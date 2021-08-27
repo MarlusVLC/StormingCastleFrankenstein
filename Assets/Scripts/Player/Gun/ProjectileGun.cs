@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using TMPro;
 using UnityEngine;
 
 public class ProjectileGun : MonoBehaviour
@@ -21,16 +20,12 @@ public class ProjectileGun : MonoBehaviour
     private int bulletsLeft, bulletsShot;
     
     // bools
-    private bool shooting, readyToShoot, reloading;
+    private bool shooting, readyToShoot;
     
     // reference
     [SerializeField] private Camera fpsCam;
     [SerializeField] private Transform attackPoint;
-    
-    // graphics
-    [SerializeField] private GameObject muzzleFlash;
-    [SerializeField] private TextMeshProUGUI ammunitionDisplay;
-    
+
     // bug fixing
     [SerializeField] private bool allowInvoke = true;
 
@@ -44,10 +39,6 @@ public class ProjectileGun : MonoBehaviour
     private void Update()
     {
         MyInput();
-        
-        // set ammo display
-        if (ammunitionDisplay != null)
-            ammunitionDisplay.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
     }
 
     private void MyInput()
@@ -55,15 +46,9 @@ public class ProjectileGun : MonoBehaviour
         // check if allowed to hold down button and take corresponding input
         if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
-       
-        // reloading
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading) Reload();
-        
-        // reload automatically when trying to shoot without ammo
-        if (readyToShoot && shooting && !reloading && bulletsLeft <= 0) Reload();
-        
+
         // shooting
-        if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
+        if (readyToShoot && shooting && bulletsLeft > 0)
         {
             // set bullets shot to 0
             bulletsShot = 0;
@@ -106,10 +91,6 @@ public class ProjectileGun : MonoBehaviour
         // add forces to bullet
         currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
         currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
-        
-        // instantiate muzzle flash
-        if (muzzleFlash != null)
-            Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
 
         bulletsLeft--;
         bulletsShot++;
@@ -130,17 +111,5 @@ public class ProjectileGun : MonoBehaviour
     {
         readyToShoot = true;
         allowInvoke = true;
-    }
-
-    private void Reload()
-    {
-        reloading = true;
-        Invoke("ReloadFinished", reloadTime);
-    }
-
-    private void ReloadFinished()
-    {
-        bulletsLeft = magazineSize;
-        reloading = false;
     }
 }
