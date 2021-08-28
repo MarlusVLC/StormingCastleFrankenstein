@@ -3,9 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProjectileGun : MonoBehaviour
 {
+    // guns
+    [SerializeField] private GameObject mainGun;
+    [SerializeField] private GameObject shotgun;
+
+    [SerializeField] private string currentGun;
+    
     // bullet
     [SerializeField] private GameObject bullet;
     
@@ -26,6 +33,10 @@ public class ProjectileGun : MonoBehaviour
     // reference
     [SerializeField] private Camera fpsCam;
     [SerializeField] private Transform attackPoint;
+    
+    // gun UI text
+    [SerializeField] private Text text1;
+    [SerializeField] private Text text2;
 
     // bug fixing
     [SerializeField] private bool allowInvoke = true;
@@ -55,6 +66,25 @@ public class ProjectileGun : MonoBehaviour
             bulletsShot = 0;
 
             Shoot();
+        }
+        
+        // changing the gun
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            mainGun.gameObject.SetActive(true);
+            shotgun.gameObject.SetActive(false);
+            
+            text1.color = Color.red;
+            text2.color = Color.white;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            mainGun.gameObject.SetActive(false);
+            shotgun.gameObject.SetActive(true);
+            
+            text1.color = Color.white;
+            text2.color = Color.red;
         }
     }
 
