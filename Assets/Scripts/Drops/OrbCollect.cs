@@ -16,21 +16,20 @@ public class OrbCollect : MonoBehaviour
     private int healthAddAmount = 10;
     private int ammoAddAmount = 10;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnControllerColliderHit(ControllerColliderHit collider)
     {
-        Debug.Log("colidi com alguma coisa");
-        if (collision.gameObject.Equals(healthOrb))
+        if (collider.gameObject.Equals(healthOrb))
         {
             Debug.Log("health collected");
             HealthCollect();
-            Destroy(collision.gameObject);
+            Destroy(collider.gameObject);
         }
 
-        if (collision.gameObject.Equals(ammoOrb))
+        if (collider.gameObject.Equals(ammoOrb))
         {
             Debug.Log("ammo collected");
             AmmoCollect();
-            Destroy(collision.gameObject);
+            Destroy(collider.gameObject);
         }
     }
 
