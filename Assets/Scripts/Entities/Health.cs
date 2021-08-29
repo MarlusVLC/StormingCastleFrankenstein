@@ -1,17 +1,19 @@
 ﻿using Unity.Collections;
 using UnityEngine;
+using Utilities;
 
 namespace Entities
 {
-    public class Health : MonoBehaviour
+    public abstract class Health : MonoCache
     {
         [SerializeField] private int maxHealth = 100;
         [SerializeField] private int startingHealth = 100;
         
         private int _currentHealth;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _currentHealth = Mathf.Clamp(startingHealth, 0, maxHealth);
         }
 
@@ -24,10 +26,7 @@ namespace Entities
                 Die();
             }
         }
-        
-        private void Die()
-        {
-            Destroy(gameObject);
-        }
+
+        protected abstract void Die();
     }
 }

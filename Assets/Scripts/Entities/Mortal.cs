@@ -1,7 +1,9 @@
-﻿namespace Entities
+﻿using Utilities;
+
+namespace Entities
 {
-    public class Mortal
+    public abstract class Mortal : MonoCache
     {
-        
+        protected abstract void Die();
     }
 }

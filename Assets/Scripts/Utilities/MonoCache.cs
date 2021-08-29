@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Utilities
 {
-    public class MonoCache : MonoBehaviour, IDelayCalls
+    public class MonoCache : MonoBehaviour
     {
 
         private Transform _transform;
@@ -34,10 +34,6 @@ namespace Utilities
         {
             TryGetComponent(out _transform);
         }
-
-        public IEnumerator ExecuteActionWithDelay(Action action, float intervalTime)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

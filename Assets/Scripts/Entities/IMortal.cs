@@ -1,7 +1,7 @@
 ﻿namespace Entities
 {
-    public interface IMortal
-    {
-        
-    }
+    // public interface IMortal
+    // {
+    //     protected abstract void Die();
+    // }
 }
