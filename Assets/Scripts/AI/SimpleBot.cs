@@ -7,14 +7,15 @@ namespace AI
 {
     public class SimpleBot : MonoCache
     {
-        
-        /// <summary>
-        /// JÁ VORTO. FUI MUÇA///
-        /// </summary>
-        [SerializeField] private Transform mockDestination;
-        
+        // [SerializeField] private float AngularSpeed_WhenTargetAcquired;
+        // [SerializeField] private float AngularSpeed_OnTargetAcquired;
         private FieldOfView _fov;
         private NavMeshAgent _navMeshAgent;
+
+        private float _currRotationSpeed;
+
+        private float MaximumRotationSpeed => _navMeshAgent.angularSpeed;
+        private float StoppingDistance => _navMeshAgent.stoppingDistance;
 
         protected override void Awake()
         {
@@ -34,14 +35,25 @@ namespace AI
 
         }
 
-        private void Start()
+        private void FixedUpdate()
         {
-            _navMeshAgent.SetDestination(mockDestination.position);
+            if (_fov.HasTarget)
+            {
+                var targetPosition = _fov.FirstTarget.position;
+                var distanceToTarget = Vector3.Distance(targetPosition, Transform.position);
+                _currRotationSpeed = MaximumRotationSpeed * StoppingDistance  / distanceToTarget;
+                Transform.RotateTowards(targetPosition, _currRotationSpeed);
+            }
         }
 
-        private void SetDestination(Transform transform)
+        private void SetDestination(Transform target)
         {
-            _navMeshAgent.SetDestination(transform.position);
+            var dirToTarget = (target.position - Transform.position).normalized;
+            var playerToTargetAngle = Vector3.Angle(Transform.forward, dirToTarget);
+            if (playerToTargetAngle < 45f)
+            {
+                _navMeshAgent.SetDestination(target.position);
+            }
         }
     } 
 }

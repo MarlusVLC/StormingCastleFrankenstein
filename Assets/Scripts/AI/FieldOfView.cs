@@ -20,8 +20,6 @@ namespace AI
         [SerializeField] private LayerMask obstacleMask;
     
         public List<Transform> VisibleTargets { get; private set; }
-        public bool HasTarget => VisibleTargets.Count > 0;
-
         private Collider[] _targetsInViewRadius;
         private int _numberOfTargetsInRadius;
         
@@ -33,7 +31,6 @@ namespace AI
             _targetsInViewRadius = new Collider[numberOfExpectedTargets];
             VisibleTargets = new List<Transform>(numberOfExpectedTargets);
 
-            // StartCoroutine(FindTargetsWithDelay(checkInterval));
             StartCoroutine(Parallel.ExecuteActionWithDelay(FindVisibleTargets, checkInterval));
         }
         
@@ -42,21 +39,9 @@ namespace AI
             if (Application.isPlaying)
             {
                 _targetsInViewRadius = new Collider[numberOfExpectedTargets];
-                // StartCoroutine(FindTargetsWithDelay(checkInterval));
                 StartCoroutine(Parallel.ExecuteActionWithDelay(FindVisibleTargets, checkInterval));
             }
         }
-        
-        
-        
-        // public IEnumerator FindTargetsWithDelay(float delay)
-        // {
-        //     while (true)
-        //     {
-        //         yield return new WaitForSeconds(delay);
-        //         FindVisibleTargets();
-        //     }
-        // }
 
         public void FindVisibleTargets()
         {
@@ -85,25 +70,12 @@ namespace AI
             
         }
         
-
-        // public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
-        // {
-        //     if (!angleIsGlobal)
-        //     {
-        //         angleInDegrees += transform.eulerAngles.y;
-        //     }
-        //     return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0,
-        //         Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-        // }
-        
-        
         
         public float ViewAngle => viewAngle;
         public float ViewRadius => viewRadius;
-        // public List<Transform> VisibleTargets => VisibleTargets;
-
         public bool ShowCircumference => showCircumference;
-
+        public bool HasTarget => VisibleTargets.Count > 0;
+        public Transform FirstTarget => VisibleTargets[0];
         public void InitializeTargetCollections()
         {
             _targetsInViewRadius = new Collider[numberOfExpectedTargets];
