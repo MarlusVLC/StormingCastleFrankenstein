@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -25,6 +28,37 @@ public class PlayerMovement : MonoBehaviour
     
     private bool isGrounded;
     
+    // audio source
+    [SerializeField] private AudioSource audioSource;
+    
+    // audio clips
+    [SerializeField] private AudioClip[] step;
+    private AudioClip stepAudioClip;
+    
+    // step sounds timer
+    private float waitTime = 0.5f;
+    private bool stepping = false;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void sfxSteps()
+    {
+        stepping = true;
+        int index = Random.Range(0, step.Length);
+        stepAudioClip = step[index];
+        audioSource.clip = stepAudioClip;
+        audioSource.Play();
+        Invoke("ChangeStep", waitTime);
+    }
+
+    private void ChangeStep()
+    {
+        stepping = false;
+    }
+
     void Update()
     {
         // ground detection stuff
@@ -52,5 +86,11 @@ public class PlayerMovement : MonoBehaviour
 
         // applying velocity (gravity) the player
         controller.Move(velocity * Time.deltaTime);
+        
+        // step sounds
+        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1 && !stepping && isGrounded || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1 && !stepping&& isGrounded)
+        {
+            Invoke("sfxSteps", 0);
+        }
     }
 }

@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 public class ProjectileGun : MonoBehaviour
 {
     // guns
     [SerializeField] private GameObject mainGun;
     [SerializeField] private GameObject shotgun;
-
-    [SerializeField] private string currentGun;
     
     // bullet
     [SerializeField] private GameObject bullet;
@@ -40,6 +39,13 @@ public class ProjectileGun : MonoBehaviour
 
     // bug fixing
     [SerializeField] private bool allowInvoke = true;
+    
+    // audio clips
+    [SerializeField] private AudioClip shotAudioClip;
+    [SerializeField] private AudioClip[] shell;
+    [SerializeField] private AudioClip[] empty;
+    private AudioClip shellAudioClip;
+    private AudioClip emptyAudioClip;
 
     private void Awake()
     {
@@ -51,6 +57,17 @@ public class ProjectileGun : MonoBehaviour
     private void Update()
     {
         MyInput();
+    }
+
+    IEnumerator sfxShotThenShell()
+    {
+        AudioSource.PlayClipAtPoint(shotAudioClip, transform.position);
+        
+        yield return new WaitForSeconds(1);
+        
+        int index = UnityEngine.Random.Range(0, shell.Length);
+        shellAudioClip = shell[index];
+        AudioSource.PlayClipAtPoint(shellAudioClip, transform.position);
     }
 
     private void MyInput()
@@ -66,6 +83,17 @@ public class ProjectileGun : MonoBehaviour
             bulletsShot = 0;
 
             Shoot();
+            
+            // play shooting sound
+            StartCoroutine(sfxShotThenShell());
+        }
+        
+        if (shooting && bulletsLeft <= 0)
+        {
+            // play empty shooting sound
+            int index = UnityEngine.Random.Range(0, empty.Length);
+            emptyAudioClip = empty[index];
+            AudioSource.PlayClipAtPoint(emptyAudioClip, transform.position);
         }
         
         // changing the gun
@@ -115,7 +143,7 @@ public class ProjectileGun : MonoBehaviour
         
         // instantiate bullet/projectile
         GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity);
-        
+
         // rotate bullet to shoot direction
         currentBullet.transform.forward = directionWithSpread.normalized;
         
