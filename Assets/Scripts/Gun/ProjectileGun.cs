@@ -3,9 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
+using Random = System.Random;
 
 public class ProjectileGun : MonoBehaviour
 {
+    // guns
+    [SerializeField] private GameObject mainGun;
+    [SerializeField] private GameObject shotgun;
+    
     // bullet
     [SerializeField] private GameObject bullet;
     
@@ -26,9 +32,20 @@ public class ProjectileGun : MonoBehaviour
     // reference
     [SerializeField] private Camera fpsCam;
     [SerializeField] private Transform attackPoint;
+    
+    // gun UI text
+    [SerializeField] private Text text1;
+    [SerializeField] private Text text2;
 
     // bug fixing
     [SerializeField] private bool allowInvoke = true;
+    
+    // audio clips
+    [SerializeField] private AudioClip shotAudioClip;
+    [SerializeField] private AudioClip[] shell;
+    [SerializeField] private AudioClip[] empty;
+    private AudioClip shellAudioClip;
+    private AudioClip emptyAudioClip;
 
     private void Awake()
     {
@@ -40,6 +57,17 @@ public class ProjectileGun : MonoBehaviour
     private void Update()
     {
         MyInput();
+    }
+
+    IEnumerator sfxShotThenShell()
+    {
+        AudioSource.PlayClipAtPoint(shotAudioClip, transform.position);
+        
+        yield return new WaitForSeconds(1);
+        
+        int index = UnityEngine.Random.Range(0, shell.Length);
+        shellAudioClip = shell[index];
+        AudioSource.PlayClipAtPoint(shellAudioClip, transform.position);
     }
 
     private void MyInput()
@@ -55,6 +83,36 @@ public class ProjectileGun : MonoBehaviour
             bulletsShot = 0;
 
             Shoot();
+            
+            // play shooting sound
+            StartCoroutine(sfxShotThenShell());
+        }
+        
+        if (shooting && bulletsLeft <= 0)
+        {
+            // play empty shooting sound
+            int index = UnityEngine.Random.Range(0, empty.Length);
+            emptyAudioClip = empty[index];
+            AudioSource.PlayClipAtPoint(emptyAudioClip, transform.position);
+        }
+        
+        // changing the gun
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            mainGun.gameObject.SetActive(true);
+            shotgun.gameObject.SetActive(false);
+            
+            text1.color = Color.red;
+            text2.color = Color.white;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            mainGun.gameObject.SetActive(false);
+            shotgun.gameObject.SetActive(true);
+            
+            text1.color = Color.white;
+            text2.color = Color.red;
         }
     }
 
@@ -85,7 +143,7 @@ public class ProjectileGun : MonoBehaviour
         
         // instantiate bullet/projectile
         GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity);
-        
+
         // rotate bullet to shoot direction
         currentBullet.transform.forward = directionWithSpread.normalized;
         
