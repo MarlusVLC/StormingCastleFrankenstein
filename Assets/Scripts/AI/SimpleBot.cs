@@ -11,8 +11,10 @@ namespace AI
         // [SerializeField] private float AngularSpeed_OnTargetAcquired;
         private FieldOfView _fov;
         private NavMeshAgent _navMeshAgent;
+        private Animator _animator;
 
         private float _currRotationSpeed;
+        private float _distanceToTarget;
 
         private float MaximumRotationSpeed => _navMeshAgent.angularSpeed;
         private float StoppingDistance => _navMeshAgent.stoppingDistance;
@@ -21,6 +23,7 @@ namespace AI
         {
             base.Awake();
             TryGetComponent(out _navMeshAgent);
+            TryGetComponent(out _animator);
             _fov = GetComponentInChildren<FieldOfView>();
         }
 
@@ -40,9 +43,10 @@ namespace AI
             if (_fov.HasTarget)
             {
                 var targetPosition = _fov.FirstTarget.position;
-                var distanceToTarget = Vector3.Distance(targetPosition, Transform.position);
-                _currRotationSpeed = MaximumRotationSpeed * StoppingDistance  / distanceToTarget;
+                _distanceToTarget = Vector3.Distance(targetPosition, Transform.position);
+                _currRotationSpeed = MaximumRotationSpeed * StoppingDistance  / _distanceToTarget;
                 Transform.RotateTowards(targetPosition, _currRotationSpeed);
+                _animator.SetBool("IsCloseToTarget", _distanceToTarget < StoppingDistance);
             }
         }
 

@@ -1,15 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Entities;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : Health
 {
-    public int maxHealth = 100;
-    public int currentHealth;
-
-    private void Awake()
+    protected override void Die()
     {
-        currentHealth = maxHealth;
+        Destroy(this.gameObject);
     }
 }

@@ -35,10 +35,7 @@ public class OrbCollect : MonoBehaviour
 
     public void HealthCollect()
     {
-        if (_playerHealth.currentHealth < _playerHealth.maxHealth)
-        {
-            _playerHealth.currentHealth += healthAddAmount;
-        }
+        _playerHealth.RecoverHealth(healthAddAmount);
     }
     
     public void AmmoCollect()

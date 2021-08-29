@@ -1,14 +1,26 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Entities;
 using UnityEngine;
+using Utilities;
 
-public class Attack : MonoBehaviour
+namespace AI
 {
-    [SerializeField] private float attackDamage;
-
-    private void OnCollisionEnter(Collision other)
+    public class Attack : MonoBehaviour
     {
-        throw new NotImplementedException();
+        [SerializeField] private LayerMask attackableMask;
+        [SerializeField] private int attackDamage;
+
+        private void OnCollisionEnter(Collision other)
+        {
+            Debug.Log("HIT!");
+
+            if (attackableMask.HasLayerWihin(other.gameObject.layer) && other.gameObject.TryGetComponent(out Health health))
+            {
+                health.TakeDamage(attackDamage);
+            }
+        }
     }
 }
+
