@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Marlus/Training Grounds v0.1 - Marlus.unity
+    guid: 60c893a24ce73094b82764476f1772bb
   m_configObjects: {}

@@ -16,7 +16,8 @@ namespace AI
         {
             Debug.Log("HIT!");
 
-            if (attackableMask.HasLayerWihin(other.gameObject.layer) && other.gameObject.TryGetComponent(out Health health))
+            if (attackableMask.HasLayerWihin(other.gameObject.layer) &&
+                other.gameObject.TryGetComponent(out Health health))
             {
                 health.TakeDamage(attackDamage);
             }
