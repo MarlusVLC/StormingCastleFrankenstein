@@ -242,7 +242,7 @@ MonoBehaviour:
   numberOfExpectedTargets: 1
   checkInterval: 0.4
   viewAngle: 360
-  viewRadius: 30
+  viewRadius: 50
   targetMask:
     serializedVersion: 2
     m_Bits: 64

@@ -14,8 +14,6 @@ namespace AI
 
         private void OnCollisionEnter(Collision other)
         {
-            Debug.Log("HIT!");
-
             if (attackableMask.HasLayerWihin(other.gameObject.layer) &&
                 other.gameObject.TryGetComponent(out Health health))
             {
