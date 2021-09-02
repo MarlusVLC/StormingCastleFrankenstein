@@ -10,8 +10,6 @@ namespace AI
     {
         // #if UNITY_EDITOR
         [field: SerializeField] public Color DefaultColor { get; private set; }
-        [field: SerializeField] public Color NormalRouteColor { get; private set; }
-        [field: SerializeField] public Color AlertRouteColor { get; private set; }
         [SerializeField] protected float debugDrawRadius = 1.0f;
 
         private Color _currentColor;

@@ -11,7 +11,7 @@ namespace Gun
         private void OnCollisionEnter(Collision collision)
         {
             var other = collision.gameObject;
-            if (uncollidableMask.HasLayerWihin(other.layer)) return;
+            if (uncollidableMask.HasLayerWithin(other.layer)) return;
             
             if (other.TryGetComponent(out Health health))
             {

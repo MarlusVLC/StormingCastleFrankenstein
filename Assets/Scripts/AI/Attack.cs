@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Entities;
 using UnityEngine;
 using Utilities;
@@ -14,7 +11,7 @@ namespace AI
 
         private void OnCollisionEnter(Collision other)
         {
-            if (attackableMask.HasLayerWihin(other.gameObject.layer) &&
+            if (attackableMask.HasLayerWithin(other.gameObject.layer) &&
                 other.gameObject.TryGetComponent(out Health health))
             {
                 health.TakeDamage(attackDamage);
