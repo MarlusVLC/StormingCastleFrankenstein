@@ -1,10 +1,9 @@
-using System;
 using Entities;
 using UnityEngine;
 
-namespace UI
+namespace UI.HUD
 {
-    public class HUDManager : MonoBehaviour
+    public class HudHealth : MonoBehaviour
     {
         [SerializeField] private Health health;
         [SerializeField] private ProgressBarPro healthProgressBar;

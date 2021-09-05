@@ -46,6 +46,8 @@ public class ProjectileGun : MonoBehaviour
     private AudioClip shellAudioClip;
     private AudioClip emptyAudioClip;
 
+    public event Action<byte> OnWeaponChanged; 
+
     private void Awake()
     {
         // make sure magazine is full
@@ -95,24 +97,28 @@ public class ProjectileGun : MonoBehaviour
             AudioSource.PlayClipAtPoint(emptyAudioClip, transform.position);
         }
         
-        // changing the gun
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            mainGun.gameObject.SetActive(true);
-            shotgun.gameObject.SetActive(false);
-            
-            text1.color = Color.red;
-            text2.color = Color.white;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            mainGun.gameObject.SetActive(false);
-            shotgun.gameObject.SetActive(true);
-            
-            text1.color = Color.white;
-            text2.color = Color.red;
-        }
+        // // changing the gun
+        // if (Input.GetKeyDown(KeyCode.Alpha1))
+        // {
+        //     mainGun.gameObject.SetActive(true);
+        //     shotgun.gameObject.SetActive(false);
+        //     
+        //     text1.color = Color.red;
+        //     text2.color = Color.white;
+        //     
+        //     OnWeaponChanged?.Invoke(0);
+        // }
+        //
+        // if (Input.GetKeyDown(KeyCode.Alpha2))
+        // {
+        //     mainGun.gameObject.SetActive(false);
+        //     shotgun.gameObject.SetActive(true);
+        //     
+        //     text1.color = Color.white;
+        //     text2.color = Color.red;
+        //
+        //     OnWeaponChanged?.Invoke(1);
+        // }
     }
 
     private void Shoot()
