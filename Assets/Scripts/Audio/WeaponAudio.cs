@@ -15,14 +15,6 @@ namespace Audio
         // private AudioClip shellAudioClip;
         // private AudioClip emptyAudioClip;
 
-
-        private void OnEnable()
-        {
-            WeaponsSelector _weaponsSelector;
-            _weaponsSelector = FindObjectOfType<WeaponsSelector>();
-            _weaponsSelector.OnWeaponChanged += EmptySfx;
-        }
-
         private IEnumerator SfxShotThenShell()
         {
             AudioSource.PlayClipAtPoint(shotAudioClip, transform.position);
@@ -40,12 +32,6 @@ namespace Audio
         public void EmptySfx()
         {
             PlayRandomSound(empty);
-        }
-        
-        public void EmptySfx(int i)
-        {
-            var audioClip = empty[i];
-            AudioSource.PlayClipAtPoint(audioClip, transform.position);
         }
 
         public static void PlayRandomSound(AudioClip[] sounds, Vector3 position)
