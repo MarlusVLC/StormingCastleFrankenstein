@@ -18,7 +18,6 @@ namespace Gun
                 health.TakeDamage(damage);
             }
             Destroy(this.gameObject);
-
         }
     }
 }

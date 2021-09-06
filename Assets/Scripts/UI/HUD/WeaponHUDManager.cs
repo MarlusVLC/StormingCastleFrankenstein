@@ -15,6 +15,7 @@ namespace UI.HUD
         private GameObject[] _icons;
         private TextMeshProUGUI[] _indexes;
 
+        
         private void Awake()
         {
             icons.transform.TryGetChildren(out _icons);

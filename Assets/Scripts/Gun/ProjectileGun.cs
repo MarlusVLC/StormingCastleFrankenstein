@@ -1,16 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+using Audio;
 using UnityEngine;
-using UnityEngine.UI;
+using Utilities;
 
 public class ProjectileGun : MonoBehaviour
 {
-    // guns
-    [SerializeField] private GameObject mainGun;
-    [SerializeField] private GameObject shotgun;
-    
     // bullet
     [SerializeField] private GameObject bullet;
     
@@ -31,47 +25,32 @@ public class ProjectileGun : MonoBehaviour
     // reference
     [SerializeField] private Camera fpsCam;
     [SerializeField] private Transform attackPoint;
-    
-    // gun UI text
-    [SerializeField] private Text text1;
-    [SerializeField] private Text text2;
 
     // bug fixing
     [SerializeField] private bool allowInvoke = true;
     
     // audio clips
-    [SerializeField] private AudioClip shotAudioClip;
-    [SerializeField] private AudioClip[] shell;
-    [SerializeField] private AudioClip[] empty;
-    private AudioClip shellAudioClip;
-    private AudioClip emptyAudioClip;
+    private WeaponAudio weaponAudio;
 
-    public event Action<byte> OnWeaponChanged; 
+    public event Action<byte> OnWeaponChanged;
+    public int ShotsLeft => bulletsLeft / bulletsPerTap;
+
 
     private void Awake()
     {
         // make sure magazine is full
+        weaponAudio = GetComponent<WeaponAudio>();
         bulletsLeft = magazineSize;
         readyToShoot = true;
     }
 
     private void Update()
     {
-        MyInput();
+        ClickToShoot();
     }
+    
 
-    IEnumerator sfxShotThenShell()
-    {
-        AudioSource.PlayClipAtPoint(shotAudioClip, transform.position);
-        
-        yield return new WaitForSeconds(1);
-        
-        int index = UnityEngine.Random.Range(0, shell.Length);
-        shellAudioClip = shell[index];
-        AudioSource.PlayClipAtPoint(shellAudioClip, transform.position);
-    }
-
-    private void MyInput()
+    private void ClickToShoot()
     {
         // check if allowed to hold down button and take corresponding input
         if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
@@ -82,43 +61,14 @@ public class ProjectileGun : MonoBehaviour
         {
             // set bullets shot to 0
             bulletsShot = 0;
-
             Shoot();
-            
             // play shooting sound
-            StartCoroutine(sfxShotThenShell());
+            weaponAudio.ShotWithShell();
         }
-        
         if (shooting && bulletsLeft <= 0)
         {
-            // play empty shooting sound
-            int index = UnityEngine.Random.Range(0, empty.Length);
-            emptyAudioClip = empty[index];
-            AudioSource.PlayClipAtPoint(emptyAudioClip, transform.position);
+            weaponAudio.EmptySfx();
         }
-        
-        // // changing the gun
-        // if (Input.GetKeyDown(KeyCode.Alpha1))
-        // {
-        //     mainGun.gameObject.SetActive(true);
-        //     shotgun.gameObject.SetActive(false);
-        //     
-        //     text1.color = Color.red;
-        //     text2.color = Color.white;
-        //     
-        //     OnWeaponChanged?.Invoke(0);
-        // }
-        //
-        // if (Input.GetKeyDown(KeyCode.Alpha2))
-        // {
-        //     mainGun.gameObject.SetActive(false);
-        //     shotgun.gameObject.SetActive(true);
-        //     
-        //     text1.color = Color.white;
-        //     text2.color = Color.red;
-        //
-        //     OnWeaponChanged?.Invoke(1);
-        // }
     }
 
     private void Shoot()
@@ -162,7 +112,7 @@ public class ProjectileGun : MonoBehaviour
         // invoke resetShot function (if not already invoked)
         if (allowInvoke)
         {
-            Invoke("ResetShot", timeBetweenShooting);
+            StartCoroutine(Parallel.ExecuteActionWithDelay(ResetShot, timeBetweenShooting));
             allowInvoke = false;
         }
         
