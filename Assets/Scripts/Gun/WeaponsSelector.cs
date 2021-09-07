@@ -8,8 +8,11 @@ namespace Gun
     public class WeaponsSelector : MonoBehaviour
     {
         private GameObject[] _weapons;
+        private ProjectileGun _currentWeapon;
+        private ProjectileGun _previousWeapon;
+        
+        public ProjectileGun CurrentWeapon => _currentWeapon;
 
-        public event Action<int> OnWeaponChanged;
 
         private void Awake()
         {
@@ -18,7 +21,7 @@ namespace Gun
 
         private void Start()
         {
-            OnWeaponChanged?.Invoke(0);
+            SwitchTo(1);
         }
 
         private void OnEnable()
@@ -28,16 +31,32 @@ namespace Gun
         
         private void OnDisable()
         {
-            InputFilter.Instance.OnNumericValueReceived -= SwitchTo;
+            if (InputFilter.HasInstance())
+            {
+                InputFilter.Instance.OnNumericValueReceived -= SwitchTo;
+            }   
         }
         
         private void SwitchTo(int receivedValue)
         {
             if (receivedValue < 1 || receivedValue > _weapons.Length) return;
-            
+
             var selection = receivedValue - 1;
             ExclusivelyActivate(ref _weapons, selection);
-            OnWeaponChanged?.Invoke(selection);
+            _previousWeapon = _currentWeapon;
+            _currentWeapon = _weapons[selection].GetComponent<ProjectileGun>();
+            OnWeaponChanged?.Invoke(new WeaponChangedEventArgs
+            {
+                Position = selection, PreviousWeapon = _previousWeapon, CurrentWeapon = _currentWeapon
+            });
+        }
+
+        public event Action<WeaponChangedEventArgs> OnWeaponChanged;
+        public class WeaponChangedEventArgs : EventArgs
+        {
+            public int Position { get; set; }
+            public ProjectileGun PreviousWeapon { get; set; }
+            public ProjectileGun CurrentWeapon { get; set; }
         }
 
     }

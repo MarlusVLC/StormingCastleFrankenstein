@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Utilities;
 
 namespace PlayfulSystems.ProgressBar {
 	[RequireComponent(typeof(RectTransform))]
@@ -13,9 +15,20 @@ namespace PlayfulSystems.ProgressBar {
         [SerializeField] bool hideOnEmpty = true;
         [SerializeField] bool useDiscreteSteps = false;
         [SerializeField] int numSteps = 10;
+        [Header("Custom")] 
+        [SerializeField] private bool forceRecenterOnEditor;
 
         protected DrivenRectTransformTracker m_Tracker;
         protected bool isDisplaySizeZero;
+
+        private void OnValidate()
+        {
+            if (forceRecenterOnEditor)
+            {
+                rectTrans.SetLeft(0);
+                rectTrans.SetRight(0);
+            }
+        }
 
         public override bool CanUpdateView(float currentValue, float targetValue) {
             // This ensures that we can update, even if the object has been updated cause it was set to 0

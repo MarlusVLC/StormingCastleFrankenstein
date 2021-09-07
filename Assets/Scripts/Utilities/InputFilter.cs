@@ -38,10 +38,7 @@ namespace Utilities
 
             return -1;
         }
-        
 
-
-        
         private void GetMouseWheelValue()
         {
             //TODO pegar input da rodinha do mouse

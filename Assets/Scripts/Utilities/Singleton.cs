@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Utilities
@@ -13,6 +14,7 @@ namespace Utilities
                 if (_instance == null)
                 {
                     _instance = FindObjectOfType<T>();
+                    Debug.Log(typeof(T).Name + "has been found!");
 
                     if (_instance == null)
                     {
@@ -26,6 +28,11 @@ namespace Utilities
 
                 return _instance;
             }
+        }
+
+        public static bool HasInstance()
+        {
+            return _instance != null;
         }
     }
 }

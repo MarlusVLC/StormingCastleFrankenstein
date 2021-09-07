@@ -6,13 +6,13 @@ namespace Utilities
 {
     public static class Parallel
     {
-        public static IEnumerator ExecuteActionWithDelay(Action action, float intervalTime)
+        public static IEnumerator ExecuteActionWithDelay(Action action, float intervalTime, bool repeat = false)
         {
-            while (true)
+            do
             {
                 yield return new WaitForSeconds(intervalTime);
                 action?.Invoke();
-            }
+            } while (repeat);
         }
     }
 }

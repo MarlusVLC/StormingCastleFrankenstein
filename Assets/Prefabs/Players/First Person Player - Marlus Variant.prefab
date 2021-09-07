@@ -49,30 +49,14 @@ PrefabInstance:
       propertyPath: weaponManager
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 4604086598044535816, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
+    - target: {fileID: 4002399547780690778, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
+      propertyPath: ammoCounter
+      value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 4604086598044535816, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604086598044535816, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604086598044535816, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604086598044535816, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604086598044535816, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 4002399547780690778, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
+      propertyPath: weaponSelector
+      value: 
+      objectReference: {fileID: 3724602643850708750}
     - target: {fileID: 4604086599065514282, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
       propertyPath: m_Name
       value: HUD
@@ -164,30 +148,6 @@ PrefabInstance:
     - target: {fileID: 4604086599065514287, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604086599338467361, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604086599338467361, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604086599338467361, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604086599338467361, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604086599338467361, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4604086599338467361, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4604086599338467363, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
       propertyPath: m_CullTransparentMesh

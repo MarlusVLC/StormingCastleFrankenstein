@@ -32,7 +32,7 @@ public class ProjectileGun : MonoBehaviour
     // audio clips
     private WeaponAudio weaponAudio;
 
-    public event Action<byte> OnWeaponChanged;
+    public event Action<int> OnAmmoChanged;
     public int ShotsLeft => bulletsLeft / bulletsPerTap;
 
 
@@ -48,7 +48,12 @@ public class ProjectileGun : MonoBehaviour
     {
         ClickToShoot();
     }
-    
+
+    private void OnDisable()
+    {
+        ResetShot();
+    }
+
 
     private void ClickToShoot()
     {
@@ -108,11 +113,13 @@ public class ProjectileGun : MonoBehaviour
 
         bulletsLeft--;
         bulletsShot++;
+        OnAmmoChanged?.Invoke(ShotsLeft);
         
         // invoke resetShot function (if not already invoked)
         if (allowInvoke)
         {
             StartCoroutine(Parallel.ExecuteActionWithDelay(ResetShot, timeBetweenShooting));
+            // Invoke("ResetShot", timeBetweenShooting);
             allowInvoke = false;
         }
         

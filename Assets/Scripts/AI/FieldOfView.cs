@@ -31,7 +31,7 @@ namespace AI
             _targetsInViewRadius = new Collider[numberOfExpectedTargets];
             VisibleTargets = new List<Transform>(numberOfExpectedTargets);
 
-            StartCoroutine(Parallel.ExecuteActionWithDelay(FindVisibleTargets, checkInterval));
+            StartCoroutine(Parallel.ExecuteActionWithDelay(FindVisibleTargets, checkInterval, true));
         }
         
         void OnValidate()
@@ -39,7 +39,7 @@ namespace AI
             if (Application.isPlaying)
             {
                 _targetsInViewRadius = new Collider[numberOfExpectedTargets];
-                StartCoroutine(Parallel.ExecuteActionWithDelay(FindVisibleTargets, checkInterval));
+                StartCoroutine(Parallel.ExecuteActionWithDelay(FindVisibleTargets, checkInterval, true));
             }
         }
 
