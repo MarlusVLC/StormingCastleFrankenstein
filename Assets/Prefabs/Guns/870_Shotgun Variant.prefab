@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cac3efec5c38c499287c7535437bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainGun: {fileID: 0}
-  shotgun: {fileID: 6302313457901220413}
   bullet: {fileID: 0}
   shootForce: 100
   upwardForce: 0
@@ -26,18 +24,28 @@ MonoBehaviour:
   bulletsLeft: 0
   fpsCam: {fileID: 0}
   attackPoint: {fileID: 7547028073442168594}
-  text1: {fileID: 0}
-  text2: {fileID: 0}
   allowInvoke: 1
+--- !u!114 &5333079854051161267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302313457901220413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29f44c4c7d644f9902e6c73b4c1180b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   shotAudioClip: {fileID: 8300000, guid: 51adddfb535d1ca458de1a94d0be93b4, type: 3}
+  empty:
+  - {fileID: 8300000, guid: 36481c3c9c7dd564588b5e90fdc776d4, type: 3}
+  - {fileID: 8300000, guid: d0a06e0a27f60054fa348c53c9259ec5, type: 3}
   shell:
   - {fileID: 8300000, guid: a1cd79a0b5c8d4d4c846f43f090ac839, type: 3}
   - {fileID: 8300000, guid: 46b6c40737681614f95ddd830f7b2732, type: 3}
   - {fileID: 8300000, guid: bd26d54288335ad4ca5192f14bfebde3, type: 3}
   - {fileID: 8300000, guid: 63a675d1653433047b534b712d1e8ffe, type: 3}
-  empty:
-  - {fileID: 8300000, guid: 36481c3c9c7dd564588b5e90fdc776d4, type: 3}
-  - {fileID: 8300000, guid: d0a06e0a27f60054fa348c53c9259ec5, type: 3}
 --- !u!1 &7547028073442168595
 GameObject:
   m_ObjectHideFlags: 0

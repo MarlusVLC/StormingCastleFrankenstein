@@ -1,14 +1,12 @@
 ﻿using System;
-using Unity.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utilities;
 
 namespace Entities
 {
     public abstract class Health : MonoCache
     {
-        [field: SerializeField] public int MaxHealth { get; private set; }
+        [field: Range(0,9999)][field: SerializeField] public int MaxHealth { get; private set; }
         [SerializeField] private int startingHealth = 100;
 
         private int _currentHealth;
@@ -29,23 +27,23 @@ namespace Entities
 
         public void TakeDamage(int damage)
         {
-            _currentHealth -= damage;
-            if (_currentHealth < 0)
-            {
-                _currentHealth = 0;
-                Die();
-            }
-            OnHealthChanged();
+            CurrentHealth -= damage;
         }
 
         protected abstract void Die();
 
-        public int CurrentHealth
+        private int CurrentHealth
         {
             get => _currentHealth;
             set
             {
                 _currentHealth = value;
+                if (_currentHealth <= 0)
+                {
+                    _currentHealth = 0;
+                    OnHealthChanged();
+                    Die();
+                }
                 OnHealthChanged();
             } 
 

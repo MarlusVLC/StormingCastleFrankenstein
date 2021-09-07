@@ -180,6 +180,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6729007819484624023}
     m_Modifications:
+    - target: {fileID: 1520174599676220161, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174599676220161, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174600126335291, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174600126335291, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174600126335291, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174600126335291, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174600126335291, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174600126335291, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174600950539538, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174600950539538, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174600950539538, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174600950539538, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174600950539538, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520174600950539538, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4726972635716197231, guid: ef16e6c3da30d3c48ba3461a6684708e, type: 3}
       propertyPath: m_Name
       value: GunSelect
