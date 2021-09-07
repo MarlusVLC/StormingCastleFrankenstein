@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1324232952647980, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
       propertyPath: m_Name
-      value: HorizontalHex
+      value: HealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 224266196848740468, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
       propertyPath: m_Pivot.x
@@ -49,15 +49,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224266196848740468, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 224266196848740468, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 224266196848740468, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224266196848740468, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
       propertyPath: m_LocalPosition.x
