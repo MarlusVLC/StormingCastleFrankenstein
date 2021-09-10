@@ -1,5 +1,6 @@
 using System;
 using Audio;
+using UI.Menus;
 using UnityEngine;
 using Utilities;
 
@@ -46,6 +47,7 @@ public class ProjectileGun : MonoBehaviour
 
     private void Update()
     {
+        if (GamePause.IsPaused) return;
         ClickToShoot();
     }
 

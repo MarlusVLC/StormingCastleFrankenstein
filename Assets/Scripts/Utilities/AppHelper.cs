@@ -14,7 +14,7 @@ namespace Utilities
 #elif UNITY_WEBPLAYER
          Application.OpenURL(webplayerQuitURL);
 #else
-         Application.Quit();
+         Application.InOutGame();
 #endif
         }
     }

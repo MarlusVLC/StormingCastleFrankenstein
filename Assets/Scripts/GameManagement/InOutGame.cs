@@ -3,9 +3,9 @@ using Utilities;
 
 namespace GameManagement
 {
-    public class QuitGame : MonoBehaviour
+    public class InOutGame : MonoBehaviour
     {
-        public void Quit()
+        public void QuitGame()
         {
             AppHelper.Quit();
         }
