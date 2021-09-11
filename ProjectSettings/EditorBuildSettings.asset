@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Marlus/Main Menu.unity
     guid: 11b81f676a6d7a24ebcbbdd0e293f389
   - enabled: 1
-    path: Assets/Scenes/Marlus/Basic H.U.D. Mockup - Marlus.unity
-    guid: 60c893a24ce73094b82764476f1772bb
+    path: Assets/Scenes/Marlus/Pause Menu.unity
+    guid: 7db0d82e6bb16c04d8f387a8014198e2
   m_configObjects: {}

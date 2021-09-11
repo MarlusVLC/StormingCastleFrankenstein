@@ -3,7 +3,7 @@ using Utilities;
 
 namespace GameManagement
 {
-    public class InOutGame : MonoBehaviour
+    public class GameQuit : MonoBehaviour
     {
         public void QuitGame()
         {

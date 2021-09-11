@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8865576626909066628}
   - component: {fileID: 8865576626909066629}
-  - component: {fileID: 4056455803267494995}
+  - component: {fileID: 7358271168296346045}
   m_Layer: 0
   m_Name: --SceneManager
   m_TagString: Untagged
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad54d261bbb24dc7933993ead08d1d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4056455803267494995
+--- !u!114 &7358271168296346045
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
