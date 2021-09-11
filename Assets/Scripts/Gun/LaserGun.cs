@@ -1,6 +1,9 @@
 using System;
 using Audio;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.VFX;
 using Utilities;
 
 [RequireComponent(typeof(LineRenderer))]
@@ -8,7 +11,11 @@ using Utilities;
 public class LaserGun : MonoBehaviour
 {
     // laser
+    [SerializeField] private VisualEffect vfxGhostgun;
+    [SerializeField] private Material material;
     private LineRenderer line;
+    private bool isVfxGhostgunPlaying = false;
+
     
     // gun stats
     [SerializeField] private float timeBetweenShooting;
@@ -36,6 +43,7 @@ public class LaserGun : MonoBehaviour
         bulletsLeft = magazineSize;
         readyToShoot = true;
         
+        // laser
         line = GetComponent<LineRenderer>();
         line.positionCount = 2;
         line.startWidth = 0.2f;
@@ -44,6 +52,11 @@ public class LaserGun : MonoBehaviour
     private void Update()
     {
         ClickToShoot();
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isVfxGhostgunPlaying = false;
+        }
     }
 
     private void OnDisable()
@@ -87,9 +100,17 @@ public class LaserGun : MonoBehaviour
             line.enabled = true;
             line.SetPosition(0, attackPoint.position);
             line.SetPosition(1, targetPoint);
+            line.material = material;
+            line.shadowCastingMode = ShadowCastingMode.ShadowsOnly;
+
+            if (!isVfxGhostgunPlaying)
+            {
+                vfxGhostgun.Play();
+                isVfxGhostgunPlaying = true;
+            }
         }
         
-        bulletsLeft--;
+        bulletsLeft = (int) (bulletsLeft - 1 * Time.deltaTime);
         OnAmmoChanged?.Invoke(ShotsLeft);
         
         // invoke resetShot function (if not already invoked)
