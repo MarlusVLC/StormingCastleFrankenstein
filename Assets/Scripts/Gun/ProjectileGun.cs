@@ -4,15 +4,28 @@ using UI.Menus;
 using UnityEngine;
 using Utilities;
 
+/// <summary>
+/// TODO ALTO! Criar script GunHandler, que se comunique com WeaponSelector pra pegar a arma atual e
+///     Lide com o input - Deve ser uma classe abstrata, da qual GunHandler_Player e GunHandler_Bot derivem.
+///     
+/// </summary>
 public class ProjectileGun : MonoBehaviour
 {
+    
+    //
+
     // bullet
     [SerializeField] private GameObject bullet;
     
     // bullet force
     [SerializeField] private float shootForce, upwardForce;
     
+    // TODO BAIXO usar headers pra separar as variáveis no inspetor
+    // TODO BAIXO separar variáveis públicas de privadas (serializadas sao consideradas públicas)
     // gun stats
+    /// <summary>
+    /// TODO BAIXO separar cada variável em sua própria linha (TOC? - sepa)
+    /// </summary>
     [SerializeField] private float timeBetweenShooting, spread, timeBetweenShots;
     [SerializeField] private int magazineSize, bulletsPerTap;
     [SerializeField] private bool allowButtonHold;
@@ -41,7 +54,7 @@ public class ProjectileGun : MonoBehaviour
     {
         // make sure magazine is full
         weaponAudio = GetComponent<WeaponAudio>();
-        bulletsLeft = magazineSize;
+        bulletsLeft = magazineSize; //TODO criar uma variável startingAmmo para executar essa ação
         readyToShoot = true;
     }
 
@@ -59,6 +72,9 @@ public class ProjectileGun : MonoBehaviour
 
     private void ClickToShoot()
     {
+        //TODO ALTO! jogar essas booleanas pra fora do método, pra liberar outras formas de atirar 
+        //Por exemplo: O bot nao usa o teclado para atirar
+        
         // check if allowed to hold down button and take corresponding input
         if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
