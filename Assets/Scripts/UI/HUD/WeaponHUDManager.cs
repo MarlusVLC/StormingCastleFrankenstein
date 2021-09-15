@@ -9,7 +9,7 @@ namespace UI.HUD
 {
     public class WeaponHUDManager : Singleton<WeaponHUDManager>
     {
-        [SerializeField] private WeaponsSelector weaponSelector;
+        [SerializeField] private WeaponHandler weaponSelector;
         [SerializeField] private GameObject indexes;
         [SerializeField] private GameObject weaponIcons;
         [SerializeField] private GameObject ammoIcons;
@@ -45,7 +45,7 @@ namespace UI.HUD
 
         }
 
-        private void ChangeWeaponIcon(WeaponsSelector.WeaponChangedEventArgs e)
+        private void ChangeWeaponIcon(WeaponHandler.WeaponChangedEventArgs e)
         {
             var selection = e.Position;
             if (selection > _weaponIcons.Length)
@@ -55,7 +55,7 @@ namespace UI.HUD
             ExclusivelyActivate(ref _weaponIcons, selection);
         }
 
-        private void ChangeAmmoIcon(WeaponsSelector.WeaponChangedEventArgs e)
+        private void ChangeAmmoIcon(WeaponHandler.WeaponChangedEventArgs e)
         {
             var selection = e.Position;
             if (selection > _ammoIcons.Length)
@@ -64,7 +64,7 @@ namespace UI.HUD
             }
             ExclusivelyActivate(ref _ammoIcons, selection);
         }
-        private void ChangeIndex(WeaponsSelector.WeaponChangedEventArgs e)
+        private void ChangeIndex(WeaponHandler.WeaponChangedEventArgs e)
         {
             var selection = e.Position;
             if (selection > _weaponIcons.Length)
@@ -85,7 +85,7 @@ namespace UI.HUD
             }
         }
 
-        private void UpdateAmmoCounter(WeaponsSelector.WeaponChangedEventArgs e)
+        private void UpdateAmmoCounter(WeaponHandler.WeaponChangedEventArgs e)
         {
             ammoCounter.text = e.CurrentWeapon.ShotsLeft.ToString();
             if (e.PreviousWeapon != null)

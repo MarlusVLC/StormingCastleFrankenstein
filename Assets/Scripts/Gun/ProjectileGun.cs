@@ -5,15 +5,12 @@ using UnityEngine;
 using Utilities;
 
 /// <summary>
-/// TODO ALTO! Criar script GunHandler, que se comunique com WeaponSelector pra pegar a arma atual e
+/// TODO ALTO! Criar script PlayerWeapons, que se comunique com WeaponSelector pra pegar a arma atual e
 ///     Lide com o input - Deve ser uma classe abstrata, da qual GunHandler_Player e GunHandler_Bot derivem.
 ///     
 /// </summary>
 public class ProjectileGun : MonoBehaviour
 {
-    
-    //
-
     // bullet
     [SerializeField] private GameObject bullet;
     
@@ -28,13 +25,14 @@ public class ProjectileGun : MonoBehaviour
     /// </summary>
     [SerializeField] private float timeBetweenShooting, spread, timeBetweenShots;
     [SerializeField] private int magazineSize, bulletsPerTap;
-    [SerializeField] private bool allowButtonHold;
+    [SerializeField] private bool isAutomatic;
 
     public int bulletsLeft; 
     private int bulletsShot;
     
     // bools
-    private bool shooting, readyToShoot;
+    // private bool shooting;
+    private bool readyToShoot;
     
     // reference
     [SerializeField] private Camera fpsCam;
@@ -45,24 +43,28 @@ public class ProjectileGun : MonoBehaviour
     
     // audio clips
     private WeaponAudio weaponAudio;
-
+    
     public event Action<int> OnAmmoChanged;
     public int ShotsLeft => bulletsLeft / bulletsPerTap;
+
+    public bool IsAutomatic;
+    
+    
 
 
     private void Awake()
     {
         // make sure magazine is full
         weaponAudio = GetComponent<WeaponAudio>();
-        bulletsLeft = magazineSize; //TODO criar uma variável startingAmmo para executar essa ação
+        bulletsLeft = magazineSize; //TODO MÉDIO criar uma variável startingAmmo para executar essa ação
         readyToShoot = true;
     }
 
-    private void Update()
-    {
-        if (GamePause.IsPaused) return;
-        ClickToShoot();
-    }
+    // private void Update()
+    // {
+    //     if (GamePause.IsPaused) return;
+    //     ClickToShoot();
+    // }
 
     private void OnDisable()
     {
@@ -70,14 +72,14 @@ public class ProjectileGun : MonoBehaviour
     }
 
 
-    private void ClickToShoot()
+    public void ClickToShoot(bool shooting)
     {
         //TODO ALTO! jogar essas booleanas pra fora do método, pra liberar outras formas de atirar 
         //Por exemplo: O bot nao usa o teclado para atirar
         
         // check if allowed to hold down button and take corresponding input
-        if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
-        else shooting = Input.GetKeyDown(KeyCode.Mouse0);
+        // if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
+        // else shooting = Input.GetKeyDown(KeyCode.Mouse0);
 
         // shooting
         if (readyToShoot && shooting && bulletsLeft > 0)
@@ -98,6 +100,7 @@ public class ProjectileGun : MonoBehaviour
     {
         readyToShoot = false;
 
+        //TODO ALTO! A variável ray deve vir de fora do método, já que o NPC não tem câmera
         // find the exact hit position using a raycast
         Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // just a ray through the middle of the screen
         RaycastHit hit;
@@ -128,6 +131,9 @@ public class ProjectileGun : MonoBehaviour
         // add forces to bullet
         currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
         currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
+        
+        //TODO MÉDIO criar um script na própria bala que detecta se atingiu algo da qual possa causar dano
+        //A variável de dano deve ser passada à bala pra que ela retire vida no contato com uma entidade com Health
 
         bulletsLeft--;
         bulletsShot++;
@@ -137,13 +143,12 @@ public class ProjectileGun : MonoBehaviour
         if (allowInvoke)
         {
             StartCoroutine(Parallel.ExecuteActionWithDelay(ResetShot, timeBetweenShooting));
-            // Invoke("ResetShot", timeBetweenShooting);
             allowInvoke = false;
         }
         
         // if more than one bulletPerTap make sure to repeat shoot function
         if (bulletsShot < bulletsPerTap && bulletsLeft > 0)
-            Invoke("Shoot", timeBetweenShots);
+            StartCoroutine(Parallel.ExecuteActionWithDelay(Shoot, timeBetweenShots));
     }
 
     private void ResetShot()

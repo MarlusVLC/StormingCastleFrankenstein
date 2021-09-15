@@ -5,7 +5,7 @@ using static Utilities.GameObjectUtil;
 
 namespace Gun
 {
-    public class WeaponsSelector : MonoBehaviour
+    public abstract class WeaponHandler : MonoBehaviour
     {
         private GameObject[] _weapons;
         private ProjectileGun _currentWeapon;
@@ -14,30 +14,17 @@ namespace Gun
         public ProjectileGun CurrentWeapon => _currentWeapon;
 
 
-        private void Awake()
+        protected virtual void Awake()
         {
             transform.TryGetChildren(out _weapons);
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             SwitchTo(1);
         }
 
-        private void OnEnable()
-        {
-            InputFilter.Instance.OnNumericValueReceived += SwitchTo;
-        }
-        
-        private void OnDisable()
-        {
-            if (InputFilter.HasInstance())
-            {
-                InputFilter.Instance.OnNumericValueReceived -= SwitchTo;
-            }   
-        }
-        
-        private void SwitchTo(int receivedValue)
+        protected virtual void SwitchTo(int receivedValue)
         {
             if (receivedValue < 1 || receivedValue > _weapons.Length) return;
 
