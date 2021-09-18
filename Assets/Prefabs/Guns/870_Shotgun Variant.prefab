@@ -1,30 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &7547028073512688197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6302313457901220413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cac3efec5c38c499287c7535437bcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  shootForce: 100
-  upwardForce: 0
-  timeBetweenShooting: 1
-  spread: 5
-  timeBetweenShots: 0
-  magazineSize: 1000
-  bulletsPerTap: 8
-  allowButtonHold: 0
-  bulletsLeft: 0
-  fpsCam: {fileID: 0}
-  attackPoint: {fileID: 7547028073442168594}
-  allowInvoke: 1
 --- !u!114 &5333079854051161267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,6 +21,31 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 46b6c40737681614f95ddd830f7b2732, type: 3}
   - {fileID: 8300000, guid: bd26d54288335ad4ca5192f14bfebde3, type: 3}
   - {fileID: 8300000, guid: 63a675d1653433047b534b712d1e8ffe, type: 3}
+--- !u!114 &7547028073512688197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302313457901220413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91cac3efec5c38c499287c7535437bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 6173487948656069444, guid: 52a584bbe72f0484295ea367bea73cb0, type: 3}
+  shootForce: 100
+  upwardForce: 0
+  timeBetweenShooting: 1
+  spread: 5
+  timeBetweenShots: 0
+  magazineSize: 1000
+  startingAmmo: 10
+  bulletsPerTap: 8
+  isAutomatic: 0
+  attackPoint: {fileID: 7547028073442168594}
+  allowInvoke: 1
+  bulletsLeft: 0
 --- !u!1 &7547028073442168595
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,13 +5,12 @@ using static Utilities.GameObjectUtil;
 
 namespace Gun
 {
-    public abstract class WeaponHandler : MonoBehaviour
+    public class WeaponHandler : MonoBehaviour
     {
         private GameObject[] _weapons;
-        private ProjectileGun _currentWeapon;
         private ProjectileGun _previousWeapon;
         
-        public ProjectileGun CurrentWeapon => _currentWeapon;
+        public ProjectileGun CurrentWeapon { get; private set; }
 
 
         protected virtual void Awake()
@@ -21,7 +20,7 @@ namespace Gun
 
         protected virtual void Start()
         {
-            SwitchTo(1);
+            SwitchTo(2);
         }
 
         protected virtual void SwitchTo(int receivedValue)
@@ -30,11 +29,11 @@ namespace Gun
 
             var selection = receivedValue - 1;
             ExclusivelyActivate(ref _weapons, selection);
-            _previousWeapon = _currentWeapon;
-            _currentWeapon = _weapons[selection].GetComponent<ProjectileGun>();
+            _previousWeapon = CurrentWeapon;
+            CurrentWeapon = _weapons[selection].GetComponent<ProjectileGun>();
             OnWeaponChanged?.Invoke(new WeaponChangedEventArgs
             {
-                Position = selection, PreviousWeapon = _previousWeapon, CurrentWeapon = _currentWeapon
+                Position = selection, PreviousWeapon = _previousWeapon, CurrentWeapon = CurrentWeapon
             });
         }
 

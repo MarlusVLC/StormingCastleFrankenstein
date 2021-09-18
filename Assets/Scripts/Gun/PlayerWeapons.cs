@@ -6,12 +6,15 @@ namespace Gun
 {
     public class PlayerWeapons : WeaponHandler
     {
+        [SerializeField] private Camera playerCam;
+
         private void Update()
         {
             if (GamePause.IsPaused) return;
-            CurrentWeapon.ClickToShoot(CurrentWeapon.IsAutomatic
+            CurrentWeapon.TriggerGun(CurrentWeapon.IsAutomatic
                 ? Input.GetMouseButton(0)
-                : Input.GetMouseButtonDown(0));
+                : Input.GetMouseButtonDown(0),
+                playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)));
         }
         
         private void OnEnable()
