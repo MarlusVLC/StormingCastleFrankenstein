@@ -48,7 +48,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3326100555453051634}
   m_Layer: 0
-  m_Name: Level06
+  m_Name: Bullet_Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
