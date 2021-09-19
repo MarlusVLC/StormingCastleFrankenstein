@@ -85,16 +85,7 @@ public class ProjectileGun : MonoBehaviour
             .Fire(directionWithSpread.normalized, shootForce, upwardForce)
             .SetUncollidableMask(damageableLayer)
             .SetDamage(damage/bulletsPerTap);
-
-        // rotate bullet to shoot direction
-        // currentBullet.transform.forward = directionWithSpread.normalized;
         
-        // add forces to bullet
-        // currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
-        // currentBullet.GetComponent<Rigidbody>().AddForce(transform.up * upwardForce, ForceMode.Impulse);
-        
-
-
         bulletsLeft--;
         _bulletsShot++;
         OnAmmoChanged?.Invoke(ShotsLeft);

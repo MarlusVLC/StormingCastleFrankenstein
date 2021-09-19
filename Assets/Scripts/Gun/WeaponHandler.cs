@@ -33,7 +33,6 @@ namespace Gun
                 Debug.LogException(new ArgumentException("initialWeaponIndex must be greater than 0 and lower than " 
                                                                + gameObject.name +
                                                                "'s child amount"));
-                AppHelper.Quit();
             }
 
             var selection = receivedValue - 1;
@@ -46,7 +45,6 @@ namespace Gun
             });
         }
         
-        // _weaponHandler.CurrentWeapon.TriggerGun(true, new Ray(Transform.position, Transform.forward));
         public virtual WeaponHandler Fire(bool continuouslyFire, Ray ray)
         {
             CurrentWeapon.TriggerGun(continuouslyFire, ray, damageableLayer);
