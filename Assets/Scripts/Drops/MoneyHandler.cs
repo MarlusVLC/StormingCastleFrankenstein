@@ -11,7 +11,7 @@ namespace Drops
         
         private int _currentCoinAmount;
         
-        private void Awake()
+        private void Start()
         {
             CurrentCoinAmount = startingCoinAmount;
         }
@@ -53,8 +53,9 @@ namespace Drops
                 if (keepItPositive == true)
                 {
                     _currentCoinAmount = Mathf.Clamp(_currentCoinAmount, 0, maxCoinAmount);
-                    OnCoinAmountChanged();
                 }
+                OnCoinAmountChanged();
+
             } 
         }
         

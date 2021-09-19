@@ -1,5 +1,6 @@
 using System;
 using Audio;
+using Gun;
 using UnityEngine;
 using Utilities;
 
@@ -7,6 +8,7 @@ public class ProjectileGun : MonoBehaviour
 {
     [Header("Bullet")]
     [SerializeField] private GameObject bullet;
+    [SerializeField] private Transform attackPoint;
     [Header("Bullet Force")]
     [SerializeField] private float shootForce;
     [SerializeField] private float upwardForce;
@@ -16,10 +18,9 @@ public class ProjectileGun : MonoBehaviour
     [SerializeField] private float timeBetweenShots;
     [SerializeField] private int magazineSize;
     [SerializeField] private int startingAmmo;
+    [SerializeField] private int damage;
     [SerializeField] private int bulletsPerTap;
     [SerializeField] private bool isAutomatic;
-    [Header("Bullet-Spawn Position")]
-    [SerializeField] private Transform attackPoint;
     [Header("Bug Fixing")]
     [SerializeField] private bool allowInvoke = true;
     
@@ -28,14 +29,10 @@ public class ProjectileGun : MonoBehaviour
     private int _bulletsShot;
     private bool _readyToShoot;
     
-    public int ShotsLeft => bulletsLeft / bulletsPerTap;
-    public bool IsAutomatic => isAutomatic;
-    
     private void Awake()
     {
-        // make sure magazine is full
         _weaponAudio = GetComponent<WeaponAudio>();
-        bulletsLeft = startingAmmo;
+        bulletsLeft = startingAmmo * bulletsPerTap;
         _readyToShoot = true;
     }
     
@@ -44,14 +41,14 @@ public class ProjectileGun : MonoBehaviour
         ResetShot();
     }
     
-    public void TriggerGun(bool shooting, Ray ray)
+    public void TriggerGun(bool shooting, Ray ray, LayerMask damageableLayer)
     {
         // shooting
         if (_readyToShoot && shooting && bulletsLeft > 0)
         {
             // set bullets shot to 0
             _bulletsShot = 0;
-            Shoot(ray);
+            Shoot(ray, damageableLayer);
             // play shooting sound
             _weaponAudio.ShotWithShell();
         }
@@ -61,7 +58,7 @@ public class ProjectileGun : MonoBehaviour
         }
     }
 
-    private void Shoot(Ray ray)
+    private void Shoot(Ray ray, LayerMask damageableLayer)
     {
         _readyToShoot = false;
         var attackPosition = attackPoint.position;
@@ -83,14 +80,20 @@ public class ProjectileGun : MonoBehaviour
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0);
         
         // instantiate bullet/projectile
-        GameObject currentBullet = Instantiate(bullet, attackPosition, Quaternion.identity);
+        var currentBullet = Instantiate(bullet, attackPosition, Quaternion.identity);
+        currentBullet.GetComponent<BulletImpact>()
+            .Fire(directionWithSpread.normalized, shootForce, upwardForce)
+            .SetUncollidableMask(damageableLayer)
+            .SetDamage(damage/bulletsPerTap);
 
         // rotate bullet to shoot direction
-        currentBullet.transform.forward = directionWithSpread.normalized;
+        // currentBullet.transform.forward = directionWithSpread.normalized;
         
         // add forces to bullet
-        currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
-        currentBullet.GetComponent<Rigidbody>().AddForce(transform.up * upwardForce, ForceMode.Impulse);
+        // currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
+        // currentBullet.GetComponent<Rigidbody>().AddForce(transform.up * upwardForce, ForceMode.Impulse);
+        
+
 
         bulletsLeft--;
         _bulletsShot++;
@@ -105,7 +108,7 @@ public class ProjectileGun : MonoBehaviour
         
         // if more than one bulletPerTap make sure to repeat shoot function
         if (_bulletsShot < bulletsPerTap && bulletsLeft > 0)
-            StartCoroutine(Parallel.ExecuteActionWithDelay(() => Shoot(ray), timeBetweenShots));
+            StartCoroutine(Parallel.ExecuteActionWithDelay(() => Shoot(ray, damageableLayer), timeBetweenShots));
     }
 
     private void ResetShot()
@@ -114,5 +117,9 @@ public class ProjectileGun : MonoBehaviour
         allowInvoke = true;
     }
     
+    
+    public int ShotsLeft => bulletsLeft / bulletsPerTap;
+    public bool IsEmpty => bulletsLeft <= 0;
+    public bool IsAutomatic => isAutomatic;
     public event Action<int> OnAmmoChanged;
 }

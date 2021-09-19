@@ -7,6 +7,9 @@ namespace Gun
 {
     public class WeaponHandler : MonoBehaviour
     {
+        [SerializeField] private int initialWeaponIndex = 1;
+        [SerializeField] private LayerMask damageableLayer;
+
         private GameObject[] _weapons;
         private ProjectileGun _previousWeapon;
         
@@ -20,12 +23,18 @@ namespace Gun
 
         protected virtual void Start()
         {
-            SwitchTo(2);
+            SwitchTo(initialWeaponIndex);
         }
 
         protected virtual void SwitchTo(int receivedValue)
         {
-            if (receivedValue < 1 || receivedValue > _weapons.Length) return;
+            if (receivedValue < 1 || receivedValue > _weapons.Length)
+            {
+                Debug.LogException(new ArgumentException("initialWeaponIndex must be greater than 0 and lower than " 
+                                                               + gameObject.name +
+                                                               "'s child amount"));
+                AppHelper.Quit();
+            }
 
             var selection = receivedValue - 1;
             ExclusivelyActivate(ref _weapons, selection);
@@ -35,6 +44,13 @@ namespace Gun
             {
                 Position = selection, PreviousWeapon = _previousWeapon, CurrentWeapon = CurrentWeapon
             });
+        }
+        
+        // _weaponHandler.CurrentWeapon.TriggerGun(true, new Ray(Transform.position, Transform.forward));
+        public virtual WeaponHandler Fire(bool continuouslyFire, Ray ray)
+        {
+            CurrentWeapon.TriggerGun(continuouslyFire, ray, damageableLayer);
+            return this;
         }
 
         public event Action<WeaponChangedEventArgs> OnWeaponChanged;

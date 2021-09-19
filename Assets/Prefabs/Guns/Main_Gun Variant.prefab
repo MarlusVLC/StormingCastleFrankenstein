@@ -34,16 +34,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 6173487948656069444, guid: 52a584bbe72f0484295ea367bea73cb0, type: 3}
+  attackPoint: {fileID: 7547028073753882432}
   shootForce: 100
   upwardForce: 0.1
   timeBetweenShooting: 0.1
   spread: 0
   timeBetweenShots: 0.1
-  magazineSize: 20
-  startingAmmo: 20
+  magazineSize: 100
+  startingAmmo: 80
+  damage: 10
   bulletsPerTap: 1
   isAutomatic: 0
-  attackPoint: {fileID: 7547028073753882432}
   allowInvoke: 1
   bulletsLeft: 50
 --- !u!1 &7547028073753882433

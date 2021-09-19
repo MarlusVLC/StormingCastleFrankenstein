@@ -8,10 +8,12 @@ namespace AI
     {
         protected FieldOfView _fov;
         protected NavMeshAgent _navMeshAgent;
+        protected Rigidbody _rb;
         protected Animator _animator;
 
         protected float _currRotationSpeed;
         protected float _distanceToTarget;
+        protected float _angleToTarget;
 
         protected float MaximumRotationSpeed => _navMeshAgent.angularSpeed;
         protected float StoppingDistance => _navMeshAgent.stoppingDistance;
@@ -39,15 +41,18 @@ namespace AI
             if (_fov.HasTarget)
             {
                 RotateTowardsTarget();
-                Attack();
+                if (IsTargetWithinSight(30f))
+                {
+                    Attack();
+                }
             }
         }
 
         protected virtual void TrySetDestination(Transform target)
         {
             var dirToTarget = (target.position - Transform.position).normalized;
-            var playerToTargetAngle = Vector3.Angle(Transform.forward, dirToTarget);
-            if (playerToTargetAngle < 45f)
+            _angleToTarget = Vector3.Angle(Transform.forward, dirToTarget);
+            if (IsTargetWithinSight(45f))
             {
                 _navMeshAgent.SetDestination(target.position);
             }
@@ -59,6 +64,11 @@ namespace AI
             _distanceToTarget = Vector3.Distance(targetPosition, Transform.position);
             _currRotationSpeed = MaximumRotationSpeed * StoppingDistance  / _distanceToTarget;
             Transform.RotateTowards(targetPosition, _currRotationSpeed);
+        }
+
+        protected virtual bool IsTargetWithinSight(float maximumAngle)
+        {
+            return _angleToTarget < maximumAngle;
         }
 
         protected abstract void Attack();
