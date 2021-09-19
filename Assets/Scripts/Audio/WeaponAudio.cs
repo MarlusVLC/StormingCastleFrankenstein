@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-using Gun;
+using Weapons;
 using UnityEngine;
 using Random = UnityEngine.Random;
 

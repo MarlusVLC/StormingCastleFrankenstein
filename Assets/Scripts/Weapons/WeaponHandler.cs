@@ -3,7 +3,7 @@ using UnityEngine;
 using Utilities;
 using static Utilities.GameObjectUtil;
 
-namespace Gun
+namespace Weapons
 {
     public class WeaponHandler : MonoBehaviour
     {
@@ -11,9 +11,9 @@ namespace Gun
         [SerializeField] private LayerMask damageableLayer;
 
         private GameObject[] _weapons;
-        private ProjectileGun _previousWeapon;
+        private Gun _previousWeapon;
         
-        public ProjectileGun CurrentWeapon { get; private set; }
+        public Gun CurrentWeapon { get; private set; }
 
 
         protected virtual void Awake()
@@ -38,7 +38,7 @@ namespace Gun
             var selection = receivedValue - 1;
             ExclusivelyActivate(ref _weapons, selection);
             _previousWeapon = CurrentWeapon;
-            CurrentWeapon = _weapons[selection].GetComponent<ProjectileGun>();
+            CurrentWeapon = _weapons[selection].GetComponent<Gun>();
             OnWeaponChanged?.Invoke(new WeaponChangedEventArgs
             {
                 Position = selection, PreviousWeapon = _previousWeapon, CurrentWeapon = CurrentWeapon
@@ -47,7 +47,7 @@ namespace Gun
         
         public virtual WeaponHandler Fire(bool continuouslyFire, Ray ray)
         {
-            CurrentWeapon.TriggerGun(continuouslyFire, ray, damageableLayer);
+            CurrentWeapon.PullTrigger(continuouslyFire, ray, damageableLayer);
             return this;
         }
 
@@ -55,8 +55,8 @@ namespace Gun
         public class WeaponChangedEventArgs : EventArgs
         {
             public int Position { get; set; }
-            public ProjectileGun PreviousWeapon { get; set; }
-            public ProjectileGun CurrentWeapon { get; set; }
+            public Gun PreviousWeapon { get; set; }
+            public Gun CurrentWeapon { get; set; }
         }
 
     }

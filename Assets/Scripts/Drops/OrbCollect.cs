@@ -1,15 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
+using Weapons;
 using Debug = UnityEngine.Debug;
 
 public class OrbCollect : MonoBehaviour
 {
     [SerializeField] private PlayerHealth _playerHealth;
-    [SerializeField] private ProjectileGun _projectileGun;
+    [SerializeField] private Gun _projectileGun;
     [SerializeField] private GameObject healthOrb;
     [SerializeField] private GameObject ammoOrb;
 
@@ -28,7 +24,7 @@ public class OrbCollect : MonoBehaviour
         if (collider.gameObject.Equals(ammoOrb))
         {
             Debug.Log("ammo collected");
-            AmmoCollect();
+            // AmmoCollect();
             Destroy(collider.gameObject);
         }
     }
@@ -38,8 +34,8 @@ public class OrbCollect : MonoBehaviour
         _playerHealth.RecoverHealth(healthAddAmount);
     }
     
-    public void AmmoCollect()
-    {
-        _projectileGun.bulletsLeft += ammoAddAmount;
-    }
+    // public void AmmoCollect()
+    // {
+    //     _projectileGun._bulletsLeft += ammoAddAmount;
+    // }
 }

@@ -2,7 +2,7 @@ using UI.Menus;
 using UnityEngine;
 using Utilities;
 
-namespace Gun
+namespace Weapons
 {
     public class PlayerWeapons : WeaponHandler
     {

@@ -1,4 +1,4 @@
-using Gun;
+using Weapons;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -90,9 +90,9 @@ namespace UI.HUD
             ammoCounter.text = e.CurrentWeapon.ShotsLeft.ToString();
             if (e.PreviousWeapon != null)
             {
-                e.PreviousWeapon.OnAmmoChanged -= UpdateAmmoCounter;
+                e.PreviousWeapon.AmmoChanged -= UpdateAmmoCounter;
             }
-            e.CurrentWeapon.OnAmmoChanged += UpdateAmmoCounter;
+            e.CurrentWeapon.AmmoChanged += UpdateAmmoCounter;
         }
         
         private void UpdateAmmoCounter(int ammo)

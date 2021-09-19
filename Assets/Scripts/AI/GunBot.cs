@@ -1,4 +1,4 @@
-using Gun;
+using Weapons;
 using UnityEngine;
 using Utilities;
 

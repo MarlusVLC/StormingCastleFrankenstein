@@ -2,7 +2,7 @@
 using UnityEngine;
 using Utilities;
 
-namespace Gun
+namespace Weapons
 {
     public class BulletImpact : MonoBehaviour
     {
