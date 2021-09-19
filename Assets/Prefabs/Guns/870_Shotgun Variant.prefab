@@ -38,7 +38,7 @@ MonoBehaviour:
   shootForce: 100
   upwardForce: 0
   timeBetweenShooting: 1
-  spread: 0.5
+  spread: 1.55
   timeBetweenShots: 0
   magazineSize: 1000
   startingAmmo: 10
