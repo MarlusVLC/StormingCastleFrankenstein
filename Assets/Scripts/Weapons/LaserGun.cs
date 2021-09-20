@@ -1,4 +1,5 @@
 using System.Collections;
+using Entities;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.VFX;
@@ -40,12 +41,10 @@ namespace Weapons
         
         public override Gun PullTrigger(bool shooting, Ray ray, LayerMask damageableLayer)
         {
-            shooting = Input.GetKey(KeyCode.Mouse0);
-
             // shooting
             if (_readyToShoot && shooting && _bulletsLeft > 0)
             {
-                Shoot(ray, damageableLayer);
+                Shoot(shooting, ray, damageableLayer);
                 _weaponAudio.ShotWithShell();
             }
             
@@ -55,20 +54,34 @@ namespace Weapons
             return this;
         }
 
-        protected override void Shoot(Ray ray, LayerMask damageableLayer)
+        protected override void Shoot(bool shooting, Ray ray, LayerMask damageableLayer)
         {
             _readyToShoot = false;
             var attackPosition = attackPoint.position;
             
             
             // check if ray hit something
-            var targetPoint 
-                = Physics.Raycast(ray, out var hit) 
-                    ? hit.point 
-                    : ray.GetPoint(75);
+            // var targetPoint 
+            //     = Physics.Raycast(ray, out var hit) 
+            //         ? hit.point 
+            //         : ray.GetPoint(75);
 
+            Vector3 targetPoint;
+            if (Physics.Raycast(ray, out var hit))
+            {
+                targetPoint = hit.point;
+                if (hit.collider.TryGetComponent(out Health health))
+                {
+                    health.TakeDamage(damage);
+                }
+            }
+            else
+            {
+                targetPoint = ray.GetPoint(75);
+            }
+            
             // instantiate laser
-            if (Input.GetMouseButton(0))
+            if (shooting)
             {
                 line.enabled = true;
                 line.SetPosition(0, attackPosition);
@@ -77,10 +90,13 @@ namespace Weapons
                 line.shadowCastingMode = ShadowCastingMode.On;
             }
             
+            
             // if (canPlayVfxGhostGunStart) StartCoroutine(PlayVfxGhostGun());
 
             _bulletsLeft = (int) (_bulletsLeft - 1 * Time.deltaTime);
             OnAmmoChanged();
+
+
             
             // invoke resetShot function (if not already invoked)
             if (allowInvoke)

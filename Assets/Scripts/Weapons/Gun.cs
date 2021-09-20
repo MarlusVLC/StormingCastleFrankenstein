@@ -35,7 +35,7 @@ namespace Weapons
         }
 
         public abstract Gun PullTrigger(bool shooting, Ray ray, LayerMask damageableLayer);
-        protected abstract void Shoot(Ray ray, LayerMask damageableLayer); 
+        protected abstract void Shoot(bool shooting, Ray ray, LayerMask damageableLayer); 
         
         protected virtual void ResetShot()
         {

@@ -17,6 +17,7 @@ namespace Audio
 
         private IEnumerator SfxShotThenShell()
         {
+            if (shotAudioClip == null) yield break;
             AudioSource.PlayClipAtPoint(shotAudioClip, transform.position);
         
             yield return new WaitForSeconds(1);
@@ -39,6 +40,7 @@ namespace Audio
             // play empty shooting sound
             int index = Random.Range(0, sounds.Length);
             var audioClip = sounds[index];
+            if (sounds.Length == 0) return;
             AudioSource.PlayClipAtPoint(audioClip, position);
         }
 

@@ -30,7 +30,7 @@ namespace Weapons
             {
                 // set bullets shot to 0
                 _bulletsShot = 0;
-                Shoot(ray, damageableLayer);
+                Shoot(shooting, ray, damageableLayer);
                 // play shooting sound
                 _weaponAudio.ShotWithShell();
             }
@@ -41,7 +41,7 @@ namespace Weapons
             return this;
         }
 
-        protected override void Shoot(Ray ray, LayerMask damageableLayer)
+        protected override void Shoot(bool shooting, Ray ray, LayerMask damageableLayer)
         {
             _readyToShoot = false;
             var attackPosition = attackPoint.position;
@@ -82,7 +82,7 @@ namespace Weapons
             
             // if more than one bulletPerTap make sure to repeat shoot function
             if (_bulletsShot < bulletsPerTap && _bulletsLeft > 0)
-                StartCoroutine(Parallel.ExecuteActionWithDelay(() => Shoot(ray, damageableLayer), timeBetweenShots));
+                StartCoroutine(Parallel.ExecuteActionWithDelay(() => Shoot(shooting, ray, damageableLayer), timeBetweenShots));
         }
 
         public override int ShotsLeft => _bulletsLeft / bulletsPerTap;
