@@ -42,13 +42,24 @@ namespace Weapons
             _readyToShoot = true;
             allowInvoke = true;
         }
+        
+        public int AddRelativeAmmo(float valueRelativeToMax)
+        {
+            Debug.Log((int)(valueRelativeToMax * magazineSize));
+            _bulletsLeft += Mathf.CeilToInt(valueRelativeToMax * magazineSize);
+            _bulletsLeft = Mathf.Clamp(_bulletsLeft, 0, magazineSize);
+            OnAmmoChanged();
+            return _bulletsLeft;
+        }
 
         public void OnAmmoChanged()
         {
             AmmoChanged?.Invoke(ShotsLeft);
         }
-
         public abstract int ShotsLeft {get;}
+
+        public int MagazineSize => magazineSize;
+
         public bool IsEmpty => _bulletsLeft <= 0;
         public bool IsAutomatic => isAutomatic;
         public event Action<int> AmmoChanged;

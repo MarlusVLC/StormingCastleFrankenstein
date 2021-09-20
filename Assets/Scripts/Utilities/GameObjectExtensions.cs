@@ -1,9 +1,12 @@
 using UnityEngine;
 
-namespace Utilities
-{
-    public class GameObject : MonoBehaviour
-    {
-        
-    }
-}
+// namespace Utilities
+// {
+//     public static class GameObjectExtensions
+//     {
+//         public static bool TryGetComponentInChildren()
+//         {
+//             
+//         }
+//     }
+// }

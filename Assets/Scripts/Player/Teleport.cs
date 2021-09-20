@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Utilities;
 
-public class Teleport : MonoBehaviour
+public class Teleport : MonoCache
 {
-    [SerializeField] private GameObject[] portals;
+    [SerializeField] private Transform[] portals;
     [SerializeField] private float range = 3f;
     [SerializeField] private KeyCode activateKey = KeyCode.E;
     [TextArea][SerializeField] private string actionMessage;
@@ -15,8 +16,9 @@ public class Teleport : MonoBehaviour
     private bool _canBeInteractedWith;
 
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         actionMessageHUD.text = actionMessage;
     }
     
@@ -28,7 +30,9 @@ public class Teleport : MonoBehaviour
             {
                 actionMessageHUD.enabled = _canBeInteractedWith = true;
                 if (Input.GetKey(activateKey))
+                {
                     SceneUtil.ResetScene();
+                }
             }
             if (Vector3.SqrMagnitude(portal.transform.position - gameObject.transform.position) > range*range)
             {

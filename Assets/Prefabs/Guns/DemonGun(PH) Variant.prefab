@@ -1,31 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &5857416284791948306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650079732555036096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91cac3efec5c38c499287c7535437bcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 6173487948656069444, guid: 52a584bbe72f0484295ea367bea73cb0, type: 3}
-  attackPoint: {fileID: 246948232279977575}
-  shootForce: 200
-  upwardForce: 0.2
-  timeBetweenShooting: 1
-  spread: 3
-  timeBetweenShots: 0
-  magazineSize: 80
-  startingAmmo: 2
-  damage: 100
-  bulletsPerTap: 10
-  isAutomatic: 0
-  allowInvoke: 1
-  bulletsLeft: 0
 --- !u!114 &4440506492524909796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +21,31 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 46b6c40737681614f95ddd830f7b2732, type: 3}
   - {fileID: 8300000, guid: bd26d54288335ad4ca5192f14bfebde3, type: 3}
   - {fileID: 8300000, guid: 63a675d1653433047b534b712d1e8ffe, type: 3}
+--- !u!114 &5857416284791948306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650079732555036096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91cac3efec5c38c499287c7535437bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPoint: {fileID: 246948232279977575}
+  isAutomatic: 0
+  timeBetweenShooting: 1
+  damage: 100
+  magazineSize: 20
+  startingAmmo: 2
+  allowInvoke: 1
+  bullet: {fileID: 6173487948656069444, guid: 52a584bbe72f0484295ea367bea73cb0, type: 3}
+  shootForce: 200
+  upwardForce: 0.2
+  spread: 3
+  timeBetweenShots: 0
+  bulletsPerTap: 10
 --- !u!1 &5086499339350202605
 GameObject:
   m_ObjectHideFlags: 0

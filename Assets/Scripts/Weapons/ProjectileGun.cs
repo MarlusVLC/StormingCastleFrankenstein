@@ -21,6 +21,7 @@ namespace Weapons
         {
             base.Awake();
             _bulletsLeft = startingAmmo * bulletsPerTap;
+            
         }
 
         public override Gun PullTrigger(bool shooting, Ray ray, LayerMask damageableLayer)
