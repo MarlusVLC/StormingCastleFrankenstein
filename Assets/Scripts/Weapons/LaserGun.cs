@@ -58,13 +58,6 @@ namespace Weapons
         {
             _readyToShoot = false;
             var attackPosition = attackPoint.position;
-            
-            
-            // check if ray hit something
-            // var targetPoint 
-            //     = Physics.Raycast(ray, out var hit) 
-            //         ? hit.point 
-            //         : ray.GetPoint(75);
 
             Vector3 targetPoint;
             if (Physics.Raycast(ray, out var hit))

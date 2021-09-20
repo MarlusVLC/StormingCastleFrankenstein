@@ -33,20 +33,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cac3efec5c38c499287c7535437bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6173487948656069444, guid: 52a584bbe72f0484295ea367bea73cb0, type: 3}
   attackPoint: {fileID: 7547028073753882432}
+  isAutomatic: 0
+  timeBetweenShooting: 0.1
+  damage: 10
+  magazineSize: 36
+  startingAmmo: 36
+  allowInvoke: 1
+  bullet: {fileID: 6173487948656069444, guid: 52a584bbe72f0484295ea367bea73cb0, type: 3}
   shootForce: 100
   upwardForce: 0.1
-  timeBetweenShooting: 0.1
   spread: 0
   timeBetweenShots: 0.1
-  magazineSize: 100
-  startingAmmo: 80
-  damage: 10
   bulletsPerTap: 1
-  isAutomatic: 0
-  allowInvoke: 1
-  bulletsLeft: 50
 --- !u!1 &7547028073753882433
 GameObject:
   m_ObjectHideFlags: 0
