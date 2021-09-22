@@ -56,12 +56,16 @@ namespace Weapons
         {
             AmmoChanged?.Invoke(ShotsLeft);
         }
+        
+        public event Action<int> AmmoChanged;
+        
         public abstract int ShotsLeft {get;}
 
         public int MagazineSize => magazineSize;
 
         public bool IsEmpty => _bulletsLeft <= 0;
+        
         public bool IsAutomatic => isAutomatic;
-        public event Action<int> AmmoChanged;
+    
     }
 }

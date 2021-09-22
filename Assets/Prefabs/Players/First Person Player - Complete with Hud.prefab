@@ -223,6 +223,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2849842154229917995, guid: 51b02f2a97dc93f44bffd3c0b97f3d6b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2849842155353401243, guid: 51b02f2a97dc93f44bffd3c0b97f3d6b, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -319,6 +323,10 @@ PrefabInstance:
       propertyPath: moneyHandler
       value: 
       objectReference: {fileID: 160873847145627430}
+    - target: {fileID: 4864052814028443503, guid: 51b02f2a97dc93f44bffd3c0b97f3d6b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.56
+      objectReference: {fileID: 0}
     - target: {fileID: 5900636907580763818, guid: 51b02f2a97dc93f44bffd3c0b97f3d6b, type: 3}
       propertyPath: m_Enabled
       value: 0
