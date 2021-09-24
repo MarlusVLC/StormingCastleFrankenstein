@@ -10,6 +10,7 @@ namespace Entities
         [SerializeField] private int startingHealth = 100;
 
         private int _currentHealth;
+        private bool _isImmortal = false;
         
         protected override void Awake()
         {
@@ -27,6 +28,7 @@ namespace Entities
 
         public void TakeDamage(int damage)
         {
+            if (_isImmortal) return;
             CurrentHealth -= damage;
         }
 
@@ -74,5 +76,11 @@ namespace Entities
             public int MaxHealth { get; set; }
         }
 
+
+        public bool IsImmortal
+        {
+            get => _isImmortal;
+            set => _isImmortal = value;
+        }
     }
 }
