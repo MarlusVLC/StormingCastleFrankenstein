@@ -44,8 +44,7 @@ MonoBehaviour:
   shootForce: 100
   upwardForce: 0.1
   spread: 0
-  timeBetweenShots: 0.1
-  bulletsPerTap: 1
+  bulletFragments: 1
 --- !u!1 &7547028073753882433
 GameObject:
   m_ObjectHideFlags: 0

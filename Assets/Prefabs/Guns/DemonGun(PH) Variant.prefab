@@ -37,15 +37,14 @@ MonoBehaviour:
   isAutomatic: 0
   timeBetweenShooting: 1
   damage: 100
-  magazineSize: 20
+  magazineSize: 2
   startingAmmo: 2
   allowInvoke: 1
   bullet: {fileID: 6173487948656069444, guid: 52a584bbe72f0484295ea367bea73cb0, type: 3}
   shootForce: 200
   upwardForce: 0.2
   spread: 3
-  timeBetweenShots: 0
-  bulletsPerTap: 10
+  bulletFragments: 10
 --- !u!1 &5086499339350202605
 GameObject:
   m_ObjectHideFlags: 0
