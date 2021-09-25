@@ -15,7 +15,7 @@ namespace Weapons
         [SerializeField] private VisualEffect vfxGhostgunFadeIn;
         [SerializeField] private VisualEffect vfxGhostgunFadeOut;
         [SerializeField] private Material material;
-        private LineRenderer line;
+        // private LineRenderer line;
         private bool isVfxGhostgunPlaying;
         private bool canPlayVfxGhostGunStart;
         
@@ -25,17 +25,28 @@ namespace Weapons
             _bulletsLeft = startingAmmo;
             
             // laser
-            line = GetComponent<LineRenderer>();
-            line.positionCount = 2;
-            line.startWidth = 0.2f;
+            // line = GetComponent<LineRenderer>();
+            // line.positionCount = 2;
+            // line.startWidth = 0.2f;
             canPlayVfxGhostGunStart = true;
+            
+            
+            vfxGhostgunLoop.Stop();
+            vfxGhostgunFadeIn.Stop();
+            vfxGhostgunFadeOut.Stop();
+
+            vfxGhostgunFadeOut.playRate = 2f;
         }
 
         private void Update()
         {
-            if (Input.GetMouseButtonUp(0))
+            if (isVfxGhostgunPlaying && 
+                (Input.GetMouseButtonUp(0) || IsEmpty))
             {
-                isVfxGhostgunPlaying = false;
+                vfxGhostgunLoop.Stop();
+                vfxGhostgunFadeIn.Stop();
+                StopCoroutine(PlayVfxGhostGun());
+                StartCoroutine(StopVfxGhostGun());
             }
         }
         
@@ -45,11 +56,13 @@ namespace Weapons
             if (_readyToShoot && shooting && _bulletsLeft > 0)
             {
                 Shoot(shooting, ray, damageableLayer);
+                StartCoroutine(PlayVfxGhostGun());
+                StopCoroutine(StopVfxGhostGun());
                 _weaponAudio.ShotWithShell();
             }
             
-            if (!shooting || _bulletsLeft <= 0) 
-                line.enabled = false;
+            // if (!shooting || _bulletsLeft <= 0) 
+                // line.enabled = false;
 
             return this;
         }
@@ -74,14 +87,14 @@ namespace Weapons
             }
             
             // instantiate laser
-            if (shooting)
-            {
-                line.enabled = true;
-                line.SetPosition(0, attackPosition);
-                line.SetPosition(1, targetPoint);
-                line.material = material;
-                line.shadowCastingMode = ShadowCastingMode.On;
-            }
+            // if (shooting)
+            // {
+            //     line.enabled = true;
+            //     line.SetPosition(0, attackPosition);
+            //     line.SetPosition(1, targetPoint);
+            //     line.material = material;
+            //     line.shadowCastingMode = ShadowCastingMode.On;
+            // }
             
             
             // if (canPlayVfxGhostGunStart) StartCoroutine(PlayVfxGhostGun());
@@ -101,32 +114,40 @@ namespace Weapons
 
         private IEnumerator PlayVfxGhostGun()
         {
-            print("started coroutine");
-            canPlayVfxGhostGunStart = false;
-            vfxGhostgunFadeIn.Play();
-            
-            yield return new WaitForSeconds(1);
-            
-            print("waited for 1 second");
-            if (!isVfxGhostgunPlaying)
+            if (CanPlayLaserVFX)
             {
-                print("vfxGhostgunLoop");
-                vfxGhostgunLoop.Play();
+                vfxGhostgunFadeIn.enabled = true;
                 isVfxGhostgunPlaying = true;
-                yield return new WaitForSeconds(1);
-                isVfxGhostgunPlaying = false;
-            }
-            
-            if (Input.GetMouseButtonUp(1))
-            {
-                isVfxGhostgunPlaying = false;
-                vfxGhostgunFadeOut.Play();
-                canPlayVfxGhostGunStart = true;
-                StopCoroutine(PlayVfxGhostGun());
+                print("started coroutine");
+                // canPlayVfxGhostGunStart = false;
+                vfxGhostgunFadeIn.Play();
+
+                yield return new WaitForSeconds(0.1f);
+
+                while (isVfxGhostgunPlaying)
+                {
+                    vfxGhostgunLoop.enabled = true;
+                    vfxGhostgunLoop.Play();
+                    yield return new WaitForSeconds(0.1f);
+                }
             }
         }
 
+        private IEnumerator StopVfxGhostGun()
+        {
+            vfxGhostgunFadeOut.enabled = true;
+            vfxGhostgunFadeOut.Play();
+            yield return new WaitForSeconds(2);
+            isVfxGhostgunPlaying = false;
+            Debug.Log(isVfxGhostgunPlaying);
+
+            vfxGhostgunLoop.enabled = false;
+            vfxGhostgunFadeIn.enabled = false;
+            vfxGhostgunFadeOut.enabled = false;
+        }
+
         public override int ShotsLeft => 100*_bulletsLeft/magazineSize;
+        protected bool CanPlayLaserVFX => isVfxGhostgunPlaying == false && _bulletsLeft > 0;
 
     }
 

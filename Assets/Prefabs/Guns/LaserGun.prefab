@@ -149,8 +149,8 @@ MonoBehaviour:
   isAutomatic: 1
   timeBetweenShooting: 0
   damage: 1
-  magazineSize: 50
-  startingAmmo: 50
+  magazineSize: 800
+  startingAmmo: 800
   allowInvoke: 1
   vfxGhostgunLoop: {fileID: 1422062605501273232}
   vfxGhostgunFadeIn: {fileID: 1398519743404374567}
@@ -213,7 +213,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1714932410032903664, guid: 69ec36bee141a084380db76cffcc7e48, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1714932410032903664, guid: 69ec36bee141a084380db76cffcc7e48, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4880350048030829355, guid: 69ec36bee141a084380db76cffcc7e48, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9071189810599691349, guid: 69ec36bee141a084380db76cffcc7e48, type: 3}
       propertyPath: m_RootOrder
@@ -296,7 +296,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2103377879460028926, guid: a5b1a3245a1a94e4f901e75b88260340, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2103377879460028926, guid: a5b1a3245a1a94e4f901e75b88260340, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4859059269395847116, guid: a5b1a3245a1a94e4f901e75b88260340, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7618217277758619737, guid: a5b1a3245a1a94e4f901e75b88260340, type: 3}
       propertyPath: m_RootOrder
@@ -387,7 +387,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2084471315115529579, guid: 728791792cdeb4e45a3458c3efcc14e8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2084471315115529579, guid: 728791792cdeb4e45a3458c3efcc14e8, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -399,7 +399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4143767397348360302, guid: 728791792cdeb4e45a3458c3efcc14e8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7493638908016041052, guid: 728791792cdeb4e45a3458c3efcc14e8, type: 3}
       propertyPath: m_Name
