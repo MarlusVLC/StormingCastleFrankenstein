@@ -31,7 +31,7 @@ namespace Weapons
                 _bulletsShot = 0;
                 Shoot(shooting, ray, damageableLayer);
                 // play shooting sound
-                _weaponAudio.ShotWithShell();
+                FindObjectOfType<AudioManager>().Play("Shot");
             }
             if (shooting && _bulletsLeft <= 0)
             {
