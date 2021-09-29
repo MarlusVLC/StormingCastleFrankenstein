@@ -152,10 +152,7 @@ MonoBehaviour:
   magazineSize: 800
   startingAmmo: 800
   allowInvoke: 1
-  vfxGhostgunLoop: {fileID: 1422062605501273232}
-  vfxGhostgunFadeIn: {fileID: 1398519743404374567}
-  vfxGhostgunFadeOut: {fileID: 7604271462267033920}
-  material: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  _visualEffect: {fileID: 4400609302459627791}
 --- !u!114 &4818172074556275332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,9 +198,113 @@ Transform:
   - {fileID: 4161056286590348722}
   - {fileID: 3252348782761995135}
   - {fileID: 3307056061932190702}
+  - {fileID: 4400609302459627790}
   m_Father: {fileID: 5766387516679736758}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &131114319622111808
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5766387517294739636}
+    m_Modifications:
+    - target: {fileID: 4378577592700746568, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746568, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746568, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746568, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746568, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746568, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746568, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746568, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_Materials.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746569, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_Name
+      value: Vfx_GhostGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746574, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746574, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746574, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746574, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746574, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746574, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746574, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746574, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746574, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746574, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746574, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378577592700746575, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+--- !u!4 &4400609302459627790 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4378577592700746574, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+  m_PrefabInstance: {fileID: 131114319622111808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &4400609302459627791 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 4378577592700746575, guid: bc575d3dd637da643bc7c46ecd497ae3, type: 3}
+  m_PrefabInstance: {fileID: 131114319622111808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5766387517221060539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -213,7 +314,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1714932410032903664, guid: 69ec36bee141a084380db76cffcc7e48, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1714932410032903664, guid: 69ec36bee141a084380db76cffcc7e48, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -226,6 +327,10 @@ PrefabInstance:
     - target: {fileID: 4266824470251890424, guid: 69ec36bee141a084380db76cffcc7e48, type: 3}
       propertyPath: m_Name
       value: Vfx_GhostGunLoop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266824470251890424, guid: 69ec36bee141a084380db76cffcc7e48, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4880350048030829355, guid: 69ec36bee141a084380db76cffcc7e48, type: 3}
       propertyPath: m_Enabled
@@ -282,11 +387,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9071189810599691349, guid: 69ec36bee141a084380db76cffcc7e48, type: 3}
   m_PrefabInstance: {fileID: 5766387517221060539}
   m_PrefabAsset: {fileID: 0}
---- !u!2083052967 &1422062605501273232 stripped
-VisualEffect:
-  m_CorrespondingSourceObject: {fileID: 4880350048030829355, guid: 69ec36bee141a084380db76cffcc7e48, type: 3}
-  m_PrefabInstance: {fileID: 5766387517221060539}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5766387517369904619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -296,7 +396,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2103377879460028926, guid: a5b1a3245a1a94e4f901e75b88260340, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2103377879460028926, guid: a5b1a3245a1a94e4f901e75b88260340, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -317,6 +417,10 @@ PrefabInstance:
     - target: {fileID: 3901938968574172340, guid: a5b1a3245a1a94e4f901e75b88260340, type: 3}
       propertyPath: m_Name
       value: Vfx_GhostGunFadeIn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901938968574172340, guid: a5b1a3245a1a94e4f901e75b88260340, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4859059269395847116, guid: a5b1a3245a1a94e4f901e75b88260340, type: 3}
       propertyPath: m_Enabled
@@ -373,11 +477,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7618217277758619737, guid: a5b1a3245a1a94e4f901e75b88260340, type: 3}
   m_PrefabInstance: {fileID: 5766387517369904619}
   m_PrefabAsset: {fileID: 0}
---- !u!2083052967 &1398519743404374567 stripped
-VisualEffect:
-  m_CorrespondingSourceObject: {fileID: 4859059269395847116, guid: a5b1a3245a1a94e4f901e75b88260340, type: 3}
-  m_PrefabInstance: {fileID: 5766387517369904619}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5766387517785528622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -387,7 +486,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2084471315115529579, guid: 728791792cdeb4e45a3458c3efcc14e8, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2084471315115529579, guid: 728791792cdeb4e45a3458c3efcc14e8, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -404,6 +503,10 @@ PrefabInstance:
     - target: {fileID: 7493638908016041052, guid: 728791792cdeb4e45a3458c3efcc14e8, type: 3}
       propertyPath: m_Name
       value: Vfx_GhostGunFadeOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493638908016041052, guid: 728791792cdeb4e45a3458c3efcc14e8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9017608439381733969, guid: 728791792cdeb4e45a3458c3efcc14e8, type: 3}
       propertyPath: m_RootOrder
@@ -454,11 +557,6 @@ PrefabInstance:
 --- !u!4 &3252348782761995135 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9017608439381733969, guid: 728791792cdeb4e45a3458c3efcc14e8, type: 3}
-  m_PrefabInstance: {fileID: 5766387517785528622}
-  m_PrefabAsset: {fileID: 0}
---- !u!2083052967 &7604271462267033920 stripped
-VisualEffect:
-  m_CorrespondingSourceObject: {fileID: 4143767397348360302, guid: 728791792cdeb4e45a3458c3efcc14e8, type: 3}
   m_PrefabInstance: {fileID: 5766387517785528622}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7081384044931273131
