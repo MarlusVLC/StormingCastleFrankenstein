@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     // audio clips
     [SerializeField] private AudioClip[] step;
     private AudioClip stepAudioClip;
-    
+
     // step sounds timer
     private float waitTime = 0.5f;
     private bool stepping = false;
