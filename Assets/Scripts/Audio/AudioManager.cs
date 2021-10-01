@@ -2,47 +2,57 @@ using System;
 using System;
 using UnityEngine.Audio;
 using UnityEngine;
-    
+using Random = UnityEngine.Random;
+
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
-    public static AudioManager instance;    
+    private int indexSequence = 0;
+    private AudioSource currentSource;
+    
+    // step sounds timer
+    private float waitTime = 0.5f;
+    private bool stepping = false;
 
     void Awake()
-    {   
-        // in case you need the sound to persist through scenes:
-        /*
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        
-        DontDestroyOnLoad(gameObject);
-        */
-        
+    {
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
-        }    
+        }
     }
 
-    public void Play(string name)
+    protected int GetSoundsSize()
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
+        return sounds.Length;
+    }
+
+    protected void PlaySequence()
+    {
+        Play(indexSequence);
+        indexSequence++;
+        
+        if (indexSequence == GetSoundsSize())
         {
-            Debug.LogWarning("Sound: " + name + " not found!");
-            return;
+            indexSequence = 0;
         }
-        s.source.Play();
+    }
+    
+    protected void Play(int index)
+    {
+        currentSource = sounds[index].source; 
+        currentSource.Play();
+    }
+    
+    public void Stop()
+    {
+        if (currentSource)
+        {
+            currentSource.Stop();   
+        }
     }
 }

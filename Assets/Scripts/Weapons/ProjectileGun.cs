@@ -1,3 +1,4 @@
+using Audio;
 using UnityEngine;
 using Utilities;
 
@@ -31,7 +32,7 @@ namespace Weapons
                 _bulletsShot = 0;
                 Shoot(shooting, ray, damageableLayer);
                 // play shooting sound
-                FindObjectOfType<AudioManager>().Play("Shot");
+                FindObjectOfType<ProjectileSound>().PlayProjectileSound();
             }
             if (shooting && _bulletsLeft <= 0)
             {

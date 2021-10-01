@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
@@ -47,10 +48,7 @@ public class PlayerMovement : MonoBehaviour
     private void sfxSteps()
     {
         stepping = true;
-        int index = Random.Range(0, step.Length);
-        stepAudioClip = step[index];
-        audioSource.clip = stepAudioClip;
-        audioSource.Play();
+        FindObjectOfType<StepSound>().PlayStepSound();
         Invoke("ChangeStep", waitTime);
     }
 
