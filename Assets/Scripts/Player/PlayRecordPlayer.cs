@@ -35,22 +35,27 @@ public class PlayRecordPlayer : MonoBehaviour
                         case "RecordPlayer1":
                             FindObjectOfType<AudioLogSound>().StopAudioLogSound();
                             FindObjectOfType<AudioLogSound>().PlayAudioLogSound(0);
+                            recordPlayer.gameObject.SetActive(false);
                             break;
                         case "RecordPlayer2":
                             FindObjectOfType<AudioLogSound>().StopAudioLogSound();
                             FindObjectOfType<AudioLogSound>().PlayAudioLogSound(1);
+                            recordPlayer.gameObject.SetActive(false);
                             break;
                         case "RecordPlayer3":
                             FindObjectOfType<AudioLogSound>().StopAudioLogSound();
                             FindObjectOfType<AudioLogSound>().PlayAudioLogSound(2);
+                            recordPlayer.gameObject.SetActive(false);
                             break;
                         case "RecordPlayer4":
                             FindObjectOfType<AudioLogSound>().StopAudioLogSound();
                             FindObjectOfType<AudioLogSound>().PlayAudioLogSound(3);
+                            recordPlayer.gameObject.SetActive(false);
                             break;
                         case "RecordPlayer5":
                             FindObjectOfType<AudioLogSound>().StopAudioLogSound();
                             FindObjectOfType<AudioLogSound>().PlayAudioLogSound(4);
+                            recordPlayer.gameObject.SetActive(false);
                             break;
                     }
                 }
