@@ -1,5 +1,8 @@
+using System;
 using UnityEngine;
+using UnityEngine.VFX;
 using Utilities;
+using Random = UnityEngine.Random;
 
 namespace Weapons
 {
@@ -13,13 +16,23 @@ namespace Weapons
         [Header("Spreading-Fire Specs")]
         [SerializeField] private float spread;
         [Min(1)][SerializeField] private int bulletFragments;
+        [Header("Visual Effects")] 
+        [SerializeField] private VisualEffect muzzleFlash;
         
         private int _bulletsShot;
+        private bool _hasMuzzleFlash;
         
         protected override void Awake()
         {
             base.Awake();
             _bulletsLeft = startingAmmo;
+            _hasMuzzleFlash = muzzleFlash != null;
+            if (_hasMuzzleFlash) muzzleFlash.Stop();
+        }
+
+        private void OnEnable()
+        {
+            if (_hasMuzzleFlash) muzzleFlash.Stop();
         }
 
         public override Gun PullTrigger(bool shooting, Ray ray, LayerMask damageableLayer)
@@ -30,7 +43,7 @@ namespace Weapons
                 // set bullets shot to 0
                 _bulletsShot = 0;
                 Shoot(shooting, ray, damageableLayer);
-                // play shooting sound
+                if (_hasMuzzleFlash) muzzleFlash.Play();
                 _weaponAudio.ShotWithShell();
             }
             if (shooting && _bulletsLeft <= 0)
@@ -69,7 +82,7 @@ namespace Weapons
             }
 
 
-            _bulletsLeft--;
+            ConsumeAmmo();
             OnAmmoChanged();
             
             // invoke resetShot function (if not already invoked)

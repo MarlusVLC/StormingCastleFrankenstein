@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Weapons;
 
 namespace GameManagement
 {
@@ -8,10 +9,12 @@ namespace GameManagement
         [SerializeField] private GameObject firstPersonPlayer;
 
         private PlayerHealth _playerHealth;
+        private WeaponHandler _weaponHandler;
 
         private void Awake()
         {
             _playerHealth = firstPersonPlayer.GetComponent<PlayerHealth>();
+            _weaponHandler = firstPersonPlayer.GetComponentInChildren<WeaponHandler>();
         }
 
         private void Update()
@@ -24,6 +27,12 @@ namespace GameManagement
                     {
                         _playerHealth.IsImmortal = !_playerHealth.IsImmortal;
                         Debug.Log("Infinite health activated");
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.A))
+                    {
+                        Array.ForEach(_weaponHandler.ConfirmedGuns, g => g.HasUnlimitedAmmo = !g.HasUnlimitedAmmo);
+                        Debug.Log("Infinite ammo activated");
                     }
                 }
             }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Entities;
 using UnityEngine;
@@ -12,46 +13,35 @@ namespace Weapons
     {
         // laser
         [SerializeField] private VisualEffect _visualEffect;
-        // private LineRenderer line;
-        private bool isVfxGhostgunPlaying;
-        private bool canPlayVfxGhostGunStart;
+        private bool _isVfxGhostgunPlaying;
+        private bool _canPlayVfxGhostGunStart;
         
         protected override void Awake()
         {
             base.Awake();
             _bulletsLeft = startingAmmo;
-            
-            // laser
-            // line = GetComponent<LineRenderer>();
-            // line.positionCount = 2;
-            // line.startWidth = 0.2f;
-            canPlayVfxGhostGunStart = true;
-            
-            
+            _canPlayVfxGhostGunStart = true;
+            _visualEffect.enabled = true;
             _visualEffect.Stop();
         }
 
-        // private void Update()
-        // {
-        //     if (isVfxGhostgunPlaying && 
-        //         (Input.GetMouseButtonUp(0) || IsEmpty))
-        //     {
-        //        StopVfxGhostGun();
-        //     }
-        // }
-        
+        private void OnEnable()
+        {
+            _visualEffect.Stop();
+        }
+
         public override Gun PullTrigger(bool shooting, Ray ray, LayerMask damageableLayer)
         {
             // shooting
             if (_readyToShoot && shooting && _bulletsLeft > 0)
             {
                 Shoot(shooting, ray, damageableLayer);
-                if (isVfxGhostgunPlaying == false)
+                if (_isVfxGhostgunPlaying == false)
                     PlayVfxGhostGun();
                 _weaponAudio.ShotWithShell();
             }
             
-            if (isVfxGhostgunPlaying && (!shooting || IsEmpty)) 
+            if (_isVfxGhostgunPlaying && (!shooting || IsEmpty)) 
                 StopVfxGhostGun();
 
             return this;
@@ -60,23 +50,24 @@ namespace Weapons
         protected override void Shoot(bool shooting, Ray ray, LayerMask damageableLayer)
         {
             _readyToShoot = false;
-            var attackPosition = attackPoint.position;
+            // var attackPosition = attackPoint.position;
 
-            Vector3 targetPoint;
+            // Vector3 targetPoint;
             if (Physics.Raycast(ray, out var hit))
             {
-                targetPoint = hit.point;
+                // targetPoint = hit.point;
                 if (hit.collider.TryGetComponent(out Health health))
                 {
                     health.TakeDamage(damage);
                 }
             }
-            else
-            {
-                targetPoint = ray.GetPoint(75);
-            }
+            // else
+            // {
+            //     targetPoint = ray.GetPoint(75);
+            // }
 
-            _bulletsLeft = (int) (_bulletsLeft - 1 * Time.deltaTime);
+            // _bulletsLeft = (int) (_bulletsLeft - 1 * Time.deltaTime);
+            ConsumeAmmo(1 * Time.deltaTime);
             OnAmmoChanged();
 
 
@@ -92,17 +83,17 @@ namespace Weapons
         private void PlayVfxGhostGun()
         {
            _visualEffect.Play();
-           isVfxGhostgunPlaying = true;
+           _isVfxGhostgunPlaying = true;
         }
 
         private void StopVfxGhostGun()
         {
             _visualEffect.Stop();
-            isVfxGhostgunPlaying = false;
+            _isVfxGhostgunPlaying = false;
         }
 
         public override int ShotsLeft => 100*_bulletsLeft/magazineSize;
-        protected bool CanPlayLaserVFX => isVfxGhostgunPlaying == false && _bulletsLeft > 0;
+        // protected bool CanPlayLaserVFX => _isVfxGhostgunPlaying == false && _bulletsLeft > 0;
 
     }
 
