@@ -45,7 +45,6 @@ namespace Weapons
             if (_readyToShoot && shooting && _bulletsLeft > 0)
             {
                 Shoot(shooting, ray, damageableLayer);
-                _weaponAudio.ShotWithShell();
             }
             
             if (!shooting || _bulletsLeft <= 0) 

@@ -5,7 +5,6 @@ using Utilities;
 
 namespace Weapons
 {
-    [RequireComponent(typeof(WeaponAudio))]
     public abstract class Gun : MonoCache
     {
         [Header("Gun Stats")]
@@ -18,14 +17,12 @@ namespace Weapons
         [SerializeField] protected int startingAmmo;
         [Header("Debugging")] 
         [SerializeField] protected bool allowInvoke = true;
-        protected WeaponAudio _weaponAudio;
         protected int _bulletsLeft;
         protected bool _readyToShoot;
 
         protected override void Awake()
         {
             base.Awake();
-            _weaponAudio = GetComponent<WeaponAudio>();
             _readyToShoot = true;
         }
         

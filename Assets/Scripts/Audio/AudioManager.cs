@@ -10,10 +10,6 @@ public class AudioManager : MonoBehaviour
 
     private int indexSequence = 0;
     private AudioSource currentSource;
-    
-    // step sounds timer
-    private float waitTime = 0.5f;
-    private bool stepping = false;
 
     void Awake()
     {

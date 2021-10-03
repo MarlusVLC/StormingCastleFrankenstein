@@ -36,7 +36,7 @@ namespace Weapons
             }
             if (shooting && _bulletsLeft <= 0)
             {
-                _weaponAudio.EmptySfx();
+                FindObjectOfType<ProjectileSound>().PlayProjectileEmptySound();
             }
             return this;
         }
