@@ -14,11 +14,17 @@ namespace Weapons
         private Gun _previousWeapon;
         
         public Gun CurrentWeapon { get; private set; }
+        public Gun[] ConfirmedGuns { get; private set; }
 
 
         protected virtual void Awake()
         {
             transform.TryGetChildren(out _weapons);
+            ConfirmedGuns = new Gun[_weapons.Length];
+            for (var i = 0; i < ConfirmedGuns.Length; i++)
+            {
+                ConfirmedGuns[i] = _weapons[i].GetComponent<Gun>();
+            }
         }
 
         protected virtual void Start()
@@ -38,7 +44,7 @@ namespace Weapons
             var selection = receivedValue - 1;
             ExclusivelyActivate(ref _weapons, selection);
             _previousWeapon = CurrentWeapon;
-            CurrentWeapon = _weapons[selection].GetComponent<Gun>();
+            CurrentWeapon = ConfirmedGuns[selection];
             OnWeaponChanged?.Invoke(new WeaponChangedEventArgs
             {
                 Position = selection, PreviousWeapon = _previousWeapon, CurrentWeapon = CurrentWeapon

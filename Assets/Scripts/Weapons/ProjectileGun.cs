@@ -1,5 +1,8 @@
+using System;
 using UnityEngine;
+using UnityEngine.VFX;
 using Utilities;
+using Random = UnityEngine.Random;
 
 namespace Weapons
 {
@@ -12,16 +15,24 @@ namespace Weapons
         [SerializeField] private float upwardForce;
         [Header("Spreading-Fire Specs")]
         [SerializeField] private float spread;
-        [SerializeField] private float timeBetweenShots;
-        [SerializeField] private int bulletsPerTap;
+        [Min(1)][SerializeField] private int bulletFragments;
+        [Header("Visual Effects")] 
+        [SerializeField] private VisualEffect muzzleFlash;
         
         private int _bulletsShot;
+        private bool _hasMuzzleFlash;
         
         protected override void Awake()
         {
             base.Awake();
-            _bulletsLeft = startingAmmo * bulletsPerTap;
-            
+            _bulletsLeft = startingAmmo;
+            _hasMuzzleFlash = muzzleFlash != null;
+            if (_hasMuzzleFlash) muzzleFlash.Stop();
+        }
+
+        private void OnEnable()
+        {
+            if (_hasMuzzleFlash) muzzleFlash.Stop();
         }
 
         public override Gun PullTrigger(bool shooting, Ray ray, LayerMask damageableLayer)
@@ -32,7 +43,7 @@ namespace Weapons
                 // set bullets shot to 0
                 _bulletsShot = 0;
                 Shoot(shooting, ray, damageableLayer);
-                // play shooting sound
+                if (_hasMuzzleFlash) muzzleFlash.Play();
                 _weaponAudio.ShotWithShell();
             }
             if (shooting && _bulletsLeft <= 0)
@@ -54,24 +65,24 @@ namespace Weapons
                     : ray.GetPoint(75);
             
             // calculate direction from attackPoint to targetPoint
-            var directionWithoutSpread = targetPoint - attackPosition;
-            
-            // calculate spread
-            float x = UnityEngine.Random.Range(-spread, spread);
-            float y = UnityEngine.Random.Range(-spread, spread);
-            
-            // calculate new direction with spread
-            Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0);
-            
-            // instantiate bullet/projectile
-            var currentBullet = Instantiate(bullet, attackPosition, Quaternion.identity);
-            currentBullet.GetComponent<BulletImpact>()
-                .Fire(directionWithSpread.normalized, shootForce, upwardForce)
-                .SetUncollidableMask(damageableLayer)
-                .SetDamage(damage/bulletsPerTap);
-            
-            _bulletsLeft--;
-            _bulletsShot++;
+            var trajectoryDirection = targetPoint - attackPosition;
+
+            for (var i = 0; i < bulletFragments; i++)
+            {
+                float spreadX = Random.Range(-spread, spread);
+                float spreadY = Random.Range(-spread, spread);
+                
+                trajectoryDirection += new Vector3(spreadX, spreadY, 0);
+                
+                var currentBullet = Instantiate(bullet, attackPosition, Quaternion.identity);
+                currentBullet.GetComponent<BulletImpact>()
+                    .Fire(trajectoryDirection.normalized, shootForce, upwardForce)
+                    .SetUncollidableMask(damageableLayer)
+                    .SetDamage(damage/bulletFragments);
+            }
+
+
+            ConsumeAmmo();
             OnAmmoChanged();
             
             // invoke resetShot function (if not already invoked)
@@ -80,13 +91,9 @@ namespace Weapons
                 StartCoroutine(Parallel.ExecuteActionWithDelay(ResetShot, timeBetweenShooting));
                 allowInvoke = false;
             }
-            
-            // if more than one bulletPerTap make sure to repeat shoot function
-            if (_bulletsShot < bulletsPerTap && _bulletsLeft > 0)
-                StartCoroutine(Parallel.ExecuteActionWithDelay(() => Shoot(shooting, ray, damageableLayer), timeBetweenShots));
         }
 
-        public override int ShotsLeft => _bulletsLeft / bulletsPerTap;
+        public override int ShotsLeft => _bulletsLeft;
 
     }
 

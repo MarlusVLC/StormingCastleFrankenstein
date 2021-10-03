@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Entities;
 using UnityEngine;
@@ -11,45 +12,37 @@ namespace Weapons
     public class LaserGun : Gun
     {
         // laser
-        [SerializeField] private VisualEffect vfxGhostgunLoop;
-        [SerializeField] private VisualEffect vfxGhostgunFadeIn;
-        [SerializeField] private VisualEffect vfxGhostgunFadeOut;
-        [SerializeField] private Material material;
-        private LineRenderer line;
-        private bool isVfxGhostgunPlaying;
-        private bool canPlayVfxGhostGunStart;
+        [SerializeField] private VisualEffect _visualEffect;
+        private bool _isVfxGhostgunPlaying;
+        private bool _canPlayVfxGhostGunStart;
         
         protected override void Awake()
         {
             base.Awake();
             _bulletsLeft = startingAmmo;
-            
-            // laser
-            line = GetComponent<LineRenderer>();
-            line.positionCount = 2;
-            line.startWidth = 0.2f;
-            canPlayVfxGhostGunStart = true;
+            _canPlayVfxGhostGunStart = true;
+            _visualEffect.enabled = true;
+            _visualEffect.Stop();
         }
 
-        private void Update()
+        private void OnEnable()
         {
-            if (Input.GetMouseButtonUp(0))
-            {
-                isVfxGhostgunPlaying = false;
-            }
+            _visualEffect.Stop();
         }
-        
+
         public override Gun PullTrigger(bool shooting, Ray ray, LayerMask damageableLayer)
         {
             // shooting
             if (_readyToShoot && shooting && _bulletsLeft > 0)
             {
                 Shoot(shooting, ray, damageableLayer);
+                if (_isVfxGhostgunPlaying == false)
+                    PlayVfxGhostGun();
                 _weaponAudio.ShotWithShell();
             }
             
-            if (!shooting || _bulletsLeft <= 0) 
-                line.enabled = false;
+            if (_isVfxGhostgunPlaying && (!shooting || IsEmpty)) 
+                StopVfxGhostGun();
 
             return this;
         }
@@ -57,36 +50,24 @@ namespace Weapons
         protected override void Shoot(bool shooting, Ray ray, LayerMask damageableLayer)
         {
             _readyToShoot = false;
-            var attackPosition = attackPoint.position;
+            // var attackPosition = attackPoint.position;
 
-            Vector3 targetPoint;
+            // Vector3 targetPoint;
             if (Physics.Raycast(ray, out var hit))
             {
-                targetPoint = hit.point;
+                // targetPoint = hit.point;
                 if (hit.collider.TryGetComponent(out Health health))
                 {
                     health.TakeDamage(damage);
                 }
             }
-            else
-            {
-                targetPoint = ray.GetPoint(75);
-            }
-            
-            // instantiate laser
-            if (shooting)
-            {
-                line.enabled = true;
-                line.SetPosition(0, attackPosition);
-                line.SetPosition(1, targetPoint);
-                line.material = material;
-                line.shadowCastingMode = ShadowCastingMode.On;
-            }
-            
-            
-            // if (canPlayVfxGhostGunStart) StartCoroutine(PlayVfxGhostGun());
+            // else
+            // {
+            //     targetPoint = ray.GetPoint(75);
+            // }
 
-            _bulletsLeft = (int) (_bulletsLeft - 1 * Time.deltaTime);
+            // _bulletsLeft = (int) (_bulletsLeft - 1 * Time.deltaTime);
+            ConsumeAmmo(1 * Time.deltaTime);
             OnAmmoChanged();
 
 
@@ -99,34 +80,20 @@ namespace Weapons
             }
         }
 
-        private IEnumerator PlayVfxGhostGun()
+        private void PlayVfxGhostGun()
         {
-            print("started coroutine");
-            canPlayVfxGhostGunStart = false;
-            vfxGhostgunFadeIn.Play();
-            
-            yield return new WaitForSeconds(1);
-            
-            print("waited for 1 second");
-            if (!isVfxGhostgunPlaying)
-            {
-                print("vfxGhostgunLoop");
-                vfxGhostgunLoop.Play();
-                isVfxGhostgunPlaying = true;
-                yield return new WaitForSeconds(1);
-                isVfxGhostgunPlaying = false;
-            }
-            
-            if (Input.GetMouseButtonUp(1))
-            {
-                isVfxGhostgunPlaying = false;
-                vfxGhostgunFadeOut.Play();
-                canPlayVfxGhostGunStart = true;
-                StopCoroutine(PlayVfxGhostGun());
-            }
+           _visualEffect.Play();
+           _isVfxGhostgunPlaying = true;
+        }
+
+        private void StopVfxGhostGun()
+        {
+            _visualEffect.Stop();
+            _isVfxGhostgunPlaying = false;
         }
 
         public override int ShotsLeft => 100*_bulletsLeft/magazineSize;
+        // protected bool CanPlayLaserVFX => _isVfxGhostgunPlaying == false && _bulletsLeft > 0;
 
     }
 

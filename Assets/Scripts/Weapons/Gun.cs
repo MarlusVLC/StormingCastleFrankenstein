@@ -18,6 +18,9 @@ namespace Weapons
         [SerializeField] protected int startingAmmo;
         [Header("Debugging")] 
         [SerializeField] protected bool allowInvoke = true;
+        [SerializeField] protected bool _hasUnlimitedAmmo;
+
+        
         protected WeaponAudio _weaponAudio;
         protected int _bulletsLeft;
         protected bool _readyToShoot;
@@ -27,6 +30,11 @@ namespace Weapons
             base.Awake();
             _weaponAudio = GetComponent<WeaponAudio>();
             _readyToShoot = true;
+
+            if (_hasUnlimitedAmmo)
+            {
+                Debug.LogWarning("This weapon: " + gameObject.name + " has unlimited ammo");
+            }
         }
         
         protected virtual void OnDisable()
@@ -52,6 +60,13 @@ namespace Weapons
             return _bulletsLeft;
         }
 
+        public Gun ConsumeAmmo(float quantity = 1)
+        {
+            if (_hasUnlimitedAmmo) return this;
+            _bulletsLeft = (int)(_bulletsLeft-quantity);
+            return this;
+        }
+
         public void OnAmmoChanged()
         {
             AmmoChanged?.Invoke(ShotsLeft);
@@ -66,6 +81,11 @@ namespace Weapons
         public bool IsEmpty => _bulletsLeft <= 0;
         
         public bool IsAutomatic => isAutomatic;
-    
+
+        public bool HasUnlimitedAmmo 
+        {
+            get => _hasUnlimitedAmmo;
+            set => _hasUnlimitedAmmo = value;
+        }
     }
 }
