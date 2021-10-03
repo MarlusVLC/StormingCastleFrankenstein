@@ -166,7 +166,7 @@ public class ProgressBarPro : MonoBehaviour {
         }
     }
 
-    private void Reset() {
+    private void ReseWt() {
         DetectViewObjects();
     }
 
