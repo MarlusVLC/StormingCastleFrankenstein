@@ -1,3 +1,5 @@
+using Audio;
+
 namespace AI
 {
     public class MeleeBot : EnemyBot

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
@@ -25,39 +26,12 @@ public class PlayerMovement : MonoBehaviour
 
     // creates a velocity Vector3 to be used with gravity
     private Vector3 velocity;
+
+    public bool stepping;
+    private float waitTime = 0.5f;
     
     private bool isGrounded;
-    
-    // audio source
-    [SerializeField] private AudioSource audioSource;
-    
-    // audio clips
-    [SerializeField] private AudioClip[] step;
-    private AudioClip stepAudioClip;
-    
-    // step sounds timer
-    private float waitTime = 0.5f;
-    private bool stepping = false;
-
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
-
-    private void sfxSteps()
-    {
-        stepping = true;
-        int index = Random.Range(0, step.Length);
-        stepAudioClip = step[index];
-        audioSource.clip = stepAudioClip;
-        audioSource.Play();
-        Invoke("ChangeStep", waitTime);
-    }
-
-    private void ChangeStep()
-    {
-        stepping = false;
-    }
+    private bool canFallSoundPlay;
 
     void Update()
     {
@@ -79,18 +53,42 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            //FindObjectOfType<MovementSound>().PlayJumpSound();
         }
 
-        // making gravity work
+        //if (!isGrounded && velocity.y < -5)
+        //{
+        //    canFallSoundPlay = true;
+        //}
+
+        //if (isGrounded && canFallSoundPlay)
+        //{
+        //    FindObjectOfType<MovementSound>().PlayFallSound();
+        //    Invoke("FallSoundReset", waitTime);
+        //}
+        
+        //making gravity work
         velocity.y += gravity * Time.deltaTime;
 
-        // applying velocity (gravity) the player
+        //applying velocity (gravity) the player
         controller.Move(velocity * Time.deltaTime);
         
         // step sounds
         if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1 && !stepping && isGrounded || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1 && !stepping&& isGrounded)
         {
-            Invoke("sfxSteps", 0);
+            stepping = true;
+            FindObjectOfType<MovementSound>().PlayStepSound();
+            Invoke("ChangeStep", waitTime);
         }
+    }
+
+    private void ChangeStep()
+    {
+        stepping = false;
+    }
+
+    private void FallSoundReset()
+    {
+        canFallSoundPlay = false;
     }
 }

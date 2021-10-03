@@ -1,10 +1,14 @@
-﻿namespace Entities
+﻿using Audio;
+
+namespace Entities
 {
     public class BotHealth : Health
     {
         protected override void Die()
         {
             Destroy(this.gameObject);
+            
+            FindObjectOfType<WendigoSound>().PlayWendigoDeathSound();
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Weapons
             _visualEffect.enabled = true;
             _visualEffect.Stop();
             liquid = liquidObject.GetComponent<Renderer>().material;
-            Debug.Log("Pegou o LIQUDO? " + liquid != null);
+            // Debug.Log("Pegou o LIQUDO? " + liquid != null);
             liquid.SetFloat("_Fill_Liquid", ShotsLeft);
         }
 
@@ -41,7 +41,7 @@ namespace Weapons
                 Shoot(shooting, ray, damageableLayer);
                 if (_isVfxGhostgunPlaying == false)
                     PlayVfxGhostGun();
-                _weaponAudio.ShotWithShell();
+                // _weaponAudio.ShotWithShell();
             }
             
             if (_isVfxGhostgunPlaying && (!shooting || IsEmpty)) 

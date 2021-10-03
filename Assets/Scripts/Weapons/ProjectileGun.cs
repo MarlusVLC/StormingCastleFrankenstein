@@ -1,4 +1,5 @@
 using System;
+using Audio;
 using UnityEngine;
 using UnityEngine.VFX;
 using Utilities;
@@ -44,11 +45,13 @@ namespace Weapons
                 _bulletsShot = 0;
                 Shoot(shooting, ray, damageableLayer);
                 if (_hasMuzzleFlash) muzzleFlash.Play();
-                _weaponAudio.ShotWithShell();
+                // _weaponAudio.ShotWithShell();
+                // play shooting sound
+                FindObjectOfType<ProjectileSound>().PlayProjectileSound();
             }
             if (shooting && _bulletsLeft <= 0)
             {
-                _weaponAudio.EmptySfx();
+                FindObjectOfType<ProjectileSound>().PlayProjectileEmptySound();
             }
             return this;
         }
