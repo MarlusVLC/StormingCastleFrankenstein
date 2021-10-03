@@ -247,13 +247,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 5310258843941234196}
     m_Modifications:
     - target: {fileID: 1145264893058621314, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 49
+      propertyPath: m_SizeDelta.x
+      value: 1100
       objectReference: {fileID: 0}
-    - target: {fileID: 1767082236846353506, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 398d0ac1af3aaa74dbefecf9106fb383, type: 3}
+    - target: {fileID: 1145264893058621314, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 825
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145264893058621314, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 549
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145264893058621314, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -833
+      objectReference: {fileID: 0}
     - target: {fileID: 2546924665669294002, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
       propertyPath: m_Name
       value: WeaponIcons
@@ -288,11 +296,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3384849070710866793, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120.504
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3384849070710866793, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 120.504
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3384849070710866793, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -324,11 +332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3384849070710866793, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5
+      value: -310
       objectReference: {fileID: 0}
     - target: {fileID: 3384849070710866793, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 317
       objectReference: {fileID: 0}
     - target: {fileID: 3384849070710866793, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -342,44 +350,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4750601263204252196, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
-      propertyPath: m_Name
-      value: Ghost Gun
-      objectReference: {fileID: 0}
-    - target: {fileID: 4750601263204252196, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4979823596838505252, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
-      propertyPath: m_Name
-      value: Wendigo's Horn
-      objectReference: {fileID: 0}
-    - target: {fileID: 4979823596838505252, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5648277713178867439, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
-      propertyPath: m_Name
-      value: Demon Gun
-      objectReference: {fileID: 0}
     - target: {fileID: 5648277713178867439, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8380712496636498789, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
-      propertyPath: m_Name
-      value: Lich Gun
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8380712496636498789, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8763983070082333845, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3d7f28f030da37c4297f9182d3c29f70, type: 3}
-    m_RemovedComponents:
-    - {fileID: 8590131573777803305, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c7b962e652bc4e4da5ed79fad4de4fa, type: 3}
 --- !u!224 &4734754154991638655 stripped
 RectTransform:

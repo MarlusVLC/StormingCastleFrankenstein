@@ -553,6 +553,34 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2034666288881811775, guid: 8c7d5d019b8f68043be66b5fd2a6fa61, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034666288881811775, guid: 8c7d5d019b8f68043be66b5fd2a6fa61, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034666288881811775, guid: 8c7d5d019b8f68043be66b5fd2a6fa61, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034666288881811775, guid: 8c7d5d019b8f68043be66b5fd2a6fa61, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034666288881811775, guid: 8c7d5d019b8f68043be66b5fd2a6fa61, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034666288881811775, guid: 8c7d5d019b8f68043be66b5fd2a6fa61, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -107
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034666288881811775, guid: 8c7d5d019b8f68043be66b5fd2a6fa61, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 138
+      objectReference: {fileID: 0}
     - target: {fileID: 4683585465704492841, guid: 8c7d5d019b8f68043be66b5fd2a6fa61, type: 3}
       propertyPath: ammoIcons
       value: 

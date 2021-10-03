@@ -11,6 +11,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 114706934497143054, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114706934497143054, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 061df8ed10de9364e9b3c5934d130a54, type: 3}
+    - target: {fileID: 114706934497143054, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224136387473129058, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224136387473129058, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224136387473129058, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 224136387473129058, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 224136387473129058, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 376
+      objectReference: {fileID: 0}
+    - target: {fileID: 224136387473129058, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 283
+      objectReference: {fileID: 0}
     - target: {fileID: 224266196848740468, guid: d016ef08a8cf1df449e07bde0323021e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

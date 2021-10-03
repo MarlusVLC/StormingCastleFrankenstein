@@ -15,34 +15,6 @@ namespace Weapons
         
         private int _damage;
 
-
-        // private void OnValidate()
-        // {
-        //     _rb = GetComponent<Rigidbody>();
-        //     if (_rb != null)
-        //     {
-        //         Debug.Log("Rigidbody caught");
-        //     }
-        //
-        //     _ImpactFx = transform.GetChild(0).gameObject;
-        //     if (_ImpactFx != null)
-        //     {
-        //         Debug.Log("Child caught");
-        //     }
-        //     
-        //     _collider = GetComponent<SphereCollider>();
-        //     if (_ImpactFx != null)
-        //     {
-        //         Debug.Log("Collider caught");
-        //     }
-        //     
-        //     _renderer = GetComponent<MeshRenderer>();
-        //     if (_ImpactFx != null)
-        //     {
-        //         Debug.Log("Renderer caught");
-        //     }
-        // }
-
         private void OnCollisionEnter(Collision collision)
         {
             var other = collision.gameObject;
