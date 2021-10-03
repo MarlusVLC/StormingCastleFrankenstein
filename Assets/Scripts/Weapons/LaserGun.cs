@@ -1,20 +1,20 @@
-using System;
-using System.Collections;
 using Entities;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.VFX;
 using Utilities;
 
 namespace Weapons
 {
-    [RequireComponent(typeof(LineRenderer))]
     public class LaserGun : Gun
     {
         // laser
         [SerializeField] private VisualEffect _visualEffect;
+        [SerializeField] private GameObject liquidObject;
         private bool _isVfxGhostgunPlaying;
         private bool _canPlayVfxGhostGunStart;
+        
+        private Material liquid;
+
         
         protected override void Awake()
         {
@@ -23,6 +23,9 @@ namespace Weapons
             _canPlayVfxGhostGunStart = true;
             _visualEffect.enabled = true;
             _visualEffect.Stop();
+            liquid = liquidObject.GetComponent<Renderer>().material;
+            Debug.Log("Pegou o LIQUDO? " + liquid != null);
+            liquid.SetFloat("_Fill_Liquid", ShotsLeft);
         }
 
         private void OnEnable()
@@ -68,6 +71,9 @@ namespace Weapons
 
             // _bulletsLeft = (int) (_bulletsLeft - 1 * Time.deltaTime);
             ConsumeAmmo(1 * Time.deltaTime);
+            liquid.SetFloat("_Fill_Liquid", 
+                FloatExtensions.Remap((float)ShotsLeft/100,0,1,0.5f,0.6f));
+            
             OnAmmoChanged();
 
 
