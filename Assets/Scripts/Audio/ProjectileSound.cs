@@ -24,7 +24,7 @@ namespace Audio
         {
             if (revolver.gameObject.activeSelf)
             {
-                int index = Random.Range(1, 2);
+                var index = Random.Range(1, 2);
                 Play(index);
             }
             else if (shotgun.gameObject.activeSelf)
@@ -37,7 +37,7 @@ namespace Audio
         {
             Play(0);
             yield return new WaitForSeconds(Random.Range(1f, 1.5f));
-            int index = Random.Range(3, 6);
+            var index = Random.Range(3, 6);
             Play(index);
         }
 

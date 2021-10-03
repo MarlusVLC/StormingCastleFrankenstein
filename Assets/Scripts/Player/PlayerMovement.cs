@@ -67,10 +67,10 @@ public class PlayerMovement : MonoBehaviour
         //    Invoke("FallSoundReset", waitTime);
         //}
         
-        // making gravity work
+        //making gravity work
         velocity.y += gravity * Time.deltaTime;
 
-        // applying velocity (gravity) the player
+        //applying velocity (gravity) the player
         controller.Move(velocity * Time.deltaTime);
         
         // step sounds
