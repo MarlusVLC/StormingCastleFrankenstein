@@ -149,8 +149,8 @@ MonoBehaviour:
   isAutomatic: 1
   timeBetweenShooting: 0
   damage: 1
-  magazineSize: 800
-  startingAmmo: 800
+  magazineSize: 400
+  startingAmmo: 400
   allowInvoke: 1
   _visualEffect: {fileID: 4400609302459627791}
 --- !u!114 &4818172074556275332

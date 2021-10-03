@@ -837,10 +837,6 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 1539595231824075215, guid: 92da0390392ad154281d1d4fb5ef6b23, type: 3}
-    - target: {fileID: 3854465799625938612, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
-      propertyPath: startingAmmo
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 3854465799625938614, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
       propertyPath: m_IsActive
       value: 0

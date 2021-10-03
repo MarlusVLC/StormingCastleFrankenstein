@@ -349,10 +349,6 @@ PrefabInstance:
       propertyPath: isAutomatic
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5766387516679736757, guid: db76654d105218b4d91299e46f759bed, type: 3}
-      propertyPath: startingAmmo
-      value: 200000
-      objectReference: {fileID: 0}
     - target: {fileID: 5766387516679736758, guid: db76654d105218b4d91299e46f759bed, type: 3}
       propertyPath: m_RootOrder
       value: 2
