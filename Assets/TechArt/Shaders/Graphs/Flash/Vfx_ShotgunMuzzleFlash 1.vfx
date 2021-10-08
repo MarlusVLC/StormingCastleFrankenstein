@@ -16,8 +16,8 @@ MonoBehaviour:
   - title: MuzzleFlash
     position:
       serializedVersion: 2
-      x: 284
-      y: -269
+      x: -116
+      y: -185
       width: 1114
       height: 2045
     contents:
@@ -104,17 +104,14 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614841}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614847}
-      id: 0
-      isStickyNote: 0
   stickyNoteInfos: []
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 284
-    y: -269
-    width: 2371
-    height: 2137
+    x: -116
+    y: -248
+    width: 2771
+    height: 2116
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +122,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: Vfx_MuzzleFlash
+  m_Name: Vfx_ShotgunMuzzleFlash 1
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 0}
@@ -154,7 +151,6 @@ MonoBehaviour:
   - {fileID: 8926484042661614831}
   - {fileID: 8926484042661614836}
   - {fileID: 8926484042661614841}
-  - {fileID: 8926484042661614847}
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
@@ -314,20 +310,6 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: ConeTexture
-    path: ConeTexture
-    tooltip: 
-    sheetType: m_NamedObject
-    realType: Texture2D
-    defaultValue:
-      m_Type:
-        m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"ccfdcf7bdb37a6d49ba666eb0359b739","type":3}}'
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
   m_ImportDependencies: []
   m_GraphVersion: 6
   m_ResourceVersion: 1
@@ -340,7 +322,7 @@ VisualEffectResource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Vfx_MuzzleFlash
+  m_Name: Vfx_ShotgunMuzzleFlash 1
   m_Graph: {fileID: 114350483966674976}
   m_Infos:
     m_RendererSettings:
@@ -370,7 +352,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614601}
-  m_UIPosition: {x: 945, y: -210}
+  m_UIPosition: {x: 545, y: -126}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -405,7 +387,7 @@ MonoBehaviour:
   m_Children:
   - {fileID: 8926484042661614604}
   - {fileID: 8926484042661614580}
-  m_UIPosition: {x: 945, y: 218}
+  m_UIPosition: {x: 545, y: 302}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -866,7 +848,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 946, y: 722}
+  m_UIPosition: {x: 546, y: 806}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -927,7 +909,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614611}
   - {fileID: 8926484042661614613}
   - {fileID: 8926484042661614658}
-  m_UIPosition: {x: 949, y: 890}
+  m_UIPosition: {x: 549, y: 974}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1586,7 +1568,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614619}
       inputSlot: {fileID: 8926484042661614643}
-    position: {x: 416, y: 1518}
+    position: {x: 16, y: 1602}
     expandedSlots: []
     expanded: 0
   - m_Id: 1
@@ -2155,7 +2137,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 540, y: 1509}
+  m_UIPosition: {x: 140, y: 1593}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2564,7 +2546,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 309, y: 1583}
+  m_UIPosition: {x: -91, y: 1667}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -3466,7 +3448,7 @@ MonoBehaviour:
   excludeFromTAA: 0
   m_SubOutputs: []
   cullMode: 3
-  zWriteMode: 2
+  zWriteMode: 0
   zTestMode: 0
   colorMapping: 0
   uvMode: 3
@@ -3582,8 +3564,7 @@ MonoBehaviour:
       m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   m_Direction: 0
-  m_LinkedSlots:
-  - {fileID: 8926484042661614848}
+  m_LinkedSlots: []
 --- !u!114 &8926484042661614694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5558,7 +5539,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614812}
       inputSlot: {fileID: 8926484042661614624}
-    position: {x: 701, y: 1187}
+    position: {x: 301, y: 1271}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614812
@@ -5638,7 +5619,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614814}
       inputSlot: {fileID: 8926484042661614625}
-    position: {x: 710, y: 1239}
+    position: {x: 310, y: 1323}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614814
@@ -5718,7 +5699,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614816}
       inputSlot: {fileID: 8926484042661614635}
-    position: {x: 650, y: 1323}
+    position: {x: 250, y: 1407}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614816
@@ -5900,7 +5881,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614821}
       inputSlot: {fileID: 8926484042661614631}
-    position: {x: 653, y: 1291}
+    position: {x: 253, y: 1375}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614821
@@ -6758,83 +6739,3 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
   m_Direction: 0
   m_LinkedSlots: []
---- !u!114 &8926484042661614847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 330e0fca1717dde4aaa144f48232aa64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 114350483966674976}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
-  m_UISuperCollapsed: 0
-  m_InputSlots: []
-  m_OutputSlots:
-  - {fileID: 8926484042661614848}
-  m_ExposedName: ConeTexture
-  m_Exposed: 1
-  m_Order: 11
-  m_Category: 
-  m_Min:
-    m_Type:
-      m_SerializableType: 
-    m_SerializableObject: 
-  m_Max:
-    m_Type:
-      m_SerializableType: 
-    m_SerializableObject: 
-  m_IsOutput: 0
-  m_EnumValues: []
-  m_ValueFilter: 0
-  m_Tooltip: 
-  m_Nodes:
-  - m_Id: 0
-    linkedSlots:
-    - outputSlot: {fileID: 8926484042661614848}
-      inputSlot: {fileID: 8926484042661614689}
-    position: {x: 1936, y: 1209}
-    expandedSlots: []
-    expanded: 0
---- !u!114 &8926484042661614848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a331b1d86cc8d4aa106ccbe0da5852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661614848}
-  m_MasterData:
-    m_Owner: {fileID: 8926484042661614847}
-    m_Value:
-      m_Type:
-        m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"ccfdcf7bdb37a6d49ba666eb0359b739","type":3}}'
-    m_Space: 2147483647
-  m_Property:
-    name: o
-    m_serializedType:
-      m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-  m_Direction: 1
-  m_LinkedSlots:
-  - {fileID: 8926484042661614689}

@@ -79,13 +79,73 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 0.2
+        m_Name: UVScale_Min
+        m_Overridden: 1
+      - m_Value: 0.3
+        m_Name: UVScale_Max
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: Flash_MaxSize
+        m_Overridden: 1
+      - m_Value: 2
+        m_Name: Flash_MinSize
+        m_Overridden: 1
+      - m_Value: 20
+        m_Name: ConeMin
+        m_Overridden: 1
+      - m_Value: 40
+        m_Name: ConeMax
+        m_Overridden: 1
+      - m_Value: 24
+        m_Name: Size Random Flash Max
+        m_Overridden: 1
+      - m_Value: 20
+        m_Name: Size Random Flash Min
+        m_Overridden: 1
+      - m_Value: 24
+        m_Name: Size Random Cone Max
+        m_Overridden: 1
+      - m_Value: 20
+        m_Name: Size Random Cone Min
+        m_Overridden: 1
+      - m_Value: 4
+        m_Name: Quantity Flashs Cone Min
+        m_Overridden: 1
+      - m_Value: 6
+        m_Name: Quantity Flashs Cone Max
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0.1, y: 0.15, z: 0.1}
+        m_Name: Flash_ScaleB
+        m_Overridden: 1
+      - m_Value: {x: 0.05, y: 0.05, z: 0.05}
+        m_Name: Flash_ScaleA
+        m_Overridden: 1
+      - m_Value: {x: -90, y: 0, z: 0}
+        m_Name: Angle
+        m_Overridden: 1
+      - m_Value: {x: 3, y: 3, z: 3}
+        m_Name: Scale Random Cone Max
+        m_Overridden: 1
+      - m_Value: {x: 5, y: 5, z: 5}
+        m_Name: Scale Random Cone Min
+        m_Overridden: 1
+      - m_Value: {x: 4, y: 4, z: 4}
+        m_Name: Scale Random Flash Min
+        m_Overridden: 1
+      - m_Value: {x: 3, y: 3, z: 3}
+        m_Name: Scale Random Flash Max
+        m_Overridden: 1
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 2.6064892, y: 13.929412, z: 1.6773638, w: 0}
+        m_Name: Color
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -97,7 +157,10 @@ VisualEffect:
     m_Gradient:
       m_Array: []
     m_NamedObject:
-      m_Array: []
+      m_Array:
+      - m_Value: {fileID: 2800000, guid: 1fc9fc9b5a2b12c4a8e27e10a3401ac5, type: 3}
+        m_Name: ConeTexture
+        m_Overridden: 1
     m_Bool:
       m_Array: []
 --- !u!73398921 &7450587763688537812
@@ -119,7 +182,6 @@ VFXRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
