@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Audio;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -97,7 +98,5 @@ namespace Weapons
         }
 
         public override int ShotsLeft => _bulletsLeft;
-
     }
-
 }

@@ -1,0 +1,320 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2769689635354758636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2769689635354758637}
+  - component: {fileID: 2769689635354758639}
+  - component: {fileID: 2769689635354758638}
+  - component: {fileID: 2769689635354758633}
+  - component: {fileID: 2769689635354758632}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2769689635354758637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769689635354758636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.94, y: 4.464161, z: 28.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2769689635354758639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769689635354758636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ed1254a14d4def899ca6e5c3914bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: RevolverShot
+    clip: {fileID: 8300000, guid: 2b1e8c7b5f38c914b8d02a6e1e3fcb4b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RevolverEmpty1
+    clip: {fileID: 8300000, guid: ff38fb0357b382f49bb2abfa57f90429, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RevolverEmpty2
+    clip: {fileID: 8300000, guid: c1ed2ef291d798d4a88be7597d65ee31, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RevolverShell1
+    clip: {fileID: 8300000, guid: 6cddb6308b820e942a8964d48c0fa72c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RevolverShell2
+    clip: {fileID: 8300000, guid: 94df8a7f486458746bdd9ace47cf9453, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RevolverShell3
+    clip: {fileID: 8300000, guid: a56118e3491c1c743a0ddef4cbe97838, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RevolverShell4
+    clip: {fileID: 8300000, guid: bb699c1aed358cb4eadc06626b5ffd6c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ShotgunShot
+    clip: {fileID: 8300000, guid: 2fd984718734ac544828ffcc9cc6597f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ShotgunEmpty
+    clip: {fileID: 8300000, guid: 8b04608b54fa3f149884f0c7cf2348b7, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ShotgunShell
+    clip: {fileID: 8300000, guid: 53469c50976caa14d89aab5b5447bd31, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ShotgunPump
+    clip: {fileID: 8300000, guid: b2f0c0fe7dd26754d8cf2495bf3e1695, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  revolver: {fileID: 0}
+  shotgun: {fileID: 0}
+--- !u!114 &2769689635354758638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769689635354758636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70dbb14867cc4579b9d154cae44b2834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Step1
+    clip: {fileID: 8300000, guid: f15a1b860a1cdba45b8ee2602fae0f1f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Step2
+    clip: {fileID: 8300000, guid: e0bce95d1f7d1724ebd13ab676c3fc95, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Step3
+    clip: {fileID: 8300000, guid: 4dea0625ad410ab45aa5aa4e0b3f8a50, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Step4
+    clip: {fileID: 8300000, guid: 2687544685d389a4282c5c9a881ea99d, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Step5
+    clip: {fileID: 8300000, guid: 7786831cf386dbf44928233be9a21a84, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Step6
+    clip: {fileID: 8300000, guid: 5e378757e2809024e96354884d06d12e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: JumpVoice1
+    clip: {fileID: 8300000, guid: e263abba490b80e48960a87b88c6ed06, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: JumpVoice2
+    clip: {fileID: 8300000, guid: 0c21facc5320f34488eaae532cd372f3, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: JumpVoice3
+    clip: {fileID: 8300000, guid: 8b4f7a4df33a72146a18c68fcec3e0dd, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: JumpVoice4
+    clip: {fileID: 8300000, guid: 1d1557a915910754ca045bf1a9dec398, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: JumpVoice5
+    clip: {fileID: 8300000, guid: c06def695f2c3294aa43bda8caa7be4b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: JumpVoice6
+    clip: {fileID: 8300000, guid: 96548eab306e6f1439ced41e9be9c9c0, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: FallVoice1
+    clip: {fileID: 8300000, guid: 60c6eb239442c0145a5055403da00116, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: FallVoice2
+    clip: {fileID: 8300000, guid: 029726a4b0076864c8cc4daa5877db80, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: FallVoice3
+    clip: {fileID: 8300000, guid: 59bcd9105083eeb4fb5e75de3f9228b2, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+--- !u!114 &2769689635354758633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769689635354758636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065a96aa9cf640caa05db77c88a0de25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: OuroDeTolo1
+    clip: {fileID: 8300000, guid: 2d858014dfa0d5d49a415773c8fe69a5, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: OuroDeTolo2
+    clip: {fileID: 8300000, guid: 075b1f4c19c178548977d5a3b1ed1398, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: OuroDeTolo3
+    clip: {fileID: 8300000, guid: a0f22d2edae2e024995fe8ab66064b99, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: OuroDeTolo4
+    clip: {fileID: 8300000, guid: 84290fac0902bdf4794d3489a940fd3c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: OuroDeTolo5
+    clip: {fileID: 8300000, guid: 0feb08e3bd5cf13428c50045db63f3c5, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+--- !u!114 &2769689635354758632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769689635354758636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e00d3ee5a804c5c834bd0510bdae509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: WendigoAtaque1
+    clip: {fileID: 8300000, guid: 2931d8a23df080a469aaf9590dbf503e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoAtaque2
+    clip: {fileID: 8300000, guid: 031d6de696d16ae4fb9e9592d9eb9c80, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoAtaque3
+    clip: {fileID: 8300000, guid: de4252c9cc03e2d4fa9154dcf3651642, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoAtaque4
+    clip: {fileID: 8300000, guid: b66ee14acb321404e97f0fbdea860930, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoAtaque5
+    clip: {fileID: 8300000, guid: 7a82ba6b38a02564883fd5e17745c5e5, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoAtaque6
+    clip: {fileID: 8300000, guid: eec0fe9725788a54d9c551830ef430bb, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoAtaque7
+    clip: {fileID: 8300000, guid: 2fee2df34dc464144b1bdd70214fac89, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoMorte1
+    clip: {fileID: 8300000, guid: 40fb76ba51742c849a4b4d21eb88c25c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoMorte2
+    clip: {fileID: 8300000, guid: 2c827317e2c09c348b793f69074a2ca5, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoMorte3
+    clip: {fileID: 8300000, guid: 1d2f6b01c9fe46d43bd0c0350134cc9a, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoMorte4
+    clip: {fileID: 8300000, guid: c9012e5028abdf540af31c0b08bacaa0, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoMorte5
+    clip: {fileID: 8300000, guid: 51cda076dd4e2094580c49f7ba4fccc1, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoMorte6
+    clip: {fileID: 8300000, guid: b5e25c7f417210642aa5bf169b3d2eb7, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoMorte7
+    clip: {fileID: 8300000, guid: 516dd94a9ef66ad40abfd7fbfd75fb15, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: WendigoMorte8
+    clip: {fileID: 8300000, guid: 5ff560bf1b00fa04ab0d5e894dac84b3, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
