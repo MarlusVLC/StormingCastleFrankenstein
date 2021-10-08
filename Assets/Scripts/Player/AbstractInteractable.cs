@@ -1,8 +1,9 @@
 using UnityEngine;
+using Utilities;
 
 namespace Player
 {
-    public class AbstractInteractable : MonoBehaviour
+    public abstract class AbstractInteractable : MonoCache
     {
         
     }

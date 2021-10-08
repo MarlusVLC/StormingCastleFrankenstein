@@ -1,66 +1,38 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Audio;
+using Player;
 using UnityEngine;
-using TMPro;
-using Utilities;
 
-public class PlayRecordPlayer : MonoBehaviour
+public class PlayRecordPlayer : Interact
 {
-    [SerializeField] private GameObject[] recordPlayers;
-    [SerializeField] private float range = 3f;
-    [SerializeField] private KeyCode activateKey = KeyCode.E;
-    [TextArea][SerializeField] private string actionMessage;
-    [SerializeField] private TextMeshProUGUI actionMessageHUD;
-    
-    private bool _canBeInteractedWith;
-
-    private void Awake()
+    protected override void Interaction(Transform item)
     {
-        actionMessageHUD.text = actionMessage;
-    }
-
-    private void Update()
-    {
-        foreach (var recordPlayer in recordPlayers)
+        switch (item.name)
         {
-            if (Vector3.SqrMagnitude(recordPlayer.transform.position - gameObject.transform.position) < range * range)
-            {
-                actionMessageHUD.enabled = _canBeInteractedWith = true;
-                if (Input.GetKey(activateKey))
-                {
-                    switch (recordPlayer.name)
-                    {
-                        case "RecordPlayer1":
-                            FindObjectOfType<AudioLogSound>().StopAudioLogSound();
-                            FindObjectOfType<AudioLogSound>().PlayAudioLogSound(0);
-                            recordPlayer.gameObject.SetActive(false);
-                            break;
-                        case "RecordPlayer2":
-                            FindObjectOfType<AudioLogSound>().StopAudioLogSound();
-                            FindObjectOfType<AudioLogSound>().PlayAudioLogSound(1);
-                            recordPlayer.gameObject.SetActive(false);
-                            break;
-                        case "RecordPlayer3":
-                            FindObjectOfType<AudioLogSound>().StopAudioLogSound();
-                            FindObjectOfType<AudioLogSound>().PlayAudioLogSound(2);
-                            recordPlayer.gameObject.SetActive(false);
-                            break;
-                        case "RecordPlayer4":
-                            FindObjectOfType<AudioLogSound>().StopAudioLogSound();
-                            FindObjectOfType<AudioLogSound>().PlayAudioLogSound(3);
-                            recordPlayer.gameObject.SetActive(false);
-                            break;
-                        case "RecordPlayer5":
-                            FindObjectOfType<AudioLogSound>().StopAudioLogSound();
-                            FindObjectOfType<AudioLogSound>().PlayAudioLogSound(4);
-                            recordPlayer.gameObject.SetActive(false);
-                            break;
-                    }
-                }
-            }
-                
+            case "RecordPlayer1":
+                FindObjectOfType<AudioLogSound>().StopAudioLogSound();
+                FindObjectOfType<AudioLogSound>().PlayAudioLogSound(0);
+                item.gameObject.SetActive(false);
+                break;
+            case "RecordPlayer2":
+                FindObjectOfType<AudioLogSound>().StopAudioLogSound();
+                FindObjectOfType<AudioLogSound>().PlayAudioLogSound(1);
+                item.gameObject.SetActive(false);
+                break;
+            case "RecordPlayer3":
+                FindObjectOfType<AudioLogSound>().StopAudioLogSound();
+                FindObjectOfType<AudioLogSound>().PlayAudioLogSound(2);
+                item.gameObject.SetActive(false);
+                break;
+            case "RecordPlayer4":
+                FindObjectOfType<AudioLogSound>().StopAudioLogSound();
+                FindObjectOfType<AudioLogSound>().PlayAudioLogSound(3);
+                item.gameObject.SetActive(false);
+                break;
+            case "RecordPlayer5":
+                FindObjectOfType<AudioLogSound>().StopAudioLogSound();
+                FindObjectOfType<AudioLogSound>().PlayAudioLogSound(4);
+                item.gameObject.SetActive(false);
+                break;
         }
     }
 }

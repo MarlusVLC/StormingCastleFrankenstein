@@ -4,15 +4,15 @@ using Utilities;
 
 namespace Player
 {
-    public abstract class Interactable : MonoCache
+    public abstract class Interact : MonoCache
     {
-        [SerializeField] private Transform[] itens;
-        [SerializeField] private LayerMask portalLayerMask;
+        [SerializeField] private Transform itemsParent;
+        [SerializeField] private LayerMask itemLayerMask;
         [SerializeField] private float range = 3f;
         [SerializeField] private KeyCode activateKey = KeyCode.E;
         [TextArea][SerializeField] private string actionMessage;
         [SerializeField] private TextMeshProUGUI actionMessageHUD;
-        private bool _canBeInteractedWith;
+        
         private RaycastHit[] _raycastHit = new RaycastHit[1];
 
         protected override void Awake()
@@ -28,23 +28,25 @@ namespace Player
 
         private void CheckInteractivity()
         {
-            foreach (var portal in portals)
+            foreach (Transform item in itemsParent)
             {
-                if (Vector3.SqrMagnitude(portal.transform.position - gameObject.transform.position) < range*range
+                if (Vector3.SqrMagnitude(item.transform.position - Transform.position) < range*range
                     && Physics.RaycastNonAlloc(Transform.position, Transform.forward
-                        , _raycastHit, range, ~portalLayerMask) > 0)
+                        , _raycastHit, range, itemLayerMask) > 0)
                 {
-                    actionMessageHUD.enabled = _canBeInteractedWith = true;
+                    actionMessageHUD.enabled  = true;
                     if (Input.GetKey(activateKey))
                     {
-                        SceneUtil.ResetScene();
+                        Interaction(item);
                     }
                 }
                 else
                 {
-                    actionMessageHUD.enabled = _canBeInteractedWith =  false;
+                    actionMessageHUD.enabled =  false;
                 }
             }
         }
+
+        protected abstract void Interaction(Transform item);
     }
 }
