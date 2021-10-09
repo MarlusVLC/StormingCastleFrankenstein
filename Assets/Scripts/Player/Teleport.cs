@@ -7,4 +7,5 @@ public class Teleport : Interact
     {
         SceneUtil.ResetScene();
     }
+    
 }

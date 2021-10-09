@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
@@ -24,6 +23,7 @@ namespace AI
         private int _numberOfTargetsInRadius;
         
         public event Action<Transform> OnTargetAcquired = delegate {  };
+        public event Action OnTargetLost;
 
 
         void Start()
@@ -65,6 +65,11 @@ namespace AI
                         OnTargetAcquired?.Invoke(target);
                     }
                 }
+            }
+
+            if (VisibleTargets.Count < 1)
+            {
+                OnTargetLost?.Invoke();
             }
             
             
