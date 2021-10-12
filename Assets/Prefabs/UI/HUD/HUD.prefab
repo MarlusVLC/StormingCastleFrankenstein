@@ -548,6 +548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 7323502117620615127, guid: 292cd28f76edb194ea41caac4d3646a5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9033193939471872949, guid: 292cd28f76edb194ea41caac4d3646a5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
