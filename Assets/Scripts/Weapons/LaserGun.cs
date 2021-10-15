@@ -24,7 +24,6 @@ namespace Weapons
             _visualEffect.enabled = true;
             _visualEffect.Stop();
             liquid = liquidObject.GetComponent<Renderer>().material;
-            // Debug.Log("Pegou o LIQUDO? " + liquid != null);
             liquid.SetFloat("_Fill_Liquid", ShotsLeft);
         }
 
@@ -41,7 +40,6 @@ namespace Weapons
                 Shoot(shooting, ray, damageableLayer);
                 if (_isVfxGhostgunPlaying == false)
                     PlayVfxGhostGun();
-                // _weaponAudio.ShotWithShell();
             }
             
             if (_isVfxGhostgunPlaying && (!shooting || IsEmpty)) 
@@ -53,32 +51,21 @@ namespace Weapons
         protected override void Shoot(bool shooting, Ray ray, LayerMask damageableLayer)
         {
             _readyToShoot = false;
-            // var attackPosition = attackPoint.position;
 
-            // Vector3 targetPoint;
             if (Physics.Raycast(ray, out var hit))
             {
-                // targetPoint = hit.point;
                 if (hit.collider.TryGetComponent(out Health health))
                 {
                     health.TakeDamage(damage);
                 }
             }
-            // else
-            // {
-            //     targetPoint = ray.GetPoint(75);
-            // }
 
-            // _bulletsLeft = (int) (_bulletsLeft - 1 * Time.deltaTime);
             ConsumeAmmo(1 * Time.deltaTime);
             liquid.SetFloat("_Fill_Liquid", 
                 FloatExtensions.Remap((float)ShotsLeft/100,0,1,0.5f,0.6f));
             
             OnAmmoChanged();
 
-
-            
-            // invoke resetShot function (if not already invoked)
             if (allowInvoke)
             {
                 StartCoroutine(Parallel.ExecuteActionWithDelay(ResetShot, timeBetweenShooting));
@@ -99,8 +86,6 @@ namespace Weapons
         }
 
         public override int ShotsLeft => 100*_bulletsLeft/magazineSize;
-        // protected bool CanPlayLaserVFX => _isVfxGhostgunPlaying == false && _bulletsLeft > 0;
-
     }
 
 }

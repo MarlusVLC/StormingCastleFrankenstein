@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     private int indexSequence = 0;
     private AudioSource currentSource;
 
+    public float ClipLength => currentSource.clip.length;
+
     void Awake()
     {
         foreach (Sound s in sounds)
@@ -38,9 +40,10 @@ public class AudioManager : MonoBehaviour
         }
     }
     
-    protected void Play(int index)
+    protected void Play(int index, bool ignoreListenerPause = false)
     {
-        currentSource = sounds[index].source; 
+        currentSource = sounds[index].source;
+        currentSource.ignoreListenerPause = ignoreListenerPause;
         currentSource.Play();
     }
     

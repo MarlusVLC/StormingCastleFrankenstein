@@ -51,7 +51,6 @@ namespace Weapons
         
         public int AddRelativeAmmo(float valueRelativeToMax)
         {
-            Debug.Log((int)(valueRelativeToMax * magazineSize));
             _bulletsLeft += Mathf.CeilToInt(valueRelativeToMax * magazineSize);
             _bulletsLeft = Mathf.Clamp(_bulletsLeft, 0, magazineSize);
             OnAmmoChanged();

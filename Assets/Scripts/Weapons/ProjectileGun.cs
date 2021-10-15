@@ -45,7 +45,6 @@ namespace Weapons
                 _bulletsShot = 0;
                 Shoot(shooting, ray, damageableLayer);
                 if (_hasMuzzleFlash) muzzleFlash.Play();
-                // _weaponAudio.ShotWithShell();
                 // play shooting sound
                 FindObjectOfType<ProjectileSound>().PlayProjectileSound();
             }

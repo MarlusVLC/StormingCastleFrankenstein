@@ -6,33 +6,27 @@ public class PlayRecordPlayer : Interact
 {
     protected override void Interaction(Transform item)
     {
+        var audioIndex = -1;
         switch (item.name)
         {
             case "RecordPlayer1":
-                FindObjectOfType<AudioLogSound>().StopAudioLogSound();
-                FindObjectOfType<AudioLogSound>().PlayAudioLogSound(0);
-                item.gameObject.SetActive(false);
+                audioIndex = 0;
                 break;
             case "RecordPlayer2":
-                FindObjectOfType<AudioLogSound>().StopAudioLogSound();
-                FindObjectOfType<AudioLogSound>().PlayAudioLogSound(1);
-                item.gameObject.SetActive(false);
+                audioIndex = 1;
                 break;
             case "RecordPlayer3":
-                FindObjectOfType<AudioLogSound>().StopAudioLogSound();
-                FindObjectOfType<AudioLogSound>().PlayAudioLogSound(2);
-                item.gameObject.SetActive(false);
+                audioIndex = 2;
                 break;
             case "RecordPlayer4":
-                FindObjectOfType<AudioLogSound>().StopAudioLogSound();
-                FindObjectOfType<AudioLogSound>().PlayAudioLogSound(3);
-                item.gameObject.SetActive(false);
+                audioIndex = 3;
                 break;
             case "RecordPlayer5":
-                FindObjectOfType<AudioLogSound>().StopAudioLogSound();
-                FindObjectOfType<AudioLogSound>().PlayAudioLogSound(4);
-                item.gameObject.SetActive(false);
+                audioIndex = 4;
                 break;
         }
+
+        FindObjectOfType<AudioLogSound>().PlayAudioLogSound(audioIndex);
+        item.gameObject.SetActive(false);
     }
 }

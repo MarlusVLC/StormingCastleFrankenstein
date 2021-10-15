@@ -45,7 +45,6 @@ namespace UI.Menus
             Array.ForEach(toBeHidden, gO => gO.SetActive(true));
             Array.ForEach(toBeShown, gO => gO.SetActive(false));
             IsPaused = false;
-            // Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
 

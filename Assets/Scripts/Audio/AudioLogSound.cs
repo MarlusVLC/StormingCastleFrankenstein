@@ -1,15 +1,18 @@
+using UnityEngine;
+
 namespace Audio
 {
     public class AudioLogSound : AudioManager
     {
         public void PlayAudioLogSound(int index)
         {
-            Play(index);
+            Stop();
+            Play(index, true);
         }
 
-        public void StopAudioLogSound()
-        {
-            Stop();
-        }
+        // public void StopAudioLogSound()
+        // {
+        //     Stop();
+        // }
     }
 }

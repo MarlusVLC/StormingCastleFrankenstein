@@ -47,7 +47,9 @@ namespace Weapons
             CurrentWeapon = ConfirmedGuns[selection];
             OnWeaponChanged?.Invoke(new WeaponChangedEventArgs
             {
-                Position = selection, PreviousWeapon = _previousWeapon, CurrentWeapon = CurrentWeapon
+                Position = selection, 
+                PreviousWeapon = _previousWeapon, 
+                CurrentWeapon = CurrentWeapon
             });
         }
         
