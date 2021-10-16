@@ -1,11 +1,15 @@
+using System;
 using Audio;
 using Player;
 using UnityEngine;
 
-public class PlayRecordPlayer : Interact
+public class GramophoneCollector : Interact
 {
+    public event Action<int> OnGramophoneCollected;
+    
     protected override void Interaction(Transform item)
     {
+        
         var audioIndex = -1;
         switch (item.name)
         {
@@ -27,6 +31,7 @@ public class PlayRecordPlayer : Interact
         }
 
         FindObjectOfType<AudioLogSound>().PlayAudioLogSound(audioIndex);
+        OnGramophoneCollected?.Invoke(audioIndex);
         item.gameObject.SetActive(false);
     }
 }
