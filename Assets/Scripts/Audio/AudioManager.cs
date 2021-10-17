@@ -1,5 +1,6 @@
 using System;
 using System;
+using System.Collections;
 using UnityEngine.Audio;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -12,6 +13,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource currentSource;
 
     public float ClipLength => currentSource.clip.length;
+    public event Action OnClipFinished;
 
     void Awake()
     {
@@ -45,6 +47,7 @@ public class AudioManager : MonoBehaviour
         currentSource = sounds[index].source;
         currentSource.ignoreListenerPause = ignoreListenerPause;
         currentSource.Play();
+        StartCoroutine(WaitForAudioEnd());
     }
     
     public void Stop()
@@ -53,5 +56,14 @@ public class AudioManager : MonoBehaviour
         {
             currentSource.Stop();   
         }
+    }
+
+    private IEnumerator WaitForAudioEnd()
+    {
+        while (currentSource.isPlaying)
+        {
+            yield return null;
+        }
+        OnClipFinished?.Invoke();
     }
 }

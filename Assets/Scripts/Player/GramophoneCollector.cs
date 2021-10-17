@@ -1,12 +1,22 @@
 using System;
+using System.Collections.Generic;
 using Audio;
 using Player;
 using UnityEngine;
 
 public class GramophoneCollector : Interact
 {
-    public event Action<int> OnGramophoneCollected;
+    private AudioLogSound _audioLogSound;
+    private bool[] _hasAudioLogBeenCollected;
     
+    public event Action<int> OnGramophoneCollected;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _audioLogSound = FindObjectOfType<AudioLogSound>();
+        _hasAudioLogBeenCollected = new bool[_audioLogSound.sounds.Length];
+    }
     protected override void Interaction(Transform item)
     {
         
@@ -32,6 +42,18 @@ public class GramophoneCollector : Interact
 
         FindObjectOfType<AudioLogSound>().PlayAudioLogSound(audioIndex);
         OnGramophoneCollected?.Invoke(audioIndex);
+        _hasAudioLogBeenCollected[audioIndex] = true;
         item.gameObject.SetActive(false);
     }
+    
+    
+    public bool[] HasAudioLogBeenCollected
+    {
+        get => _hasAudioLogBeenCollected;
+        set => _hasAudioLogBeenCollected = value;
+    }
+
+    public AudioLogSound AudioLogSound => _audioLogSound;
+
+
 }

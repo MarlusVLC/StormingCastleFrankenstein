@@ -1,6 +1,7 @@
 using System;
 using Audio;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Utilities;
 
@@ -10,8 +11,10 @@ namespace UI.Menus.Collection
     public class AudioLogIcon : MonoBehaviour
     {
         [SerializeField] private int audioLogIndex;
+        [FormerlySerializedAs("_gramophoneCollector")] 
+        [SerializeField] GramophoneCollector gramophoneCollector;
         [Range(0, 1)] [SerializeField] private float deactivatedAlpha;
-        [SerializeField] GramophoneCollector _gramophoneCollector;
+
 
 
         private AudioLogSound _audioLogSound;
@@ -24,23 +27,22 @@ namespace UI.Menus.Collection
             _toggle = GetComponent<Toggle>();
             _graphic = transform.RetrieveComponentsInChildren<Image>()[0];
             SetAlpha(_toggle.isOn);
+            
+            if (gramophoneCollector == null)
+            {
+                gramophoneCollector = FindObjectOfType<GramophoneCollector>();
+            }
+            _audioLogSound = gramophoneCollector.AudioLogSound;
+            gramophoneCollector.OnGramophoneCollected += EnableAudioLog;
+            _audioLogSound.OnClipFinished += () => ToggleAudioLog(false);
         }
-        
+
         private void OnEnable()
         {
-            if (_gramophoneCollector == null)
-            {
-                _gramophoneCollector = FindObjectOfType<GramophoneCollector>();
-            }
-            _gramophoneCollector.OnGramophoneCollected += CollectAudioLog;
-
-            IsFullyInteractable = _hasBeenCollected;
+            IsFullyInteractable = gramophoneCollector.HasAudioLogBeenCollected[audioLogIndex];
         }
 
-        private void Start()
-        {
-            _audioLogSound = FindObjectOfType<AudioLogSound>();
-        }
+
 
         public void ToggleAudioLog(bool isOn)
         {
@@ -48,7 +50,7 @@ namespace UI.Menus.Collection
             {
                 _audioLogSound.PlayAudioLogSound(audioLogIndex);
             }
-            else
+            else if (GamePause.IsPaused)
             {
                 _audioLogSound.Stop();
             }
@@ -62,15 +64,17 @@ namespace UI.Menus.Collection
             _graphic.color = newColor;
         }
 
-        private void CollectAudioLog(int collectionIndex)
+        private void EnableAudioLog(int collectionIndex)
         {
-            Debug.Log("Gramophone collected");
-            if (collectionIndex == audioLogIndex)
+            var isMatching = collectionIndex == audioLogIndex;
+            if (isMatching)
             {
-                _hasBeenCollected = true;
-                SetAlpha(true);
+                ToggleAudioLog(true);
             }
+            _toggle.isOn = isMatching;
         }
+
+        #region PROPERTIES
 
         private bool IsFullyInteractable
         {
@@ -82,5 +86,8 @@ namespace UI.Menus.Collection
             get => _hasBeenCollected;
             set => _hasBeenCollected = value;
         }
+
+        #endregion
+
     }
 }

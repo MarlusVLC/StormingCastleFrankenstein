@@ -9,10 +9,5 @@ namespace Audio
             Stop();
             Play(index, true);
         }
-
-        // public void StopAudioLogSound()
-        // {
-        //     Stop();
-        // }
     }
 }
