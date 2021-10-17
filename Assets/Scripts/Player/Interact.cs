@@ -6,26 +6,26 @@ using Utilities;
 
 namespace Player
 {
-    [RequireComponent(typeof(FieldOfView))]
     public abstract class Interact : MonoCache
     {
-        [SerializeField] private Transform itemsParent;
         [SerializeField] private LayerMask itemLayerMask;
-        [SerializeField] private float range = 3f;
         [SerializeField] private KeyCode activateKey = KeyCode.E;
         [TextArea][SerializeField] private string actionMessage;
         [SerializeField] private TextMeshProUGUI actionMessageHUD;
+        [SerializeField] private FieldOfView _fov;
 
         private bool canInteract;
-        private FieldOfView _fov;
 
         protected override void Awake()
         {
             base.Awake();
             actionMessageHUD.text = actionMessage;
-            _fov = GetComponent<FieldOfView>();
+            if (_fov == null)
+            {
+                _fov = GetComponentInChildren<FieldOfView>();
+            }
             _fov.OnTargetAcquired += _ => EnableInteraction();
-            _fov.OnTargetLost += HideText;
+            _fov.OnTargetLost += () => HideText();
         }
 
         private void Update()

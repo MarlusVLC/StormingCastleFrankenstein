@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 namespace UI.Menus
@@ -6,7 +7,10 @@ namespace UI.Menus
     public class SubMenuTransitions : MonoBehaviour
     {
         [SerializeField] private GameObject targetSubMenu;
-        
+        [SerializeField] private string displayText;
+        [SerializeField] private TextMeshProUGUI subMenuTitleGUI;
+
+
         private GameObject _parentSubMenu;
 
         private void Awake()
@@ -21,6 +25,7 @@ namespace UI.Menus
         {
             targetSubMenu.SetActive(true);
             _parentSubMenu.SetActive(false);
+            subMenuTitleGUI.text = displayText;
         }
     }
 }

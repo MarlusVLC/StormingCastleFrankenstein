@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSubMenu: {fileID: 0}
+  displayText: 
+  subMenuTitleGUI: {fileID: 0}
 --- !u!114 &3242945354995124665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,14 +577,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 738455190654267062, guid: 5ebfa7486dd754349b23a1a460434ed9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391485732452857827, guid: 5ebfa7486dd754349b23a1a460434ed9, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391485732452857827, guid: 5ebfa7486dd754349b23a1a460434ed9, type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6382679784749625729, guid: 5ebfa7486dd754349b23a1a460434ed9, type: 3}
