@@ -1,5 +1,6 @@
 using System;
 using Audio;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.VFX;
 using Utilities;
@@ -20,8 +21,11 @@ namespace Weapons
         [Header("Visual Effects")] 
         [SerializeField] private VisualEffect muzzleFlash;
         
+        private GameObject npcObject;
+        
         private int _bulletsShot;
         private bool _hasMuzzleFlash;
+        private bool _enemyGun;
         
         protected override void Awake()
         {
@@ -29,6 +33,17 @@ namespace Weapons
             _bulletsLeft = startingAmmo;
             _hasMuzzleFlash = muzzleFlash != null;
             if (_hasMuzzleFlash) muzzleFlash.Stop();
+            
+            npcObject = FindParentInLayer(gameObject, "EnemyNPC");
+            
+            if (npcObject != null)
+            {
+                _enemyGun = true;
+            }
+            else
+            {
+                _enemyGun = false;
+            }
         }
 
         private void OnEnable()
@@ -45,8 +60,16 @@ namespace Weapons
                 _bulletsShot = 0;
                 Shoot(shooting, ray, damageableLayer);
                 if (_hasMuzzleFlash) muzzleFlash.Play();
-                // play shooting sound
-                FindObjectOfType<ProjectileSound>().PlayProjectileSound();
+                
+                // shooting sounds
+                if (_enemyGun)
+                {
+                    npcObject.GetComponent<AudioSource>().Play();
+                }
+                else
+                {
+                    FindObjectOfType<ProjectileSound>().PlayProjectileSound();   
+                }
             }
             if (shooting && _bulletsLeft <= 0)
             {
@@ -93,6 +116,21 @@ namespace Weapons
                 StartCoroutine(Parallel.ExecuteActionWithDelay(ResetShot, timeBetweenShooting));
                 allowInvoke = false;
             }
+        }
+
+        private static GameObject FindParentInLayer(GameObject childObject, string layer)
+        {
+            Transform t = childObject.transform;
+            while (t.parent != null)
+            {
+                if (t.parent.gameObject.layer.ToString() == layer)
+                {
+                    return t.parent.gameObject;
+                }
+                t = t.parent.transform;
+                print(t.name);
+            }
+            return null;
         }
 
         public override int ShotsLeft => _bulletsLeft;
