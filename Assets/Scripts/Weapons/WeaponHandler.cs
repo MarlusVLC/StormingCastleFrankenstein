@@ -36,9 +36,7 @@ namespace Weapons
         {
             if (receivedValue < 1 || receivedValue > _weapons.Length)
             {
-                Debug.LogException(new ArgumentException("initialWeaponIndex must be greater than 0 and lower than " 
-                                                               + gameObject.name +
-                                                               "'s child amount"));
+                receivedValue = 1;
             }
 
             var selection = receivedValue - 1;
