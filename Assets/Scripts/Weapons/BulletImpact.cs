@@ -12,6 +12,7 @@ namespace Weapons
         [SerializeField] private GameObject _ImpactFx;
         [SerializeField] private SphereCollider _collider;
         [SerializeField] private MeshRenderer _renderer;
+        [SerializeField] private bool explodeBullet;
         
         private int _damage;
 
@@ -20,11 +21,16 @@ namespace Weapons
             var other = collision.gameObject;
             if (_damageableLayer.HasLayerWithin(other.layer) == false) return;
             
+            if (explodeBullet)
+            {
+                transform.localScale = new Vector3(10f, 10f, 10f);
+            }
+            
             if (other.TryGetComponent(out Health health))
             {
                 health.TakeDamage(_damage);
             }
-
+            
             StartCoroutine(DisplayAndDestroy(0.5f));
         }
 
@@ -38,10 +44,11 @@ namespace Weapons
 
         private IEnumerator DisplayAndDestroy(float delayTime)
         {
-            _collider.enabled = false;
             _renderer.enabled = false;
             _rb.constraints = RigidbodyConstraints.FreezeAll;
             _ImpactFx.SetActive(true);
+            _ImpactFx.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+
             yield return new WaitForSeconds(delayTime);
             Destroy(gameObject);
         }

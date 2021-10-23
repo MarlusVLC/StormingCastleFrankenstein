@@ -82,12 +82,15 @@ MonoBehaviour:
   startingAmmo: 2
   allowInvoke: 1
   _hasUnlimitedAmmo: 0
-  bullet: {fileID: 6173487948656069444, guid: 52a584bbe72f0484295ea367bea73cb0, type: 3}
+  bullet: {fileID: 6173487948656069444, guid: de12f8190466c064cac84068c1586f88, type: 3}
   shootForce: 200
   upwardForce: 0.2
-  spread: 3
-  bulletFragments: 10
+  spread: 0
+  bulletFragments: 1
   muzzleFlash: {fileID: 0}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &3599317699247039574
 PrefabInstance:
   m_ObjectHideFlags: 0
