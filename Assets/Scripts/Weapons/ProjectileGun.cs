@@ -131,7 +131,6 @@ namespace Weapons
                     return t.parent.gameObject;
                 }
                 t = t.parent.transform;
-                print(t.name);
             }
             return null;
         }
