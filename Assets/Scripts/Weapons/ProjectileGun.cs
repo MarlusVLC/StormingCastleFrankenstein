@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Audio;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -20,6 +21,8 @@ namespace Weapons
         [Min(1)][SerializeField] private int bulletFragments;
         [Header("Visual Effects")] 
         [SerializeField] private VisualEffect muzzleFlash;
+        [Header("Enemy Layer")]
+        [SerializeField] private LayerMask enemyLayer;
         
         private GameObject npcObject;
         
@@ -34,7 +37,7 @@ namespace Weapons
             _hasMuzzleFlash = muzzleFlash != null;
             if (_hasMuzzleFlash) muzzleFlash.Stop();
             
-            npcObject = FindParentInLayer(gameObject, "EnemyNPC");
+            npcObject = FindParentInLayer(gameObject, enemyLayer);
             
             if (npcObject != null)
             {
@@ -118,12 +121,12 @@ namespace Weapons
             }
         }
 
-        private static GameObject FindParentInLayer(GameObject childObject, string layer)
+        private static GameObject FindParentInLayer(GameObject childObject, LayerMask layer)
         {
             Transform t = childObject.transform;
             while (t.parent != null)
             {
-                if (t.parent.gameObject.layer.ToString() == layer)
+                if (layer.HasLayerWithin(t.parent.gameObject.layer) && t.parent.gameObject.GetComponent<AudioSource>())
                 {
                     return t.parent.gameObject;
                 }
@@ -134,7 +137,5 @@ namespace Weapons
         }
 
         public override int ShotsLeft => _bulletsLeft;
-
     }
-
 }

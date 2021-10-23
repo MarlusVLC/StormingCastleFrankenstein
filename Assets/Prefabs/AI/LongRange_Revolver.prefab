@@ -302,6 +302,9 @@ MonoBehaviour:
   spread: 1.55
   bulletFragments: 6
   muzzleFlash: {fileID: 3339444018564484829}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &3339444017758235355
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +690,9 @@ MonoBehaviour:
   spread: 0
   bulletFragments: 1
   muzzleFlash: {fileID: 3339444018525270524}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &3339444018252651605
 GameObject:
   m_ObjectHideFlags: 0
