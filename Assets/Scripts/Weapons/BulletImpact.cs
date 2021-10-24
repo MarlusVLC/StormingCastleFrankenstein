@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Entities;
 using UnityEngine;
 using Utilities;
@@ -11,10 +12,21 @@ namespace Weapons
         [SerializeField] private LayerMask _damageableLayer;
         [SerializeField] private GameObject _ImpactFx;
         [SerializeField] private SphereCollider _collider;
+        [SerializeField] private Collider _playerCollider;
         [SerializeField] private MeshRenderer _renderer;
         [SerializeField] private bool explodeBullet;
         
         private int _damage;
+
+        // TODO: fix this. make the player not collide with the explosion
+        private void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            var other = hit.gameObject;
+            if (other.CompareTag("Player"))
+            {
+                Destroy(this);
+            }
+        }
 
         private void OnCollisionEnter(Collision collision)
         {
@@ -30,7 +42,7 @@ namespace Weapons
             {
                 health.TakeDamage(_damage);
             }
-            
+
             StartCoroutine(DisplayAndDestroy(0.5f));
         }
 

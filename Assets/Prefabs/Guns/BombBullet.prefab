@@ -116,7 +116,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   _ImpactFx: {fileID: 201866259083955283}
-  _collider: {fileID: 6173487948656069446}
+  _collider: {fileID: 0}
+  _playerCollider: {fileID: 4409123955690605755, guid: c12eaa03360bfcf4da07f26128dfebf3, type: 3}
   _renderer: {fileID: 6173487948656069447}
   explodeBullet: 1
 --- !u!54 &6173487948656069445

@@ -87,7 +87,7 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 4.2127895, y: 19.913446, z: 57.474514, w: 0}
+      - m_Value: {x: 57.474514, y: 20.038803, z: 4.2127895, w: 0}
         m_Name: Color
         m_Overridden: 1
     m_Uint:
@@ -368,7 +368,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.08235294, g: 0.5753421, b: 0.81960785, a: 1}
+      maxColor: {r: 0.81960785, g: 0.21351036, b: 0.08235294, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
