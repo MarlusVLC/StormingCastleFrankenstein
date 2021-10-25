@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using Audio;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.VFX;
 using Utilities;
@@ -19,9 +21,14 @@ namespace Weapons
         [Min(1)][SerializeField] private int bulletFragments;
         [Header("Visual Effects")] 
         [SerializeField] private VisualEffect muzzleFlash;
+        [Header("Enemy Layer")]
+        [SerializeField] private LayerMask enemyLayer;
+        
+        private GameObject npcObject;
         
         private int _bulletsShot;
         private bool _hasMuzzleFlash;
+        private bool _enemyGun;
         
         protected override void Awake()
         {
@@ -29,6 +36,17 @@ namespace Weapons
             _bulletsLeft = startingAmmo;
             _hasMuzzleFlash = muzzleFlash != null;
             if (_hasMuzzleFlash) muzzleFlash.Stop();
+            
+            npcObject = FindParentInLayer(gameObject, enemyLayer);
+            
+            if (npcObject != null)
+            {
+                _enemyGun = true;
+            }
+            else
+            {
+                _enemyGun = false;
+            }
         }
 
         private void OnEnable()
@@ -45,8 +63,16 @@ namespace Weapons
                 _bulletsShot = 0;
                 Shoot(shooting, ray, damageableLayer);
                 if (_hasMuzzleFlash) muzzleFlash.Play();
-                // play shooting sound
-                FindObjectOfType<ProjectileSound>().PlayProjectileSound();
+                
+                // shooting sounds
+                if (_enemyGun)
+                {
+                    npcObject.GetComponent<AudioSource>().Play();
+                }
+                else
+                {
+                    FindObjectOfType<ProjectileSound>().PlayProjectileSound();   
+                }
             }
             if (shooting && _bulletsLeft <= 0)
             {
@@ -95,8 +121,20 @@ namespace Weapons
             }
         }
 
+        private static GameObject FindParentInLayer(GameObject childObject, LayerMask layer)
+        {
+            Transform t = childObject.transform;
+            while (t.parent != null)
+            {
+                if (layer.HasLayerWithin(t.parent.gameObject.layer) && t.parent.gameObject.GetComponent<AudioSource>())
+                {
+                    return t.parent.gameObject;
+                }
+                t = t.parent.transform;
+            }
+            return null;
+        }
+
         public override int ShotsLeft => _bulletsLeft;
-
     }
-
 }

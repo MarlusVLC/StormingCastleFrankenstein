@@ -145,7 +145,7 @@ Material:
     - _Shadow1Step: 0.5
     - _Shadow2Feather: 0
     - _Shadow2Step: 0.3
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _Specular2Mul: 0.5
     - _SpecularFeather: 0
