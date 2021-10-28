@@ -21,7 +21,7 @@ QualitySettings:
     skinWeights: 1
     textureQuality: 1
     anisotropicTextures: 0
-    antiAliasing: 8
+    antiAliasing: 0
     softParticles: 0
     softVegetation: 0
     realtimeReflectionProbes: 0
@@ -40,7 +40,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: 930776f9a915f034d8ac17ad0e8a1dfb, type: 2}
+    customRenderPipeline: {fileID: 11400000, guid: b71d8c725d6857840a4ae3c86ab52aa5, type: 2}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Low
