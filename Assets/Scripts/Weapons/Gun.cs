@@ -70,6 +70,13 @@ namespace Weapons
         }
         
         public event Action<int> AmmoChanged;
+
+        public void OnShotFired()
+        {
+            ShotFired?.Invoke();
+        }
+        
+        public event Action ShotFired;
         
         public abstract int ShotsLeft {get;}
 

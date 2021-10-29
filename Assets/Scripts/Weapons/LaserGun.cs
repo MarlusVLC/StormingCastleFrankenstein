@@ -65,6 +65,7 @@ namespace Weapons
                 FloatExtensions.Remap((float)ShotsLeft/100,0,1,0.5f,0.6f));
             
             OnAmmoChanged();
+            OnShotFired();
 
             if (allowInvoke)
             {
