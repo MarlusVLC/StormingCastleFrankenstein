@@ -16,12 +16,13 @@ namespace AI
         protected float _currRotationSpeed;
         protected float _distanceToTarget;
         protected float _angleToTarget;
+        // protected bool
 
         protected float MaximumRotationSpeed => _navMeshAgent.angularSpeed;
         protected float StoppingDistance => _navMeshAgent.stoppingDistance;
         
         // sfx
-        private bool hasBeenPlayed;
+        private bool _hasSoundBeenPlayed;
 
         protected override void Awake()
         {
@@ -73,19 +74,19 @@ namespace AI
 
         protected virtual bool IsTargetWithinSight(float maximumAngle)
         {
-            if (!hasBeenPlayed)
+            if (!_hasSoundBeenPlayed)
             {
                 FindObjectOfType<WendigoSound>().PlayWendigoAttackSound();
-                hasBeenPlayed = true;
+                _hasSoundBeenPlayed = true;
             }
             return _angleToTarget < maximumAngle;
         }
 
         private void Update()
         {
-            if (hasBeenPlayed && !IsTargetWithinSight(45f))
+            if (_hasSoundBeenPlayed && !IsTargetWithinSight(45f))
             {
-                hasBeenPlayed = false;
+                _hasSoundBeenPlayed = false;
             }
         }
 

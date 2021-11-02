@@ -21,6 +21,7 @@ namespace AI
         private int _sequenceThreshold;
         private int _sequentialShots;
         private bool _isAtFiringInterval;
+        
 
         protected override void Awake()
         {

@@ -15,7 +15,7 @@ namespace Entities
         protected override void Awake()
         {
             base.Awake();
-            _currentHealth = Mathf.Clamp(startingHealth, 0, MaxHealth);
+            CurrentHealth = Mathf.Clamp(startingHealth, 0, MaxHealth);
             OnHealthChanged();
         }
 
@@ -40,6 +40,7 @@ namespace Entities
             set
             {
                 _currentHealth = value;
+                Debug.Log(gameObject.name + "'s current health: " + _currentHealth);
                 if (_currentHealth <= 0)
                 {
                     _currentHealth = 0;
