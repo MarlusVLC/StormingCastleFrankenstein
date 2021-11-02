@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3339444017387087363}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LongRange_Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,10 +39,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3339444017387087363}
     m_Modifications:
+    - target: {fileID: 3547511236560153553, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: timeBetweenShooting
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3547511237412802493, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
       propertyPath: bloodVFX
       value: 
       objectReference: {fileID: 7087692959958196856}
+    - target: {fileID: 3547511237412802493, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: startingHealth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547511237412802493, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3547511237412802494, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
       propertyPath: intervalSeconds
       value: 2
@@ -180,6 +192,10 @@ PrefabInstance:
     - target: {fileID: 5477676312420378453, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
       propertyPath: m_Name
       value: Vfx_blood
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477676312420378453, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5477676312420378454, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
       propertyPath: m_Enabled

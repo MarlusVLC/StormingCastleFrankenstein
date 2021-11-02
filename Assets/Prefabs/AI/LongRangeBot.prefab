@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3547511236428971953}
   - component: {fileID: 3547511236428971959}
   - component: {fileID: 3547511236428971952}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RevolverGunFINAL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3547511236452429896}
   - component: {fileID: 3547511236452429902}
   - component: {fileID: 3547511236452429903}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: gatilho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3547511236552177125}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackPointMainGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 3547511236560153559}
   - component: {fileID: 3547511236560153552}
   - component: {fileID: 3547511236560153553}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main_Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 3547511236691406956}
   - component: {fileID: 3547511236691406946}
   - component: {fileID: 3547511236691406947}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Canos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 3547511236882460569}
   - component: {fileID: 3547511236882460575}
   - component: {fileID: 3547511236882460568}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tambor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -713,7 +713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3547511236942255993}
   - component: {fileID: 3547511236942255992}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,7 +764,7 @@ GameObject:
   - component: {fileID: 3547511236985115660}
   - component: {fileID: 3547511236985115661}
   - component: {fileID: 3547511236985115662}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 870_Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -873,7 +873,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3547511237029924391}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,7 +906,7 @@ GameObject:
   - component: {fileID: 3547511237232446823}
   - component: {fileID: 3547511237232446821}
   - component: {fileID: 3547511237232446822}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "C\xE3o.001"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1168,6 +1168,9 @@ MonoBehaviour:
   aimAlignSpeed: 50
   maxVerticalAimAngle: 60
   maxHorizontalAimAngle: 30
+  minSequentialShots: 1
+  maxSequentialShots: 6
+  intervalSeconds: 0.2
 --- !u!82 &7075297658755082211
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1273,7 +1276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3547511237548998530}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackPointShotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1306,7 +1309,7 @@ GameObject:
   - component: {fileID: 3547511237592236677}
   - component: {fileID: 3547511237592236699}
   - component: {fileID: 3547511237592236676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Periferico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1387,7 +1390,7 @@ GameObject:
   - component: {fileID: 3547511237771112002}
   - component: {fileID: 3547511237771112000}
   - component: {fileID: 3547511237771112001}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mandibula
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1468,7 +1471,7 @@ GameObject:
   - component: {fileID: 3547511237811852798}
   - component: {fileID: 3547511237811852796}
   - component: {fileID: 3547511237811852797}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LitchGunFINAL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1554,7 +1557,7 @@ GameObject:
   - component: {fileID: 3547511237839954196}
   - component: {fileID: 3547511237839954218}
   - component: {fileID: 3547511237839954219}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gatilho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1635,7 +1638,7 @@ GameObject:
   - component: {fileID: 3547511237933422145}
   - component: {fileID: 3547511237933422151}
   - component: {fileID: 3547511237933422144}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Vfx_MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1808,7 +1811,7 @@ GameObject:
   - component: {fileID: 3547511237994967215}
   - component: {fileID: 3547511237994967213}
   - component: {fileID: 3547511237994967214}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Corpo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1892,7 +1895,7 @@ GameObject:
   - component: {fileID: 3547511238037399904}
   - component: {fileID: 3547511238037399910}
   - component: {fileID: 3547511238037399911}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Vfx_MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2065,7 +2068,7 @@ GameObject:
   - component: {fileID: 3547511238114773002}
   - component: {fileID: 3547511238114773000}
   - component: {fileID: 3547511238114773001}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Costelas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2178,7 +2181,7 @@ GameObject:
   - component: {fileID: 3547511238147513317}
   - component: {fileID: 3547511238147513339}
   - component: {fileID: 3547511238147513316}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "C\xE3o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2257,7 +2260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3547511238170631690}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2290,7 +2293,7 @@ GameObject:
   - component: {fileID: 3547511238317444324}
   - component: {fileID: 3547511238317444346}
   - component: {fileID: 3547511238317444347}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "Cabe\xE7a"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

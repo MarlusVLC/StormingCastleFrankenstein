@@ -8,20 +8,22 @@ namespace Entities
     {
         [SerializeField] private VisualEffect bloodVFX;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             bloodVFX.Stop();
         }
 
         protected override void Die()
         {
-            transform.parent.transform.position = transform.position;
+            transform.parent.position = transform.position;
             Instantiate(bloodVFX, transform.parent);
             bloodVFX.Play();
             
+            FindObjectOfType<WendigoSound>().PlayWendigoDeathSound();
+
             Destroy(gameObject);
             
-            FindObjectOfType<WendigoSound>().PlayWendigoDeathSound();
         }
     }
 }
