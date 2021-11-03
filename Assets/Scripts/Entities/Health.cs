@@ -40,7 +40,6 @@ namespace Entities
             set
             {
                 _currentHealth = value;
-                Debug.Log(gameObject.name + "'s current health: " + _currentHealth);
                 if (_currentHealth <= 0)
                 {
                     _currentHealth = 0;

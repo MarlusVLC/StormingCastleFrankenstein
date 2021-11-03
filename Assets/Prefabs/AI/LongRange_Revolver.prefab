@@ -56,6 +56,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3547511237412802494, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: canFlee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547511237412802494, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
       propertyPath: intervalSeconds
       value: 2
       objectReference: {fileID: 0}
