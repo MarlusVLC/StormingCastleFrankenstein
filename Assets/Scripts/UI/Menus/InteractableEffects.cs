@@ -1,10 +1,8 @@
-using System;
 using Audio;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 
 namespace UI.Menus
 {
@@ -27,24 +25,26 @@ namespace UI.Menus
             _origColor = _text.fontMaterial.GetColor("_FaceColor");
             _origSpecularPower = _text.fontMaterial.GetFloat("_SpecularPower");
             _origAngle = _text.fontMaterial.GetFloat("_LightAngle");
+            _menuSound = FindObjectOfType<MenuSound>();
         }
 
-        private void Start()
+        private void OnDisable()
         {
-            _menuSound = FindObjectOfType<MenuSound>();
+            _text.fontMaterial.SetFloat("_SpecularPower", _origSpecularPower);
+            _text.fontMaterial.SetFloat("_LightAngle", _origAngle);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            _text.fontMaterial.DOFloat(highlightSpecularPower, "_SpecularPower", transitionTime);
-            _text.fontMaterial.DOFloat(lightAngle, "_LightAngle", transitionTime);
+            _text.fontMaterial.DOFloat(highlightSpecularPower, "_SpecularPower", transitionTime).SetUpdate(true);
+            _text.fontMaterial.DOFloat(lightAngle, "_LightAngle", transitionTime).SetUpdate(true);
             _menuSound.PlayMouseOver();
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _text.fontMaterial.DOFloat(_origSpecularPower, "_SpecularPower", transitionTime);
-            _text.fontMaterial.DOFloat(_origAngle, "_LightAngle", transitionTime);
+            _text.fontMaterial.DOFloat(_origSpecularPower, "_SpecularPower", transitionTime).SetUpdate(true);
+            _text.fontMaterial.DOFloat(_origAngle, "_LightAngle", transitionTime).SetUpdate(true);
         }
 
         public void OnPointerClick(PointerEventData eventData)
