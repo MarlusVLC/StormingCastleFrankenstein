@@ -25,7 +25,10 @@ namespace UI.Menus
         {
             targetSubMenu.SetActive(true);
             _parentSubMenu.SetActive(false);
-            subMenuTitleGUI.text = displayText;
+            if (subMenuTitleGUI != null)
+            {
+                subMenuTitleGUI.text = displayText;
+            }
         }
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6220657626677319432}
   - component: {fileID: 6220657626677319431}
   - component: {fileID: 9193542709301850304}
+  - component: {fileID: 8922152261193465039}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -68,15 +69,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: SAMPLE BUTTON
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 3c84160c1849a8249a1720044de8fab5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a78d6f58729406b4d9efd43b5fccda8c, type: 2}
+  m_sharedMaterial: {fileID: 6341887031760824274, guid: a78d6f58729406b4d9efd43b5fccda8c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290032869
-  m_fontColor: {r: 0.8962264, g: 0.70598966, b: 0.70598966, a: 1}
+    rgba: 4291875024
+  m_fontColor: {r: 0.81568635, g: 0.81568635, b: 0.81568635, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -156,9 +157,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.8980393, g: 0.7058824, b: 0.7058824, a: 1}
-    m_HighlightedColor: {r: 0.8301887, g: 0.33285868, b: 0.33285868, a: 1}
-    m_PressedColor: {r: 0.6509434, g: 0.009211446, b: 0.009211446, a: 1}
+    m_NormalColor: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.8980393, g: 0.7058824, b: 0.7058824, a: 1}
     m_DisabledColor: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -179,3 +180,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8922152261193465039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6220657626677319429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8485faf96d4a4542a60d729fe915fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionTime: 0.125
+  highlightSpecularPower: 4
+  lightAngle: 4
+  clickSoundIndex: 1

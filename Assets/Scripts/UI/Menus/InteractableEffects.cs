@@ -1,0 +1,55 @@
+using System;
+using Audio;
+using DG.Tweening;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
+
+namespace UI.Menus
+{
+    public class InteractableEffects : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    {
+        [SerializeField] private float transitionTime = 0.125f;
+        [SerializeField] private float highlightSpecularPower = 4f;
+        [SerializeField] private float lightAngle = 4f;
+        [Range(1,3)][SerializeField] private int clickSoundIndex = 1;
+
+        private TextMeshProUGUI _text;
+        private float _origSpecularPower;
+        private float _origAngle;
+        private Color _origColor;
+        private MenuSound _menuSound;
+        
+        private void OnEnable()
+        {
+            TryGetComponent(out _text);
+            _origColor = _text.fontMaterial.GetColor("_FaceColor");
+            _origSpecularPower = _text.fontMaterial.GetFloat("_SpecularPower");
+            _origAngle = _text.fontMaterial.GetFloat("_LightAngle");
+        }
+
+        private void Start()
+        {
+            _menuSound = FindObjectOfType<MenuSound>();
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            _text.fontMaterial.DOFloat(highlightSpecularPower, "_SpecularPower", transitionTime);
+            _text.fontMaterial.DOFloat(lightAngle, "_LightAngle", transitionTime);
+            _menuSound.PlayMouseOver();
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            _text.fontMaterial.DOFloat(_origSpecularPower, "_SpecularPower", transitionTime);
+            _text.fontMaterial.DOFloat(_origAngle, "_LightAngle", transitionTime);
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            _menuSound.PlayIndex(clickSoundIndex);
+        }
+    }
+}
