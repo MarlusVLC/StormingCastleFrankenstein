@@ -460,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3304541656167717985, guid: 055106185fa0d84439f6b7780c970192, type: 3}
       propertyPath: EmissionModule.enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3304541656167717985, guid: 055106185fa0d84439f6b7780c970192, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b

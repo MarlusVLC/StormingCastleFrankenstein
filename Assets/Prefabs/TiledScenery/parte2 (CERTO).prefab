@@ -5172,6 +5172,10 @@ PrefabInstance:
       propertyPath: m_MeshFormatVersion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5682694683439173261, guid: 9dea87bdd967a714cacbfaccf29d0ba8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -169.0744
+      objectReference: {fileID: 0}
     - target: {fileID: 5852952615514966570, guid: 9dea87bdd967a714cacbfaccf29d0ba8, type: 3}
       propertyPath: m_RootOrder
       value: 11

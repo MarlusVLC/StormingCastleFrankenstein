@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2769689635354758636
+--- !u!1 &2132299340055970864
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2769689635354758637}
-  - component: {fileID: 2769689635354758639}
-  - component: {fileID: 2769689635354758638}
-  - component: {fileID: 2769689635354758633}
-  - component: {fileID: 2769689635354758632}
+  - component: {fileID: 2132299340055970865}
+  - component: {fileID: 2132299340055970867}
+  - component: {fileID: 2132299340055970866}
+  - component: {fileID: 2132299340055970869}
+  - component: {fileID: 2132299340055970868}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -20,13 +20,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2769689635354758637
+--- !u!4 &2132299340055970865
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2769689635354758636}
+  m_GameObject: {fileID: 2132299340055970864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.94, y: 4.464161, z: 28.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2769689635354758639
+--- !u!114 &2132299340055970867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2769689635354758636}
+  m_GameObject: {fileID: 2132299340055970864}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19ed1254a14d4def899ca6e5c3914bae, type: 3}
@@ -104,13 +104,13 @@ MonoBehaviour:
     source: {fileID: 0}
   revolver: {fileID: 0}
   shotgun: {fileID: 0}
---- !u!114 &2769689635354758638
+--- !u!114 &2132299340055970866
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2769689635354758636}
+  m_GameObject: {fileID: 2132299340055970864}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70dbb14867cc4579b9d154cae44b2834, type: 3}
@@ -192,51 +192,81 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
---- !u!114 &2769689635354758633
+--- !u!114 &2132299340055970869
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2769689635354758636}
+  m_GameObject: {fileID: 2132299340055970864}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 065a96aa9cf640caa05db77c88a0de25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: OuroDeTolo1
-    clip: {fileID: 8300000, guid: 2d858014dfa0d5d49a415773c8fe69a5, type: 3}
+  - name: LUKAS1
+    clip: {fileID: 8300000, guid: 0656333f5d46ebc4c8b4990ddd0f5281, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: OuroDeTolo2
-    clip: {fileID: 8300000, guid: 075b1f4c19c178548977d5a3b1ed1398, type: 3}
+  - name: LUKAS2
+    clip: {fileID: 8300000, guid: 3e7a2ac6197f73d4bb156ec501697816, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: OuroDeTolo3
-    clip: {fileID: 8300000, guid: a0f22d2edae2e024995fe8ab66064b99, type: 3}
+  - name: Medico1
+    clip: {fileID: 8300000, guid: d43f974920b6de84e930986d042c7339, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: OuroDeTolo4
-    clip: {fileID: 8300000, guid: 84290fac0902bdf4794d3489a940fd3c, type: 3}
+  - name: Medico2
+    clip: {fileID: 8300000, guid: 89657bf9d66c82d49a7d3d46845e1c70, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: OuroDeTolo5
-    clip: {fileID: 8300000, guid: 0feb08e3bd5cf13428c50045db63f3c5, type: 3}
+  - name: Medico3
+    clip: {fileID: 8300000, guid: 023a975a0fb9efb4db72da03cec3b09b, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
---- !u!114 &2769689635354758632
+  - name: Medico4
+    clip: {fileID: 8300000, guid: 38007f0fefa62334894f4659399adbd0, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Medico5
+    clip: {fileID: 8300000, guid: cbdb172d050a1cd4e8663d4c0c3dc9af, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Medico6
+    clip: {fileID: 8300000, guid: cd34f5fb5220d754cbc3f9ef503d396a, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Medico7
+    clip: {fileID: 8300000, guid: b02c4d4f87ee6a547bf5586a94755195, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Medico8
+    clip: {fileID: 8300000, guid: a53cc6598f7f54443ae82a6d7f8b0daf, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Medico9
+    clip: {fileID: 8300000, guid: f0be8f4d0094c294283c4c2fd0848298, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+--- !u!114 &2132299340055970868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2769689635354758636}
+  m_GameObject: {fileID: 2132299340055970864}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e00d3ee5a804c5c834bd0510bdae509, type: 3}

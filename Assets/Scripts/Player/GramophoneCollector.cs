@@ -37,6 +37,25 @@ public class GramophoneCollector : Interact
             case "RecordPlayer5":
                 audioIndex = 4;
                 break;
+            case "RecordPlayer6":
+                audioIndex = 5;
+                break;
+            case "RecordPlayer7":
+                audioIndex = 6;
+                break;
+            case "RecordPlayer8":
+                audioIndex = 7;
+                break;
+            case "RecordPlayer9":
+                audioIndex = 8;
+                break;
+            case "RecordPlayer10":
+                audioIndex = 9;
+                break;
+            case "RecordPlayer11":
+                audioIndex = 10;
+                break;
+            
         }
 
         FindObjectOfType<AudioLogSound>().PlayAudioLogSound(audioIndex);
