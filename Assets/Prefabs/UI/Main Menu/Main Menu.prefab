@@ -393,6 +393,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6405599150531902990}
     m_Modifications:
+    - target: {fileID: 953207435269232637, guid: a75cc98e0b1431943832a5fd48da616c, type: 3}
+      propertyPath: sounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 953207435269232637, guid: a75cc98e0b1431943832a5fd48da616c, type: 3}
+      propertyPath: sounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4d11f3c4bb395f346abfb59c8cde32d4, type: 3}
+    - target: {fileID: 953207435269232637, guid: a75cc98e0b1431943832a5fd48da616c, type: 3}
+      propertyPath: sounds.Array.data[4].name
+      value: BackgroundSoundtrack
+      objectReference: {fileID: 0}
+    - target: {fileID: 953207435269232637, guid: a75cc98e0b1431943832a5fd48da616c, type: 3}
+      propertyPath: sounds.Array.data[4].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 953207435269232637, guid: a75cc98e0b1431943832a5fd48da616c, type: 3}
+      propertyPath: sounds.Array.data[4].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3194713777577617994, guid: a75cc98e0b1431943832a5fd48da616c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -15,5 +15,7 @@ public class Sound
 
     [HideInInspector]
     public AudioSource source;
+
+    public bool IsPaused => !source.isPlaying && source.time != 0;
 }
     
