@@ -14,11 +14,13 @@ namespace Player
         [SerializeField] private TextMeshProUGUI actionMessageHUD;
         [SerializeField] private FieldOfView _fov;
 
+        protected CharacterController _characterController;
         private bool canInteract;
 
         protected override void Awake()
         {
             base.Awake();
+            _characterController = GetComponent<CharacterController>();
             actionMessageHUD.text = actionMessage;
             if (_fov == null)
             {

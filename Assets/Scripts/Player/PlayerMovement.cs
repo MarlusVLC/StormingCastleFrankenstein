@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         // getting inputs
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-
+        
         // setting movement according to inputs
         Vector3 move = transform.right * x + transform.forward * z;
 
