@@ -1,12 +1,13 @@
 using System;
 using Audio;
+using Entities;
 using UnityEngine;
 using UnityEngine.AI;
 using Utilities;
 
 namespace AI
 {
-    public abstract class EnemyBot : MonoCache
+    public abstract class EnemyBot : AgileBeing
     {
         protected FieldOfView _fov;
         protected NavMeshAgent _navMeshAgent;
