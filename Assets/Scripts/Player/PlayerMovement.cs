@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Audio;
+using Entities;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : AgileBeing
 {
     // this script goes in the player object
     //--------------------------------------
@@ -20,9 +21,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpHeight = 3f;
 
     // getting and setting stuff for the ground detection
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundDistance = 0.4f;
-    [SerializeField] private LayerMask groundMask;
 
     // creates a velocity Vector3 to be used with gravity
     private Vector3 velocity;
@@ -30,13 +28,13 @@ public class PlayerMovement : MonoBehaviour
     public bool stepping;
     private float waitTime = 0.5f;
     
-    private bool isGrounded;
     private bool canFallSoundPlay;
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+        
         // ground detection stuff
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0) { velocity.y = -2f; }
         
         // getting inputs
@@ -44,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
         
         // setting movement according to inputs
-        Vector3 move = transform.right * x + transform.forward * z;
+        var move = transform.right * x + transform.forward * z;
 
         // "Move" method from character controller using the movement Vector3 and multiplying by the speed
         controller.Move(move * (speed * Time.deltaTime));
