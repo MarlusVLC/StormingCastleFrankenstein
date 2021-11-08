@@ -109,6 +109,9 @@ MonoBehaviour:
   spread: 0
   bulletFragments: 1
   muzzleFlash: {fileID: 4126956708192444054}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &7547028073753882433
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7450587763688537812, guid: fded58728f314fd4ead2e2b6a480f1a2, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7450587763688537812, guid: fded58728f314fd4ead2e2b6a480f1a2, type: 3}
       propertyPath: m_Materials.Array.size
@@ -578,6 +581,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4918694943374756881}
     m_Modifications:
+    - target: {fileID: 90365021399756911, guid: 82932737271747b4081cde3f6a124618, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 636b6e0896fb7c443a8ddfb7bb7c9297, type: 2}
+    - target: {fileID: 127112972074863271, guid: 82932737271747b4081cde3f6a124618, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e0262628977baf74b86e55332667d3c3, type: 2}
+    - target: {fileID: 571459232235776013, guid: 82932737271747b4081cde3f6a124618, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 976f5274e96889d46b17f93ed17b974a, type: 2}
+    - target: {fileID: 2390659407965620932, guid: 82932737271747b4081cde3f6a124618, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1638e24323ed97548b19ce790bd3c6ad, type: 2}
     - target: {fileID: 7003596182670205450, guid: 82932737271747b4081cde3f6a124618, type: 3}
       propertyPath: m_Name
       value: RevolverGunFINAL
@@ -638,6 +657,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.317
       objectReference: {fileID: 0}
+    - target: {fileID: 8804882445900530655, guid: 82932737271747b4081cde3f6a124618, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9eb3f403102723840b691872ac3d297c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82932737271747b4081cde3f6a124618, type: 3}
 --- !u!4 &3872020468780400635 stripped
