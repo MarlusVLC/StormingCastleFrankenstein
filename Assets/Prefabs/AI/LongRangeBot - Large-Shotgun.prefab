@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5983672143169552874}
   - component: {fileID: 5983672143169552872}
   - component: {fileID: 5983672143169552875}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LitchGunFINAL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 5983672143198126992}
   - component: {fileID: 5983672143198126998}
   - component: {fileID: 5983672143198126993}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Periferico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 5983672143317109055}
   - component: {fileID: 5983672143317109053}
   - component: {fileID: 5983672143317109052}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Canos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 5983672143388437683}
   - component: {fileID: 5983672143388437681}
   - component: {fileID: 5983672143388437680}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Corpo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 5983672143538523620}
   - component: {fileID: 5983672143538523626}
   - component: {fileID: 5983672143538523621}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Vfx_MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 5983672143560304266}
   - component: {fileID: 5983672143560304264}
   - component: {fileID: 5983672143560304267}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mandibula
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 5983672143618600013}
   - component: {fileID: 5983672143618600019}
   - component: {fileID: 5983672143618600018}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gatilho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +799,7 @@ GameObject:
   - component: {fileID: 5983672143704981306}
   - component: {fileID: 5983672143704981304}
   - component: {fileID: 5983672143704981307}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "C\xE3o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,7 +880,7 @@ GameObject:
   - component: {fileID: 5983672144006956136}
   - component: {fileID: 5983672144006956142}
   - component: {fileID: 5983672144006956137}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Costelas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -960,7 +960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5983672144014404988}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackPointMainGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +994,7 @@ GameObject:
   - component: {fileID: 5983672144084399056}
   - component: {fileID: 5983672144084399059}
   - component: {fileID: 5983672144084399058}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 870_Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1091,6 +1091,9 @@ MonoBehaviour:
   spread: 2
   bulletFragments: 6
   muzzleFlash: {fileID: 5983672143538523626}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &5983672144165745482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,7 +1104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5983672144165745483}
   - component: {fileID: 5983672144165745480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,7 +1152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5983672144197590475}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackPointShotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1363,6 +1366,9 @@ MonoBehaviour:
   aimAlignSpeed: 50
   maxVerticalAimAngle: 60
   maxHorizontalAimAngle: 30
+  minSequentialShots: 0
+  maxSequentialShots: 0
+  intervalSeconds: 0.2
 --- !u!82 &5104640463242926352
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1468,7 +1474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5983672144319846205}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1532,7 +1538,7 @@ GameObject:
   - component: {fileID: 5983672144654112275}
   - component: {fileID: 5983672144654112273}
   - component: {fileID: 5983672144654112272}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tambor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1613,7 +1619,7 @@ GameObject:
   - component: {fileID: 5983672144680451875}
   - component: {fileID: 5983672144680451873}
   - component: {fileID: 5983672144680451872}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "C\xE3o.001"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1695,7 +1701,7 @@ GameObject:
   - component: {fileID: 5983672144691067666}
   - component: {fileID: 5983672144691067661}
   - component: {fileID: 5983672144691067660}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main_Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1792,6 +1798,9 @@ MonoBehaviour:
   spread: 0
   bulletFragments: 1
   muzzleFlash: {fileID: 5983672144996526058}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &5983672144696103872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,7 +1812,7 @@ GameObject:
   - component: {fileID: 5983672144696103873}
   - component: {fileID: 5983672144696103879}
   - component: {fileID: 5983672144696103878}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RevolverGunFINAL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1886,7 +1895,7 @@ GameObject:
   - component: {fileID: 5983672144725340966}
   - component: {fileID: 5983672144725340964}
   - component: {fileID: 5983672144725340967}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: gatilho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2078,7 +2087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5983672144792292830}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2109,7 +2118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5983672144806831711}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LongRangeBot - Large-Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2143,7 +2152,7 @@ GameObject:
   - component: {fileID: 5983672144996526052}
   - component: {fileID: 5983672144996526058}
   - component: {fileID: 5983672144996526053}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Vfx_MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2316,7 +2325,7 @@ GameObject:
   - component: {fileID: 5983672145083255886}
   - component: {fileID: 5983672145083255884}
   - component: {fileID: 5983672145083255887}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "Cabe\xE7a"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2394,6 +2403,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5983672144806831711}
     m_Modifications:
+    - target: {fileID: 634355478074673617, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 634355478140890245, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2401,6 +2414,14 @@ PrefabInstance:
     - target: {fileID: 634355478140890245, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 634355478140890247, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116810268153927501, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1391023385295660110, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
       propertyPath: m_Name
@@ -2450,6 +2471,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1615903536815677789, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759504145631083917, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844283683121842645, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2015002939181975573, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
       propertyPath: bloodVFX
       value: 
@@ -2482,6 +2515,26 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2974754284366387509, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040878988404548496, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252183571948820108, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357300765048194384, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719580222757997273, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3719580222757997275, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2494,6 +2547,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3719580222825230223, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3826109168145789679, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093499839929871358, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336503810769044570, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4704875535970665071, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
       propertyPath: damage
       value: 80
@@ -2502,17 +2571,45 @@ PrefabInstance:
       propertyPath: spread
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4704875536021788473, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232296876839397329, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6427804060098511928, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
       propertyPath: startingAmmo
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427804061353958733, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150364918202625374, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8232655091784449879, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8904708118303332142, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
       propertyPath: initialWeaponIndex
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9115617568239348247, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115617568239348247, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115617569263084711, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9115617569263084711, guid: 7d404e7ccc1321f4e96130294bd7bc17, type: 3}
       propertyPath: m_IsActive
@@ -2575,6 +2672,10 @@ PrefabInstance:
     - target: {fileID: 5477676312420378453, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
       propertyPath: m_Name
       value: Vfx_blood
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477676312420378453, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5477676312420378454, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
       propertyPath: m_Enabled

@@ -112,6 +112,7 @@ namespace Weapons
 
             ConsumeAmmo();
             OnAmmoChanged();
+            OnShotFired();
             
             // invoke resetShot function (if not already invoked)
             if (allowInvoke)

@@ -18,6 +18,16 @@ namespace Weapons
         
         private int _damage;
 
+        // TODO: fix this. make the player not collide with the explosion
+        // private void OnControllerColliderHit(ControllerColliderHit hit)
+        // {
+        //     var other = hit.gameObject;
+        //     if (other.CompareTag("Player"))
+        //     {
+        //         Destroy(this);
+        //     }
+        // }
+
         private void OnCollisionEnter(Collision collision)
         {
             var other = collision.gameObject;

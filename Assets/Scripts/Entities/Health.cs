@@ -15,7 +15,7 @@ namespace Entities
         protected override void Awake()
         {
             base.Awake();
-            _currentHealth = Mathf.Clamp(startingHealth, 0, MaxHealth);
+            CurrentHealth = Mathf.Clamp(startingHealth, 0, MaxHealth);
             OnHealthChanged();
         }
 

@@ -42,7 +42,9 @@ namespace Weapons
             var selection = receivedValue - 1;
             ExclusivelyActivate(ref _weapons, selection);
             _previousWeapon = CurrentWeapon;
+            if (_previousWeapon != null) _previousWeapon.ShotFired -= OnAnyShotFired;
             CurrentWeapon = ConfirmedGuns[selection];
+            CurrentWeapon.ShotFired += OnAnyShotFired;
             OnWeaponChanged?.Invoke(new WeaponChangedEventArgs
             {
                 Position = selection, 
@@ -57,6 +59,7 @@ namespace Weapons
             return this;
         }
 
+        public event Action OnAnyShotFired;
         public event Action<WeaponChangedEventArgs> OnWeaponChanged;
         public class WeaponChangedEventArgs : EventArgs
         {
