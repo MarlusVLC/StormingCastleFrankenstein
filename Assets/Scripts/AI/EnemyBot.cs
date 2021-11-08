@@ -97,7 +97,6 @@ namespace AI
             Vector3 fleeDirection = (Transform.position - targetPosition).normalized;
             _navMeshAgent.SetDestination(Transform.position + fleeDirection * StoppingDistance);
             _isFleeing = true;
-            Debug.Log(gameObject.name + " is fleeing: " + _isFleeing);
             yield return new WaitUntil(_navMeshAgent.HasReachedDestination);
             _isFleeing = false;
         }

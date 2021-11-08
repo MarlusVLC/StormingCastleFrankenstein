@@ -12,7 +12,6 @@ namespace AI
         [SerializeField] private float jumpForce;
         
         private bool isAttacking;
-        private NavMeshAgent _navMeshAgent;
         
         protected override void Awake()
         {
@@ -31,7 +30,6 @@ namespace AI
 
         protected IEnumerator AttackProcess()
         {
-            Debug.Log(" aaaaaaaaaaa ");
             weaponCollider.enabled = isAttacking = true;
             _navMeshAgent.enabled = false;
             rb.AddForce(Vector3.up * jumpForce);

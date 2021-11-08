@@ -70,23 +70,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17dcff2d8ae28541a721d86cb360bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 4409123955690605755}
-  speed: 12
-  gravity: -9.81
-  jumpHeight: 3
   groundCheck: {fileID: 4409123956051191258}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  audioSource: {fileID: 0}
-  step:
-  - {fileID: 8300000, guid: 38988bfa705c6bb4587a3c290c7f5adf, type: 3}
-  - {fileID: 8300000, guid: 3e0349aca4062a942a11386f2ada858c, type: 3}
-  - {fileID: 8300000, guid: d71de498585fce2419d93f74a5f7eba5, type: 3}
-  - {fileID: 8300000, guid: b73effc67a2548c42b7ff966b94fbb15, type: 3}
-  - {fileID: 8300000, guid: 3d47f1d0255d97449ad5847043022a40, type: 3}
-  - {fileID: 8300000, guid: 9ed551b54ac9c5f419af3911054013f4, type: 3}
+  controller: {fileID: 4409123955690605755}
+  speed: 12
+  gravity: -9.81
+  jumpHeight: 3
+  stepping: 0
 --- !u!82 &4409123955690605750
 AudioSource:
   m_ObjectHideFlags: 0
@@ -237,12 +230,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a786551861a783f46bd021b3b497fe38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portals:
-  - {fileID: 0}
-  range: 6
+  itemLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   activateKey: 101
   actionMessage: Press 'E' to interact with the portal
   actionMessageHUD: {fileID: 2499068129450923777}
+  _fov: {fileID: 0}
 --- !u!1 &4409123955768773505
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +606,14 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 3120367299578857683, guid: 51b02f2a97dc93f44bffd3c0b97f3d6b, type: 3}
+    - target: {fileID: 6349399661403292890, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349399661403292890, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6370790292400595465, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

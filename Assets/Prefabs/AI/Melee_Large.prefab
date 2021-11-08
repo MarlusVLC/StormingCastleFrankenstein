@@ -453,6 +453,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84984844468f46179dad8d40f0e0cdb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 0}
+  groundDistance: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  canFlee: 0
+  weaponCollider: {fileID: 5550265704318952359}
+  rb: {fileID: 0}
+  jumpForce: 0
 --- !u!114 &5550265704439970610
 MonoBehaviour:
   m_ObjectHideFlags: 0
