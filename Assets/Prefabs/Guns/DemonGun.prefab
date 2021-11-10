@@ -158,6 +158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DemonGunFINAL
       objectReference: {fileID: 0}
+    - target: {fileID: 2671427478690887132, guid: b2c77559ae1a14c499d9c6daa90a725a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f86ecce49ddada14b9858f889aaf63b0, type: 2}
     - target: {fileID: 3274822508932353887, guid: b2c77559ae1a14c499d9c6daa90a725a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.63
@@ -170,6 +174,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.26
       objectReference: {fileID: 0}
+    - target: {fileID: 7452175019902404261, guid: b2c77559ae1a14c499d9c6daa90a725a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a4213ad4b7d246e4481728186935fc1e, type: 2}
+    - target: {fileID: 7702083371350686702, guid: b2c77559ae1a14c499d9c6daa90a725a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4e544a43b38e06a46ada93c6d7ec30d1, type: 2}
+    - target: {fileID: 8751665648297485792, guid: b2c77559ae1a14c499d9c6daa90a725a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 92293cf03846afb43a87c285dff39cf3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2c77559ae1a14c499d9c6daa90a725a, type: 3}
 --- !u!4 &2720993450209476742 stripped
