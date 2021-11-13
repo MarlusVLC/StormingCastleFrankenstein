@@ -64,12 +64,12 @@ MonoBehaviour:
   isAutomatic: 1
   timeBetweenShooting: 0
   damage: 1
-  magazineSize: 400
-  startingAmmo: 400
+  magazineSize: 1000
+  startingAmmo: 1000
   allowInvoke: 1
   _hasUnlimitedAmmo: 0
   _visualEffect: {fileID: 4400609302459627791}
-  liquidObject: {fileID: 0}
+  liquidObject: {fileID: 425862297581103682}
 --- !u!1 &5766387517294739637
 GameObject:
   m_ObjectHideFlags: 0

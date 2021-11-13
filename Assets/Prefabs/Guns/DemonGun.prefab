@@ -84,7 +84,7 @@ MonoBehaviour:
   _hasUnlimitedAmmo: 0
   bullet: {fileID: 6173487948656069444, guid: de12f8190466c064cac84068c1586f88, type: 3}
   shootForce: 200
-  upwardForce: 0.2
+  upwardForce: 10
   spread: 0
   bulletFragments: 1
   muzzleFlash: {fileID: 0}

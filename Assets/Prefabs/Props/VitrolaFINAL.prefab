@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7915413361753545590}
   - component: {fileID: 4815300458778747809}
   - component: {fileID: 4364296288644367218}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cylinder.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 208142293953702995}
   - component: {fileID: 6699815264927164028}
   - component: {fileID: 102355148619504008}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 7809652437792336077}
   - component: {fileID: 322294623578908627}
   - component: {fileID: 6657491685622686638}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cylinder.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5520198287101926479}
-  m_Layer: 0
+  - component: {fileID: 5676167784847162274}
+  m_Layer: 12
   m_Name: VitrolaFINAL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,6 +278,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5676167784847162274
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5174776386457323253}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.5, y: 4.5, z: 2.31}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &7166956398843553802
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +302,7 @@ GameObject:
   - component: {fileID: 3395126293121078042}
   - component: {fileID: 3189883932344789991}
   - component: {fileID: 7999670114588699637}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cylinder.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}

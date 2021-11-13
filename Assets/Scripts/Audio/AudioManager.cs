@@ -49,7 +49,10 @@ public class AudioManager : MonoBehaviour
         currentSource.ignoreListenerPause = ignoreListenerPause;
         currentSource.Play();
 
-        StartCoroutine(WaitForAudioEnd());
+        if (currentSource.gameObject.activeSelf == true)
+        {
+            StartCoroutine(WaitForAudioEnd());
+        }
     }
     
     public void Stop()

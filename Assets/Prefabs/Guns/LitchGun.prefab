@@ -20,15 +20,15 @@ MonoBehaviour:
   startingAmmo: 12
   allowInvoke: 1
   _hasUnlimitedAmmo: 0
-  bullet: {fileID: 6173487948656069444, guid: 52a584bbe72f0484295ea367bea73cb0, type: 3}
-  shootForce: 100
+  bullet: {fileID: 6173487948656069444, guid: 0d586b94c88b93b4d9ef8c3d3698f4ba, type: 3}
+  shootForce: 150
   upwardForce: 0
-  spread: 1.55
+  spread: 0.75
   bulletFragments: 6
   muzzleFlash: {fileID: 1903307207699976942}
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!1 &7547028073442168595
 GameObject:
   m_ObjectHideFlags: 0

@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal0
       objectReference: {fileID: 0}
+    - target: {fileID: 8090226653358056010, guid: 637312b7d0a6aa24f88e1854bddff528, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8090226653358056011, guid: 637312b7d0a6aa24f88e1854bddff528, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -127,6 +131,10 @@ PrefabInstance:
     - target: {fileID: 8090226653748510992, guid: 637312b7d0a6aa24f88e1854bddff528, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090226653748510995, guid: 637312b7d0a6aa24f88e1854bddff528, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637312b7d0a6aa24f88e1854bddff528, type: 3}

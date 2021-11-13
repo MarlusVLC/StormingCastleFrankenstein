@@ -34,14 +34,14 @@ namespace AI
             StartCoroutine(Parallel.ExecuteActionWithDelay(FindVisibleTargets, checkInterval, true));
         }
         
-        void OnValidate()
-        {
-            if (Application.isPlaying)
-            {
-                _targetsInViewRadius = new Collider[numberOfExpectedTargets];
-                StartCoroutine(Parallel.ExecuteActionWithDelay(FindVisibleTargets, checkInterval, true));
-            }
-        }
+        // void OnValidate()
+        // {
+        //     if (Application.isPlaying)
+        //     {
+        //         _targetsInViewRadius = new Collider[numberOfExpectedTargets];
+        //         StartCoroutine(Parallel.ExecuteActionWithDelay(FindVisibleTargets, checkInterval, true));
+        //     }
+        // }
 
         public void FindVisibleTargets()
         {

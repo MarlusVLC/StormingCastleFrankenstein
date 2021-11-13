@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4409123955690605755}
   - component: {fileID: 4409123955690605753}
   - component: {fileID: 4409123955690605750}
-  - component: {fileID: 4409123955690605751}
   - component: {fileID: 2913238883947323384}
   - component: {fileID: 3050747557695548247}
   - component: {fileID: 322141202490079534}
+  - component: {fileID: 2580118980875684926}
   m_Layer: 6
   m_Name: First Person Player
   m_TagString: Untagged
@@ -37,6 +37,7 @@ Transform:
   - {fileID: 4409123955768773630}
   - {fileID: 4409123956835274175}
   - {fileID: 4409123956051191258}
+  - {fileID: 7437514660116333515}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -176,19 +177,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4409123955690605751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4409123955690605754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f667576f4b679064983132a2307b92d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ambienceAudioClip: {fileID: 8300000, guid: 70e87a53ce4fcc246b730c5cc2982bf2, type: 3}
 --- !u!114 &2913238883947323384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +223,25 @@ MonoBehaviour:
     m_Bits: 0
   activateKey: 101
   actionMessage: Press 'E' to interact with the portal
+  actionMessageHUD: {fileID: 2499068129450923777}
+  _fov: {fileID: 0}
+--- !u!114 &2580118980875684926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4409123955690605754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ecda14f2e577d4398bfaed21f93892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemLayerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  activateKey: 101
+  actionMessage: Press 'E' to interact with the record player
   actionMessageHUD: {fileID: 2499068129450923777}
   _fov: {fileID: 0}
 --- !u!1 &4409123955768773505
@@ -361,6 +368,7 @@ GameObject:
   - component: {fileID: 4409123956835274049}
   - component: {fileID: 4409123956835274172}
   - component: {fileID: 4597486454899504017}
+  - component: {fileID: 4493413566625946433}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -482,6 +490,30 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &4493413566625946433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4409123956835274048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5015d719594266a08338300d19d7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Interaction
+  showCircumference: 0
+  numberOfExpectedTargets: 1
+  checkInterval: 0.1
+  viewAngle: 45
+  viewRadius: 6
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 6144
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 140
 --- !u!114 &1583484906588747117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,6 +531,196 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 703
   playerCam: {fileID: 4409123956835274174}
+--- !u!1 &8169025936866992146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7437514660116333515}
+  - component: {fileID: 2257129464590809763}
+  - component: {fileID: 5116752834057915797}
+  m_Layer: 6
+  m_Name: PlayerAudio
+  m_TagString: AudioManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7437514660116333515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8169025936866992146}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4409123955690605752}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2257129464590809763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8169025936866992146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ed1254a14d4def899ca6e5c3914bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: RevolverShot
+    clip: {fileID: 8300000, guid: 2b1e8c7b5f38c914b8d02a6e1e3fcb4b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RevolverEmpty1
+    clip: {fileID: 8300000, guid: ff38fb0357b382f49bb2abfa57f90429, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RevolverEmpty2
+    clip: {fileID: 8300000, guid: c1ed2ef291d798d4a88be7597d65ee31, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RevolverShell1
+    clip: {fileID: 8300000, guid: 6cddb6308b820e942a8964d48c0fa72c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RevolverShell2
+    clip: {fileID: 8300000, guid: 94df8a7f486458746bdd9ace47cf9453, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RevolverShell3
+    clip: {fileID: 8300000, guid: a56118e3491c1c743a0ddef4cbe97838, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: RevolverShell4
+    clip: {fileID: 8300000, guid: bb699c1aed358cb4eadc06626b5ffd6c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ShotgunShot
+    clip: {fileID: 8300000, guid: 2fd984718734ac544828ffcc9cc6597f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ShotgunEmpty
+    clip: {fileID: 8300000, guid: 8b04608b54fa3f149884f0c7cf2348b7, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ShotgunShell
+    clip: {fileID: 8300000, guid: 53469c50976caa14d89aab5b5447bd31, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ShotgunPump
+    clip: {fileID: 8300000, guid: b2f0c0fe7dd26754d8cf2495bf3e1695, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  revolver: {fileID: 3598713862947253318}
+  shotgun: {fileID: 4651684969496822331}
+--- !u!114 &5116752834057915797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8169025936866992146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70dbb14867cc4579b9d154cae44b2834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Step1
+    clip: {fileID: 8300000, guid: f15a1b860a1cdba45b8ee2602fae0f1f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Step2
+    clip: {fileID: 8300000, guid: e0bce95d1f7d1724ebd13ab676c3fc95, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Step3
+    clip: {fileID: 8300000, guid: 4dea0625ad410ab45aa5aa4e0b3f8a50, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Step4
+    clip: {fileID: 8300000, guid: 2687544685d389a4282c5c9a881ea99d, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Step5
+    clip: {fileID: 8300000, guid: 7786831cf386dbf44928233be9a21a84, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Step6
+    clip: {fileID: 8300000, guid: 5e378757e2809024e96354884d06d12e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: JumpVoice1
+    clip: {fileID: 8300000, guid: e263abba490b80e48960a87b88c6ed06, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: JumpVoice2
+    clip: {fileID: 8300000, guid: 0c21facc5320f34488eaae532cd372f3, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: JumpVoice3
+    clip: {fileID: 8300000, guid: 8b4f7a4df33a72146a18c68fcec3e0dd, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: JumpVoice4
+    clip: {fileID: 8300000, guid: 1d1557a915910754ca045bf1a9dec398, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: JumpVoice5
+    clip: {fileID: 8300000, guid: c06def695f2c3294aa43bda8caa7be4b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: JumpVoice6
+    clip: {fileID: 8300000, guid: 96548eab306e6f1439ced41e9be9c9c0, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: FallVoice1
+    clip: {fileID: 8300000, guid: 60c6eb239442c0145a5055403da00116, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: FallVoice2
+    clip: {fileID: 8300000, guid: 029726a4b0076864c8cc4daa5877db80, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: FallVoice3
+    clip: {fileID: 8300000, guid: 59bcd9105083eeb4fb5e75de3f9228b2, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1001 &6164360181052630573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -780,6 +1002,16 @@ GameObject:
 --- !u!4 &4409123957561472951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7547028074830352794, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
+  m_PrefabInstance: {fileID: 6164360181052630573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3598713862947253318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7240952424369408619, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
+  m_PrefabInstance: {fileID: 6164360181052630573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4651684969496822331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513823247883674646, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
   m_PrefabInstance: {fileID: 6164360181052630573}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7821477310402925148
