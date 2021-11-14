@@ -5,28 +5,24 @@ using Entities;
 using UnityEngine;
 using UnityEngine.AI;
 using Utilities;
+using Random = UnityEngine.Random;
 
 namespace AI
 {
     public abstract class EnemyBot : AgileBeing
     {
+        [SerializeField] protected EnemyType enemyType;
         [SerializeField] protected bool canFlee;
-        
+
         protected FieldOfView _fov;
         protected NavMeshAgent _navMeshAgent;
-        protected Rigidbody _rb;
         protected Animator _animator;
-
+        
         protected Vector3 _targetPosition;
         protected float _currRotationSpeed;
         protected float _distanceToTarget;
         protected float _angleToTarget;
         protected bool _isFleeing;
-        // protected bool
-
-
-        
-        // sfx
         private bool _hasSoundBeenPlayed;
 
         protected override void Awake()
@@ -116,7 +112,15 @@ namespace AI
             }
             return _angleToTarget < maximumAngle;
         }
-        
+
+        protected virtual void PlayRandomAudio(AudioSource audioSource, AudioClip[] sounds)
+        {
+            if (audioSource != null && sounds.Length > 0)
+            {
+                audioSource.PlayOneShot(sounds[Random.Range(0,sounds.Length)]);
+            }
+        }
+
         protected abstract void Attack();
         
         protected float MaximumRotationSpeed => _navMeshAgent.angularSpeed;
@@ -127,6 +131,13 @@ namespace AI
             get => _isFleeing && canFlee;
             set => _isFleeing = value;
         }
-    } 
+    }
+
+    public enum EnemyType
+    {
+        Wendigo,
+        Robot,
+        Spider
+    }
 }
 

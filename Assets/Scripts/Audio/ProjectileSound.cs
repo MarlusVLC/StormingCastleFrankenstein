@@ -8,6 +8,7 @@ namespace Audio
     {
         [SerializeField] private GameObject revolver;
         [SerializeField] private GameObject shotgun;
+        [SerializeField] private GameObject demonGun;
         public void PlayProjectileSound()
         {
             if (revolver.gameObject.activeSelf)
@@ -17,6 +18,10 @@ namespace Audio
             else if (shotgun.gameObject.activeSelf)
             {
                 StartCoroutine(ShotgunShot());
+            }
+            else if (demonGun.gameObject.activeSelf)
+            {
+                StartCoroutine(DemonShot());
             }
         }
 
@@ -48,6 +53,12 @@ namespace Audio
             Play(10);
             yield return new WaitForSeconds(Random.Range(0.5f, 1f));
             Play(9);
+        }
+        
+        private IEnumerator DemonShot()
+        {
+            Play(Random.Range(11, 14));
+            yield break;
         }
     }
 }

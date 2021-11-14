@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Entities;
 using UnityEngine;
 using Utilities;
+using Random = UnityEngine.Random;
 
 namespace Weapons
 {
@@ -11,12 +11,12 @@ namespace Weapons
         [SerializeField] private Rigidbody _rb;
         [SerializeField] private LayerMask _damageableLayer;
         [SerializeField] private GameObject _ImpactFx;
-        [SerializeField] private SphereCollider _collider;
-        [SerializeField] private Collider _playerCollider;
+        [SerializeField] private AudioClip[] impactSFX;
         [SerializeField] private MeshRenderer _renderer;
         [SerializeField] private bool explodeBullet;
         
         private int _damage;
+        private AudioSource _audioSource;
 
         // TODO: fix this. make the player not collide with the explosion
         // private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -30,6 +30,8 @@ namespace Weapons
 
         private void OnCollisionEnter(Collision collision)
         {
+            TryPlayImpactSfx();
+            
             var other = collision.gameObject;
             if (_damageableLayer.HasLayerWithin(other.layer) == false) return;
             
@@ -52,6 +54,16 @@ namespace Weapons
             _rb.AddForce(direction * shootForce, ForceMode.Impulse);
             _rb.AddForce(transform.up * upwardForce, ForceMode.Impulse);
             return this;
+        }
+
+        private bool TryPlayImpactSfx()
+        {
+            if (TryGetComponent(out _audioSource) && impactSFX.Length != 0)
+            {
+                _audioSource.PlayOneShot(impactSFX[Random.Range(0,impactSFX.Length)]);
+            }
+
+            return true;
         }
 
         private IEnumerator DisplayAndDestroy(float delayTime)
