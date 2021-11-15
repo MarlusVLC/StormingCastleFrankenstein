@@ -1,10 +1,9 @@
-using System;
 using AI;
-using UnityEngine;
+using Utilities;
 
 namespace Audio
 {
-    public class EnemySoundManager : MonoBehaviour
+    public class EnemySoundManager : Singleton<EnemySoundManager>
     {
         private WendigoSound _wendigoSound;
 
@@ -12,7 +11,7 @@ namespace Audio
         {
             _wendigoSound = GetComponent<WendigoSound>();
         }
-        
+
         public void PlayAttackSound(EnemyType enemyType)
         {
             switch (enemyType)
@@ -23,28 +22,44 @@ namespace Audio
             }
         }
 
-        public void PlayDeathSound()
+        public void PlayDeathSound(EnemyType enemyType)
         {
-            var index = Random.Range(4, 7);
-            Play(index);
+            switch (enemyType)
+            {
+                case EnemyType.Wendigo:
+                    _wendigoSound.PlayWendigoDeathSound();
+                    break;
+            }
         }
         
-        public void PlayAlertSound()
+        public void PlayAlertSound(EnemyType enemyType)
         {
-            var index = Random.Range(4, 7);
-            Play(index);
+            switch (enemyType)
+            {
+                case EnemyType.Wendigo:
+                    _wendigoSound.PlayWendigoAlertSound();
+                    break;
+            }
         }
 
-        public void PlayDamageSound()
+        public void PlayDamageSound(EnemyType enemyType)
         {
-            var index = Random.Range(8, 11);
-            Play(index);
+            switch (enemyType)
+            {
+                case EnemyType.Wendigo:
+                    _wendigoSound.PlayWendigoDamageSound();
+                    break;
+            }
         }
 
-        public void PlayChaseSound()
+        public void PlayChaseSound(EnemyType enemyType)
         {
-            var index = Random.Range(12, 15);
-            Play(index);
+            switch (enemyType)
+            {
+                case EnemyType.Wendigo:
+                    _wendigoSound.PlayWendigoDamageSound();
+                    break;
+            }
         }
     }
     

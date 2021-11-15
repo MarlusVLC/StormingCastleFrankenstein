@@ -43,6 +43,14 @@ PrefabInstance:
       propertyPath: timeBetweenShooting
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3547511236691406947, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547511237232446822, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3547511237412802493, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
       propertyPath: bloodVFX
       value: 
@@ -61,7 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3547511237412802494, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
       propertyPath: intervalSeconds
-      value: 2
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547511237412802494, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3547511237412802494, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
       propertyPath: maxSequentialShots
@@ -119,6 +131,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3547511237592236676, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547511237771112001, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547511237811852797, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547511237839954219, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3547511237933422144, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -132,6 +160,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3547511238037399911, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547511238114773001, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547511238317444347, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727489651487255339, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727489651487255339, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 0}

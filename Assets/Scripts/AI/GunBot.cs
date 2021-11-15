@@ -1,4 +1,5 @@
 using System.Collections;
+using Audio;
 using Weapons;
 using UnityEngine;
 using Utilities;
@@ -37,7 +38,13 @@ namespace AI
             var currWeapon = _weaponHandler.CurrentWeapon;
             if (currWeapon.IsEmpty == false && _isAtFiringInterval == false)
             {
+                if (_sequentialShots == 0)
+                {
+                    EnemySoundManager.Instance.PlayAttackSound(enemyType);
+                }
+                
                 _weaponHandler.Fire(true, new Ray(shoulder.position, shoulder.forward));
+
                 if (_sequentialShots >= _sequenceThreshold)
                 {
                     StartCoroutine(TriggerInterval());

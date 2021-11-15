@@ -81,6 +81,7 @@ namespace AI
             if (IsTargetWithinSight(45f))
             {
                 _navMeshAgent.SetDestination(target.position);
+                EnemySoundManager.Instance.PlayChaseSound(enemyType);
             }
             else
             {
@@ -107,7 +108,7 @@ namespace AI
         {
             if (!_hasSoundBeenPlayed)
             {
-                FindObjectOfType<WendigoSound>().PlayWendigoAttackSound();
+                EnemySoundManager.Instance.PlayAlertSound(enemyType);
                 _hasSoundBeenPlayed = true;
             }
             return _angleToTarget < maximumAngle;
@@ -123,9 +124,11 @@ namespace AI
 
         protected abstract void Attack();
         
+        public EnemyType EnemyType => enemyType;
+
         protected float MaximumRotationSpeed => _navMeshAgent.angularSpeed;
         protected float StoppingDistance => _navMeshAgent.stoppingDistance;
-
+        
         protected bool IsFleeing
         {
             get => _isFleeing && canFlee;

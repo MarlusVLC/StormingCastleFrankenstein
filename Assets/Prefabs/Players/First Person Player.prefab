@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4409123955690605752}
   - component: {fileID: 4409123955690605755}
   - component: {fileID: 4409123955690605753}
-  - component: {fileID: 4409123955690605750}
   - component: {fileID: 2913238883947323384}
   - component: {fileID: 3050747557695548247}
   - component: {fileID: 322141202490079534}
@@ -81,102 +80,6 @@ MonoBehaviour:
   gravity: -9.81
   jumpHeight: 3
   stepping: 0
---- !u!82 &4409123955690605750
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4409123955690605754}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &2913238883947323384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,78 +479,78 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: RevolverShot
+  - name: '0: RevolverShot'
     clip: {fileID: 8300000, guid: 2b1e8c7b5f38c914b8d02a6e1e3fcb4b, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: RevolverEmpty1
+  - name: '1: RevolverEmpty1'
     clip: {fileID: 8300000, guid: ff38fb0357b382f49bb2abfa57f90429, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: RevolverEmpty2
+  - name: '2: RevolverEmpty2'
     clip: {fileID: 8300000, guid: c1ed2ef291d798d4a88be7597d65ee31, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: RevolverShell1
+  - name: '3: RevolverShell1'
     clip: {fileID: 8300000, guid: 6cddb6308b820e942a8964d48c0fa72c, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: RevolverShell2
+  - name: '4: RevolverShell2'
     clip: {fileID: 8300000, guid: 94df8a7f486458746bdd9ace47cf9453, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: RevolverShell3
+  - name: '5: RevolverShell3'
     clip: {fileID: 8300000, guid: a56118e3491c1c743a0ddef4cbe97838, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: RevolverShell4
+  - name: '6: RevolverShell4'
     clip: {fileID: 8300000, guid: bb699c1aed358cb4eadc06626b5ffd6c, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: ShotgunShot
+  - name: '7: ShotgunShot'
     clip: {fileID: 8300000, guid: 2fd984718734ac544828ffcc9cc6597f, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: ShotgunEmpty
+  - name: '8: ShotgunEmpty'
     clip: {fileID: 8300000, guid: 8b04608b54fa3f149884f0c7cf2348b7, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: ShotgunShell
+  - name: '9: ShotgunShell'
     clip: {fileID: 8300000, guid: 53469c50976caa14d89aab5b5447bd31, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: ShotgunPump
+  - name: '10: ShotgunPump'
     clip: {fileID: 8300000, guid: b2f0c0fe7dd26754d8cf2495bf3e1695, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: DemonShot1
+  - name: '11: Tiro1'
     clip: {fileID: 8300000, guid: f3608911c4b2c2d448b1cb119384f424, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: DemonShot2
+  - name: '12: Tiro2'
     clip: {fileID: 8300000, guid: d9629b953b2afee4188bc3d3dbe76513, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: DemonShot3
-    clip: {fileID: 8300000, guid: d9629b953b2afee4188bc3d3dbe76513, type: 3}
+  - name: '13: Tiro3'
+    clip: {fileID: 8300000, guid: e54720f12566d104da0742cf15ff312c, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: DemonShot4
-    clip: {fileID: 8300000, guid: d9629b953b2afee4188bc3d3dbe76513, type: 3}
+  - name: '14: Tiro4'
+    clip: {fileID: 8300000, guid: 5dcff7f0c4ebf18478fc7dd08eb5a019, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
@@ -667,81 +570,122 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Step1
+  - name: '0: Step1'
     clip: {fileID: 8300000, guid: f15a1b860a1cdba45b8ee2602fae0f1f, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Step2
+  - name: '1: Step2'
     clip: {fileID: 8300000, guid: e0bce95d1f7d1724ebd13ab676c3fc95, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Step3
+  - name: '2: Step3'
     clip: {fileID: 8300000, guid: 4dea0625ad410ab45aa5aa4e0b3f8a50, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Step4
+  - name: '3: Step4'
     clip: {fileID: 8300000, guid: 2687544685d389a4282c5c9a881ea99d, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Step5
+  - name: '4: Step5'
     clip: {fileID: 8300000, guid: 7786831cf386dbf44928233be9a21a84, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Step6
+  - name: '5: Step6'
     clip: {fileID: 8300000, guid: 5e378757e2809024e96354884d06d12e, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: JumpVoice1
+  - name: '6: JumpVoice1'
     clip: {fileID: 8300000, guid: e263abba490b80e48960a87b88c6ed06, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: JumpVoice2
+  - name: '7: JumpVoice2'
     clip: {fileID: 8300000, guid: 0c21facc5320f34488eaae532cd372f3, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: JumpVoice3
+  - name: '8: JumpVoice3'
     clip: {fileID: 8300000, guid: 8b4f7a4df33a72146a18c68fcec3e0dd, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: JumpVoice4
+  - name: '9: JumpVoice4'
     clip: {fileID: 8300000, guid: 1d1557a915910754ca045bf1a9dec398, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: JumpVoice5
+  - name: '10: JumpVoice5'
     clip: {fileID: 8300000, guid: c06def695f2c3294aa43bda8caa7be4b, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: JumpVoice6
+  - name: '11: JumpVoice6'
     clip: {fileID: 8300000, guid: 96548eab306e6f1439ced41e9be9c9c0, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: FallVoice1
+  - name: '12: EmptyFile'
     clip: {fileID: 8300000, guid: 60c6eb239442c0145a5055403da00116, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: FallVoice2
+  - name: '13: EmptyFile'
     clip: {fileID: 8300000, guid: 029726a4b0076864c8cc4daa5877db80, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: FallVoice3
+  - name: '14: EmptyFile'
     clip: {fileID: 8300000, guid: 59bcd9105083eeb4fb5e75de3f9228b2, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: '15: Jump1'
+    clip: {fileID: 8300000, guid: cdfdfc45def233243b129c5f24268b8e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '16: Jump2'
+    clip: {fileID: 8300000, guid: 901d7c0fcc26ddd428d9c42ca4051ed5, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '17: Jump3'
+    clip: {fileID: 8300000, guid: 41d026c188573224da1b549dde5d9b09, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '18: Jump4'
+    clip: {fileID: 8300000, guid: 3303a82e17d6ec14cac57a3a7e49f7d8, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '19: Land1'
+    clip: {fileID: 8300000, guid: 5d704f520391d87419403315ed58081b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '20: Land2'
+    clip: {fileID: 8300000, guid: 2ece211ddd97a6847b8e139bc74c41ae, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '21: Land3'
+    clip: {fileID: 8300000, guid: d40751bb3a9f1bf479528c135021d7bc, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '22: Land4'
+    clip: {fileID: 8300000, guid: 230dc425e72ca24498498eccfbd63a4d, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  playVoice: 1
 --- !u!1001 &6164360181052630573
 PrefabInstance:
   m_ObjectHideFlags: 0

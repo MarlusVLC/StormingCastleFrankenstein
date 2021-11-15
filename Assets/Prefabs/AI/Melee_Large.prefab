@@ -458,6 +458,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
+  enemyType: 1
   canFlee: 0
   weaponCollider: {fileID: 5550265704318952359}
   rb: {fileID: 0}
@@ -567,6 +568,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5550265703808061662}
     m_Modifications:
+    - target: {fileID: 1419516642, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
+      propertyPath: enemyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1419516643, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
       propertyPath: bloodVFX
       value: 

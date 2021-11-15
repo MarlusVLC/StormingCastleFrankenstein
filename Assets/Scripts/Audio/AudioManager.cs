@@ -1,114 +1,137 @@
 using System;
-using System;
 using System.Collections;
-using UnityEngine.Audio;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using Utilities;
 
-public class AudioManager : MonoBehaviour
+namespace Audio
 {
-    public Sound[] sounds;
-
-    private int indexSequence = 0;
-    private AudioSource currentSource;
-
-    public float ClipLength => currentSource.clip.length;
-    public event Action OnClipFinished;
-
-    void Awake()
+    public class AudioManager : MonoCache
     {
-        foreach (Sound s in sounds)
+        public Sound[] sounds;
+
+        private int indexSequence = 0;
+        private AudioSource currentSource;
+
+        public float ClipLength => currentSource.clip.length;
+        public event Action OnClipFinished;
+
+        void Awake()
         {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.playOnAwake = false;
-            s.source.clip = s.clip;
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
+            foreach (Sound s in sounds)
+            {
+                s.source = gameObject.AddComponent<AudioSource>();
+                s.source.playOnAwake = false;
+                s.source.clip = s.clip;
+                s.source.volume = s.volume;
+                s.source.pitch = s.pitch;
+            }
         }
-    }
 
-    protected int GetSoundsSize()
-    {
-        return sounds.Length;
-    }
+        private void OnValidate()
+        {
+            for (var i = 0; i < sounds.Length; i++)
+            {
+                var s = sounds[i];
+                s.name = $"{i.ToString()}: ";
+                if (s.clip == null)
+                {
+                    s.name += "EmptyFile";
+                }
+                else
+                {
+                    s.name += s.clip.name;
+                }
+            }
+        }
 
-    protected void PlaySequence()
-    {
-        Play(indexSequence);
-        indexSequence++;
+        protected int GetSoundsSize()
+        {
+            return sounds.Length;
+        }
+
+        protected void PlaySequence()
+        {
+            Play(indexSequence);
+            indexSequence++;
         
-        if (indexSequence == GetSoundsSize())
-        {
-            indexSequence = 0;
+            if (indexSequence == GetSoundsSize())
+            {
+                indexSequence = 0;
+            }
         }
-    }
     
-    protected void Play(int index, bool ignoreListenerPause = false)
-    {
-        
-        
-        currentSource = sounds[index].source;
-        currentSource.ignoreListenerPause = ignoreListenerPause;
-        currentSource.Play();
-
-        if (currentSource.gameObject.activeSelf == true)
+        protected void Play(int index, bool ignoreListenerPause = false)
         {
-            StartCoroutine(WaitForAudioEnd());
+            if (index >= sounds.Length || sounds[index] == null)
+            {
+                if (Application.isEditor)
+                    Debug.LogWarning("There seems to be no space/file allocated in index: " + index);
+                return;
+            }
+        
+            currentSource = sounds[index].source;
+            currentSource.ignoreListenerPause = ignoreListenerPause;
+            currentSource.Play();
+
+            if (currentSource.gameObject.activeSelf == true)
+            {
+                StartCoroutine(WaitForAudioEnd());
+            }
         }
-    }
     
-    public void Stop()
-    {
-        if (currentSource)
+        public void Stop()
         {
-            currentSource.Stop();   
+            if (currentSource)
+            {
+                currentSource.Stop();   
+            }
         }
-    }
 
-    public void Toggle(AudioState state, int index, bool ignoreListenerPause = false)
-    {
-        if (!SoundExists(index))
+        public void Toggle(AudioState state, int index, bool ignoreListenerPause = false)
         {
-            Debug.LogWarning("There's no sound associated in index " + index);
-            return;
+            if (!SoundExists(index))
+            {
+                Debug.LogWarning("There's no sound associated in index " + index);
+                return;
+            }
+            switch (state)
+            {
+                case AudioState.Play:
+                    Play(index, ignoreListenerPause);
+                    break;
+                case AudioState.Pause:
+                    sounds[index].source.Pause();
+                    break;
+                case AudioState.Unpause:
+                    sounds[index].source.UnPause();
+                    break;
+                case AudioState.Stop:
+                    sounds[index].source.Stop();
+                    break;
+            }
         }
-        switch (state)
-        {
-            case AudioState.Play:
-                Play(index, ignoreListenerPause);
-                break;
-            case AudioState.Pause:
-                sounds[index].source.Pause();
-                break;
-            case AudioState.Unpause:
-                sounds[index].source.UnPause();
-                break;
-            case AudioState.Stop:
-                sounds[index].source.Stop();
-                break;
-        }
-    }
 
-    public bool SoundExists(int index)
-    {
+        public bool SoundExists(int index)
+        {
         
-        return sounds.Length > index && sounds[index] != null;
-    }
-
-    private IEnumerator WaitForAudioEnd()
-    {
-        while (currentSource.isPlaying)
-        {
-            yield return null;
+            return sounds.Length > index && sounds[index] != null;
         }
-        OnClipFinished?.Invoke();
-    }
+
+        private IEnumerator WaitForAudioEnd()
+        {
+            while (currentSource.isPlaying)
+            {
+                yield return null;
+            }
+            OnClipFinished?.Invoke();
+        }
     
-    public enum AudioState
-    {
-        Play,
-        Stop,
-        Pause,
-        Unpause
+        public enum AudioState
+        {
+            Play,
+            Stop,
+            Pause,
+            Unpause
+        }
     }
 }

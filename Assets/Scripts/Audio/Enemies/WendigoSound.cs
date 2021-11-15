@@ -18,19 +18,19 @@ namespace Audio
         
         public void PlayWendigoAlertSound()
         {
-            var index = Random.Range(4, 7);
+            var index = Random.Range(8, 11);
             Play(index);
         }
 
         public void PlayWendigoDamageSound()
         {
-            var index = Random.Range(8, 11);
+            var index = Random.Range(12, 15);
             Play(index);
         }
 
         public void PlayWendigoChaseSound()
         {
-            var index = Random.Range(12, 15);
+            var index = Random.Range(16, 19);
             Play(index);
         }
 

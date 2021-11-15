@@ -34,6 +34,91 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4516958507187233994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338759493231299863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643bd32bf0c70c1489020b9b7f2ca034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: '0: Ataque1'
+    clip: {fileID: 8300000, guid: 53eb5edd88629ff4f9463de1aefac146, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '1: Ataque2'
+    clip: {fileID: 8300000, guid: 2b8d7097ffa23084b9458f7213795921, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '2: Ataque3'
+    clip: {fileID: 8300000, guid: de9ad2fc9576f8f4b8a737de80228661, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '3: Ataque4'
+    clip: {fileID: 8300000, guid: bd79b0b38e4798a458919047ea8a8427, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '4: Morte1'
+    clip: {fileID: 8300000, guid: efa8de901d2b59245bc67bc2cae149aa, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '5: Morte2'
+    clip: {fileID: 8300000, guid: e10c19d57c5ab394bb30dfa8247bb7d7, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '6: Morte3'
+    clip: {fileID: 8300000, guid: 8b371395ea3b8e740b8ab2e025071b87, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '7: Morte4'
+    clip: {fileID: 8300000, guid: 563f56bdbcecb9d40b73d3f66d352199, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '8: Alert1'
+    clip: {fileID: 8300000, guid: 66b00ab600408064ab058eed19978d4f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '9: Alert2'
+    clip: {fileID: 8300000, guid: c3263aab135d12f4fbada77ee868fb98, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '10: Alert3'
+    clip: {fileID: 8300000, guid: 516abc47a6f528349a4d840965398183, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '11: Alert4'
+    clip: {fileID: 8300000, guid: 8d810c2b4a1f8d74c80edc64f0ff4d17, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+--- !u!114 &4301808742234667311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338759493231299863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ae755b80f4bb347b78b6294a4f13d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2338759493261786429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,8 +1691,14 @@ PrefabInstance:
       propertyPath: revolver
       value: 
       objectReference: {fileID: 4172625990796444323}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2132299340055970868, guid: 8b4850b6fbae7a440b66fa1e8f713838, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8b4850b6fbae7a440b66fa1e8f713838, type: 3}
+--- !u!1 &2338759493231299863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2132299340055970864, guid: 8b4850b6fbae7a440b66fa1e8f713838, type: 3}
+  m_PrefabInstance: {fileID: 4459552838968264999}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2338759493231299862 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2132299340055970865, guid: 8b4850b6fbae7a440b66fa1e8f713838, type: 3}

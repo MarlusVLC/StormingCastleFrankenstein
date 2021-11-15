@@ -5,6 +5,7 @@ using Audio;
 using Entities;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Utilities;
 using Random = UnityEngine.Random;
 
 public class PlayerMovement : AgileBeing
@@ -20,15 +21,18 @@ public class PlayerMovement : AgileBeing
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 3f;
 
-    // getting and setting stuff for the ground detection
-
-    // creates a velocity Vector3 to be used with gravity
-    private Vector3 velocity;
-
     public bool stepping;
+    private Vector3 velocity;
     private float waitTime = 0.5f;
-    
     private bool canFallSoundPlay;
+
+    private MovementSound _movementSounds;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _movementSounds = FindObjectOfType<MovementSound>();
+    }
 
     protected override void Update()
     {
@@ -51,19 +55,19 @@ public class PlayerMovement : AgileBeing
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            //FindObjectOfType<MovementSound>().PlayJumpSound();
+            _movementSounds.PlayJumpSound();
         }
 
-        //if (!isGrounded && velocity.y < -5)
-        //{
-        //    canFallSoundPlay = true;
-        //}
+        if (!isGrounded && velocity.y < -5)
+        {
+            canFallSoundPlay = true;
+        }
 
-        //if (isGrounded && canFallSoundPlay)
-        //{
-        //    FindObjectOfType<MovementSound>().PlayFallSound();
-        //    Invoke("FallSoundReset", waitTime);
-        //}
+        if (isGrounded && canFallSoundPlay)
+        {
+            _movementSounds.PlayFallSound();
+            canFallSoundPlay = false;
+        }
         
         //making gravity work
         velocity.y += gravity * Time.deltaTime;

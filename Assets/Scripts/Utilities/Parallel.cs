@@ -11,7 +11,7 @@ namespace Utilities
             do
             {
                 yield return new WaitForSeconds(intervalTime);
-                action?.Invoke();
+                action.Invoke();
             } while (repeat);
         }
     }

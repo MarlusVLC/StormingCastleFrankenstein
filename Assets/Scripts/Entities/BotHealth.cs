@@ -1,4 +1,5 @@
-﻿using Audio;
+﻿using AI;
+using Audio;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -8,9 +9,12 @@ namespace Entities
     {
         [SerializeField] private VisualEffect bloodVFX;
 
+        private EnemyType _enemyType;
+
         protected override void Awake()
         {
             base.Awake();
+            _enemyType = GetComponent<EnemyBot>().EnemyType;
             bloodVFX.Stop();
         }
 
@@ -20,10 +24,15 @@ namespace Entities
             Instantiate(bloodVFX, transform.parent);
             bloodVFX.Play();
             
-            FindObjectOfType<WendigoSound>().PlayWendigoDeathSound();
+            EnemySoundManager.Instance.PlayDeathSound(_enemyType);
 
             Destroy(gameObject);
-            
+        }
+
+        public override void TakeDamage(int damage)
+        {
+            EnemySoundManager.Instance.PlayDamageSound(_enemyType);
+            base.TakeDamage(damage);
         }
     }
 }

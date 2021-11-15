@@ -26,7 +26,7 @@ namespace Entities
             OnHealthChanged();
         }
 
-        public void TakeDamage(int damage)
+        public virtual void TakeDamage(int damage)
         {
             if (_isImmortal) return;
             CurrentHealth -= damage;
