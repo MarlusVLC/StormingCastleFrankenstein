@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 549396492432698876}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CadeiraOficial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 924374399589267270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
   m_Children:
   - {fileID: 7050700011493809120}
   - {fileID: 2362557533000852489}
@@ -44,7 +44,8 @@ GameObject:
   - component: {fileID: 2362557533000852489}
   - component: {fileID: 2758995207578364373}
   - component: {fileID: 6989543501233171334}
-  m_Layer: 0
+  - component: {fileID: 1301606716468786596}
+  m_Layer: 3
   m_Name: Cadeira2_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,6 +115,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1301606716468786596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200719270628417603}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0104179075, y: 0.009010153, z: 0.020937992}
+  m_Center: {x: 0, y: -0.00006152199, z: 0.0025246216}
 --- !u!1 &2144531001861940135
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +139,8 @@ GameObject:
   - component: {fileID: 4952209673255445144}
   - component: {fileID: 1404093903226990823}
   - component: {fileID: 3182614922173087257}
-  m_Layer: 0
+  - component: {fileID: 6191409659218645008}
+  m_Layer: 3
   m_Name: Encosto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,6 +210,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6191409659218645008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144531001861940135}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008213832, y: 0.0004973035, z: 0.011726979}
+  m_Center: {x: -0.0000000037252903, y: 2.7145795e-17, z: 0.003820431}
 --- !u!1 &4299170113601735244
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +234,8 @@ GameObject:
   - component: {fileID: 7050700011493809120}
   - component: {fileID: 1264571012629940916}
   - component: {fileID: 4136378952341627183}
-  m_Layer: 0
+  - component: {fileID: 2268642709523717994}
+  m_Layer: 3
   m_Name: Acento_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,3 +305,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2268642709523717994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299170113601735244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.007867527, y: 0.008013139, z: 0.00047532975}
+  m_Center: {x: -0.0000000037252903, y: -0.00026012718, z: 0.00047488438}
