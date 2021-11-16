@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4174721867858997212}
   - component: {fileID: 1026905372465913977}
   - component: {fileID: 3000729647426409651}
+  - component: {fileID: -9008276813551896990}
   m_Layer: 0
   m_Name: GradeQuebrada
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-9008276813551896990
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3649120518293566822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6198401070834743824, guid: 43d30665d2278684380ba5e27908c3c5, type: 3}
