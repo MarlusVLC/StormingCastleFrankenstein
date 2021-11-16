@@ -882,6 +882,10 @@ PrefabInstance:
       propertyPath: gramophoneCollector
       value: 
       objectReference: {fileID: 3159128358723527387}
+    - target: {fileID: 650529979221080592, guid: 035d91cb2aa70ae449f1284dafd9af0c, type: 3}
+      propertyPath: gramophoneCollector
+      value: 
+      objectReference: {fileID: 3159128358723527387}
     - target: {fileID: 865109160000878516, guid: 035d91cb2aa70ae449f1284dafd9af0c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -982,6 +986,10 @@ PrefabInstance:
       propertyPath: subMenuTitleGUI
       value: 
       objectReference: {fileID: 785772924218726835}
+    - target: {fileID: 1742102118535297254, guid: 035d91cb2aa70ae449f1284dafd9af0c, type: 3}
+      propertyPath: gramophoneCollector
+      value: 
+      objectReference: {fileID: 3159128358723527387}
     - target: {fileID: 2169024562034561275, guid: 035d91cb2aa70ae449f1284dafd9af0c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1039,6 +1047,10 @@ PrefabInstance:
       value: -526.5
       objectReference: {fileID: 0}
     - target: {fileID: 2371151222749088110, guid: 035d91cb2aa70ae449f1284dafd9af0c, type: 3}
+      propertyPath: gramophoneCollector
+      value: 
+      objectReference: {fileID: 3159128358723527387}
+    - target: {fileID: 2807619789025693464, guid: 035d91cb2aa70ae449f1284dafd9af0c, type: 3}
       propertyPath: gramophoneCollector
       value: 
       objectReference: {fileID: 3159128358723527387}
@@ -1202,6 +1214,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 611.80005
       objectReference: {fileID: 0}
+    - target: {fileID: 3821122177772874691, guid: 035d91cb2aa70ae449f1284dafd9af0c, type: 3}
+      propertyPath: gramophoneCollector
+      value: 
+      objectReference: {fileID: 3159128358723527387}
     - target: {fileID: 4030390183411941085, guid: 035d91cb2aa70ae449f1284dafd9af0c, type: 3}
       propertyPath: gramophoneCollector
       value: 
@@ -1242,6 +1258,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4917091795816022708, guid: 035d91cb2aa70ae449f1284dafd9af0c, type: 3}
+      propertyPath: gramophoneCollector
+      value: 
+      objectReference: {fileID: 3159128358723527387}
     - target: {fileID: 4952269329654264474, guid: 035d91cb2aa70ae449f1284dafd9af0c, type: 3}
       propertyPath: gramophoneCollector
       value: 
@@ -1514,6 +1534,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8177087594368779819, guid: 035d91cb2aa70ae449f1284dafd9af0c, type: 3}
+      propertyPath: gramophoneCollector
+      value: 
+      objectReference: {fileID: 3159128358723527387}
     - target: {fileID: 8470511359680920607, guid: 035d91cb2aa70ae449f1284dafd9af0c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

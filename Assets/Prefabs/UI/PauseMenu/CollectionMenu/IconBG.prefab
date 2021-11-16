@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca4e204bc414648b53dc960e1acaca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLogIndex: 0
+  audioLogIndex: 5
   gramophoneCollector: {fileID: 0}
   deactivatedAlpha: 0.52444446
 --- !u!1 &8999387942265547461
