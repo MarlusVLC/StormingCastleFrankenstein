@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 7087692959958196856}
     - target: {fileID: 3547511237412802493, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
       propertyPath: startingHealth
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3547511237412802493, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
       propertyPath: <MaxHealth>k__BackingField

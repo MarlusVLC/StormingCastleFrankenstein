@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8865576626909066628}
   - component: {fileID: 8865576626909066629}
   - component: {fileID: 7358271168296346045}
+  - component: {fileID: 2518466875615941333}
   m_Layer: 0
   m_Name: --SceneManager
   m_TagString: Untagged
@@ -60,3 +61,18 @@ MonoBehaviour:
   - {fileID: 0}
   toBeShown:
   - {fileID: 0}
+--- !u!114 &2518466875615941333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865576626909066630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b4478510954c0bbf80587553d60a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstPersonPlayer: {fileID: 0}
+  cheatText: {fileID: 0}
+  displayTime: 0.2

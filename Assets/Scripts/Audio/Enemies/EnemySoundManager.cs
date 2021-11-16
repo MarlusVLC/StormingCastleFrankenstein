@@ -1,4 +1,5 @@
 using AI;
+using UnityEngine;
 using Utilities;
 
 namespace Audio
@@ -17,7 +18,7 @@ namespace Audio
             switch (enemyType)
             {
                 case EnemyType.Wendigo:
-                    _wendigoSound.PlayWendigoAttackSound();
+                    _wendigoSound.PlayAttackSound();
                     break;
             }
         }
@@ -27,7 +28,7 @@ namespace Audio
             switch (enemyType)
             {
                 case EnemyType.Wendigo:
-                    _wendigoSound.PlayWendigoDeathSound();
+                    _wendigoSound.PlayDeathSound();
                     break;
             }
         }
@@ -37,7 +38,7 @@ namespace Audio
             switch (enemyType)
             {
                 case EnemyType.Wendigo:
-                    _wendigoSound.PlayWendigoAlertSound();
+                    _wendigoSound.PlayAlertSound();
                     break;
             }
         }
@@ -47,7 +48,7 @@ namespace Audio
             switch (enemyType)
             {
                 case EnemyType.Wendigo:
-                    _wendigoSound.PlayWendigoDamageSound();
+                    _wendigoSound.PlayDamageSound();
                     break;
             }
         }
@@ -57,7 +58,7 @@ namespace Audio
             switch (enemyType)
             {
                 case EnemyType.Wendigo:
-                    _wendigoSound.PlayWendigoDamageSound();
+                    _wendigoSound.PlayChaseSound();
                     break;
             }
         }

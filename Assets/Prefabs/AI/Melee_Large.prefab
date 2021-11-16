@@ -380,8 +380,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.46
-  m_Height: 2.24
+  m_Radius: 0.68
+  m_Height: 2.49
   m_Direction: 1
   m_Center: {x: 0, y: 0.059109982, z: 0}
 --- !u!54 &5550265704439970614
@@ -631,6 +631,14 @@ PrefabInstance:
     - target: {fileID: 629186841301251716, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 629186841301251719, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
+      propertyPath: m_Height
+      value: 2.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 629186841301251719, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
+      propertyPath: m_Radius
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 629186841301251768, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
       propertyPath: m_Name

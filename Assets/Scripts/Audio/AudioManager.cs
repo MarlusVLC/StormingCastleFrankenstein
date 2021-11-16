@@ -65,7 +65,8 @@ namespace Audio
             if (index >= sounds.Length || sounds[index] == null)
             {
                 if (Application.isEditor)
-                    Debug.LogWarning("There seems to be no space/file allocated in index: " + index);
+                    Debug.LogWarning($"There seems to be no space/file allocated in index: {index.ToString()}"
+                            + $" | GameObject: {gameObject.name}");
                 return;
             }
         

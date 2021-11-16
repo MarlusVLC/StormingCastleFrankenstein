@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Globalization;
 using Audio;
 using Entities;
 using UnityEngine;
@@ -24,6 +25,7 @@ namespace AI
         protected float _angleToTarget;
         protected bool _isFleeing;
         private bool _hasSoundBeenPlayed;
+        private bool _hasChaseSoundBeenPlayed;
 
         protected override void Awake()
         {
@@ -43,7 +45,7 @@ namespace AI
             _fov.OnTargetAcquired -= TryPursuit;
         }
 
-        private void Update()
+        protected override void Update()
         {
             if (_hasSoundBeenPlayed && !IsTargetWithinSight(45f))
             {
@@ -68,6 +70,15 @@ namespace AI
                     {
                         Attack();
                     }
+                    if (_navMeshAgent.velocity.sqrMagnitude > 0.5f && !_hasChaseSoundBeenPlayed)
+                    {
+                        EnemySoundManager.Instance.PlayChaseSound(enemyType);
+                        _hasChaseSoundBeenPlayed = true;
+                    }
+                    else if (_navMeshAgent.velocity.sqrMagnitude <= 0.01f)
+                    {
+                        Parallel.ExecuteActionWithDelay(() => _hasSoundBeenPlayed = false, 0.5f);
+                    }
                 }
             }
         }
@@ -81,7 +92,6 @@ namespace AI
             if (IsTargetWithinSight(45f))
             {
                 _navMeshAgent.SetDestination(target.position);
-                EnemySoundManager.Instance.PlayChaseSound(enemyType);
             }
             else
             {
