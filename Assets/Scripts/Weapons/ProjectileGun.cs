@@ -21,13 +21,16 @@ namespace Weapons
         [SerializeField] private VisualEffect muzzleFlash;
         [Header("Enemy Layer")]
         [SerializeField] private LayerMask enemyLayer;
+
+        private Animator animator;
         
         private GameObject npcObject;
         
         private int _bulletsShot;
         private bool _hasMuzzleFlash;
         private bool _enemyGun;
-        
+        private static readonly int PlayShootAnimation = Animator.StringToHash("PlayShootAnimation");
+
         protected override void Awake()
         {
             base.Awake();
@@ -45,6 +48,8 @@ namespace Weapons
             {
                 _enemyGun = false;
             }
+
+            animator = GetComponent<Animator>();
         }
 
         private void OnEnable()
@@ -117,6 +122,12 @@ namespace Weapons
             {
                 StartCoroutine(Parallel.ExecuteActionWithDelay(ResetShot, timeBetweenShooting));
                 allowInvoke = false;
+            }
+            
+            // animations
+            if (animator.gameObject.activeSelf)
+            {
+                animator.SetTrigger(PlayShootAnimation);
             }
         }
 
