@@ -30,6 +30,7 @@ namespace Weapons
         private bool _hasMuzzleFlash;
         private bool _enemyGun;
         private static readonly int PlayShootAnimation = Animator.StringToHash("PlayShootAnimation");
+        private static readonly int PlayMordidinhaAnimation = Animator.StringToHash("PlayMordidinhaAnimation");
 
         protected override void Awake()
         {
@@ -49,14 +50,25 @@ namespace Weapons
                 _enemyGun = false;
             }
 
-            animator = GetComponent<Animator>();
+            animator = GetComponent<Animator>();    
+            
+            if (!animator)
+            {
+                animator = GetComponentInChildren<Animator>();
+            }
+            
         }
 
         private void OnEnable()
         {
             if (_hasMuzzleFlash) muzzleFlash.Stop();
             
-            //animator.Play("IdleAnimation");
+            Invoke(nameof(PlayMordidinha),2f);
+        }
+
+        private void PlayMordidinha()
+        {
+            animator.SetTrigger(PlayMordidinhaAnimation);
         }
 
         public override Gun PullTrigger(bool shooting, Ray ray, LayerMask damageableLayer)
