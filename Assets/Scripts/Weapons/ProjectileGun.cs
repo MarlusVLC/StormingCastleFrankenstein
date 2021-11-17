@@ -55,6 +55,8 @@ namespace Weapons
         private void OnEnable()
         {
             if (_hasMuzzleFlash) muzzleFlash.Stop();
+            
+            //animator.Play("IdleAnimation");
         }
 
         public override Gun PullTrigger(bool shooting, Ray ray, LayerMask damageableLayer)
