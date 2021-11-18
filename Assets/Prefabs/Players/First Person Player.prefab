@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 4409123956835274172}
   - component: {fileID: 4597486454899504017}
   - component: {fileID: 4493413566625946433}
+  - component: {fileID: 5510788921974213773}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -417,6 +418,25 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 140
+--- !u!95 &5510788921974213773
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4409123956835274048}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28f21f121d31094498172cbbfcba0a54, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1583484906588747117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1047,6 +1067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 4604086599065514282, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4604086599065514286, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1320,7 +1344,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 7821477310402925148}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 

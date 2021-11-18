@@ -27,11 +27,15 @@ public class PlayerMovement : AgileBeing
     private bool canFallSoundPlay;
 
     private MovementSound _movementSounds;
+    private Animator _animator;
+    private static readonly int JumpAnimation = Animator.StringToHash("JumpAnimation");
+    private static readonly int WalkingAnimation = Animator.StringToHash("WalkingAnimation");
 
     protected override void Awake()
     {
         base.Awake();
         _movementSounds = FindObjectOfType<MovementSound>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     protected override void Update()
@@ -56,6 +60,7 @@ public class PlayerMovement : AgileBeing
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             _movementSounds.PlayJumpSound();
+            _animator.SetTrigger(JumpAnimation);
         }
 
         if (!isGrounded && velocity.y < -5)
@@ -76,11 +81,22 @@ public class PlayerMovement : AgileBeing
         controller.Move(velocity * Time.deltaTime);
         
         // step sounds
-        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1 && !stepping && isGrounded || Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1 && !stepping&& isGrounded)
+        if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1 && !stepping && isGrounded || 
+            Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1 && !stepping && isGrounded)
         {
             stepping = true;
             FindObjectOfType<MovementSound>().PlayStepSound();
             Invoke("ChangeStep", waitTime);
+        }
+        
+        // walking camera animation
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            _animator.SetBool(WalkingAnimation, true);
+        }
+        else
+        {
+            _animator.SetBool(WalkingAnimation, false);
         }
     }
 
