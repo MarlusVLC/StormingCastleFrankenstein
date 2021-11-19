@@ -78,8 +78,8 @@ MonoBehaviour:
   isAutomatic: 0
   timeBetweenShooting: 1
   damage: 100
-  magazineSize: 2
-  startingAmmo: 2
+  magazineSize: 5
+  startingAmmo: 5
   allowInvoke: 1
   _hasUnlimitedAmmo: 0
   bullet: {fileID: 6173487948656069444, guid: de12f8190466c064cac84068c1586f88, type: 3}
