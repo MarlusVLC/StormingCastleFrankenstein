@@ -29,5 +29,11 @@ namespace Weapons
                 InputFilter.Instance.OnNumericValueReceived -= SwitchTo;
             }   
         }
+
+        public void Collection(int index)
+        {
+            ConfirmedGuns[index].isUnlocked = true;
+            SwitchTo(index);
+        }
     }
 }

@@ -52,7 +52,11 @@ namespace UI.HUD
             {
                 Debug.LogWarning("There's no icon associated with the weapon in the index: " + selection);
             }
-            ExclusivelyActivate(ref _weaponIcons, selection);
+
+            if (weaponSelector.ConfirmedGuns[selection].isUnlocked)
+            {
+                ExclusivelyActivate(ref _weaponIcons, selection);
+            }
         }
 
         private void ChangeAmmoIcon(WeaponHandler.WeaponChangedEventArgs e)
@@ -62,7 +66,11 @@ namespace UI.HUD
             {
                 Debug.LogWarning("There's no ammo icon associated with the weapon in the index: " + selection);
             }
-            ExclusivelyActivate(ref _ammoIcons, selection);
+
+            if (weaponSelector.ConfirmedGuns[selection].isUnlocked)
+            {
+                ExclusivelyActivate(ref _ammoIcons, selection);
+            }
         }
         private void ChangeIndex(WeaponHandler.WeaponChangedEventArgs e)
         {

@@ -19,6 +19,7 @@ namespace Weapons
         [SerializeField] protected bool allowInvoke = true;
         [SerializeField] protected bool _hasUnlimitedAmmo;
 
+        public bool isUnlocked;
         
         // protected WeaponAudio _weaponAudio;
         protected int _bulletsLeft;
@@ -34,7 +35,7 @@ namespace Weapons
                 Debug.LogWarning("This weapon: " + gameObject.name + " has unlimited ammo");
             }
         }
-        
+
         protected virtual void OnDisable()
         {
             ResetShot();
