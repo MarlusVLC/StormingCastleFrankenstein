@@ -32,6 +32,10 @@ namespace AI
             base.Awake();
             TryGetComponent(out _navMeshAgent);
             TryGetComponent(out _animator);
+            if (_animator == null)
+            {
+                _animator = GetComponentInChildren<Animator>();
+            }
             _fov = GetComponentInChildren<FieldOfView>();
         }
 
