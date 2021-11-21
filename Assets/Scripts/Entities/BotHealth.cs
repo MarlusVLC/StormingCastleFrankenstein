@@ -9,12 +9,14 @@ namespace Entities
     {
         [SerializeField] private VisualEffect bloodVFX;
 
+        private BlinkEffect _blinkEffect;
         private EnemyType _enemyType;
 
         protected override void Awake()
         {
             base.Awake();
             _enemyType = GetComponent<EnemyBot>().EnemyType;
+            _blinkEffect = GetComponent<BlinkEffect>();
             bloodVFX.Stop();
         }
 
@@ -33,6 +35,7 @@ namespace Entities
         {
             EnemySoundManager.Instance.PlayDamageSound(_enemyType);
             base.TakeDamage(damage);
+            _blinkEffect.DamageBlink();
         }
     }
 }

@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 5550265704439970608}
   - component: {fileID: 5550265704439970609}
   - component: {fileID: 5550265704439970610}
+  - component: {fileID: 5552896850702572611}
   m_Layer: 9
   m_Name: SimpleBot
   m_TagString: Untagged
@@ -478,6 +479,18 @@ MonoBehaviour:
   <MaxHealth>k__BackingField: 50
   startingHealth: 50
   bloodVFX: {fileID: 72652247393625578}
+--- !u!114 &5552896850702572611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550265704439970611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9df4f0a44c7d1478b6323e256e1ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5550265702832964285
 PrefabInstance:
   m_ObjectHideFlags: 0
