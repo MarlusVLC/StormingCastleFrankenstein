@@ -30,9 +30,9 @@ namespace Weapons
             }   
         }
 
-        public void Collection(int index)
+        public void Collect(int index)
         {
-            ConfirmedGuns[index].isUnlocked = true;
+            ConfirmedGuns[index-1].isUnlocked = true;
             SwitchTo(index);
         }
     }

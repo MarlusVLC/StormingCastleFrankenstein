@@ -1292,7 +1292,7 @@ MonoBehaviour:
   collectorMask:
     serializedVersion: 2
     m_Bits: 64
-  index: 0
+  index: 1
 --- !u!1 &7862699342361984701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,7 +1703,7 @@ MonoBehaviour:
   collectorMask:
     serializedVersion: 2
     m_Bits: 64
-  index: 2
+  index: 3
 --- !u!1 &7862699342592514918
 GameObject:
   m_ObjectHideFlags: 0

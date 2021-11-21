@@ -11,7 +11,7 @@ namespace Drops
     {
         public LayerMask collectorMask;
         
-        public int index;
+        [Range(1,4)]public int index;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -19,7 +19,7 @@ namespace Drops
             if (collectorMask.HasLayerWithin(otherGameObject.layer))
             {
                 var playerWeapons = otherGameObject.GetComponentInChildren<PlayerWeapons>();
-                playerWeapons.Collection((index));
+                playerWeapons.Collect(index);
                 Destroy(gameObject);
             }
         }
