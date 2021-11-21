@@ -15,11 +15,11 @@ namespace Weapons
         [Header("Ammo")]
         [SerializeField] protected int magazineSize;
         [SerializeField] protected int startingAmmo;
+        [Space(10)] 
+        [SerializeField] public bool isUnlocked; //TODO tornar privada e gerar propriedade
         [Header("Debugging")] 
         [SerializeField] protected bool allowInvoke = true;
         [SerializeField] protected bool _hasUnlimitedAmmo;
-
-        public bool isUnlocked;
         
         // protected WeaponAudio _weaponAudio;
         protected int _bulletsLeft;

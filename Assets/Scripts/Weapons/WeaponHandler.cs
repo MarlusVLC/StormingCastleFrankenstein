@@ -40,10 +40,12 @@ namespace Weapons
             }
 
             var selection = receivedValue - 1;
-            if (ConfirmedGuns[selection].isUnlocked) ExclusivelyActivate(ref _weapons, selection);
+            if (!ConfirmedGuns[selection].isUnlocked) return;
+            
+            ExclusivelyActivate(ref _weapons, selection);
             _previousWeapon = CurrentWeapon;
             if (_previousWeapon != null) _previousWeapon.ShotFired -= OnAnyShotFired;
-            if (ConfirmedGuns[selection].isUnlocked) CurrentWeapon = ConfirmedGuns[selection];
+            CurrentWeapon = ConfirmedGuns[selection];
             CurrentWeapon.ShotFired += OnAnyShotFired;
             OnWeaponChanged?.Invoke(new WeaponChangedEventArgs
             {
