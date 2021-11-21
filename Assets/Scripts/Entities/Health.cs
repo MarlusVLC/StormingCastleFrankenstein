@@ -9,7 +9,7 @@ namespace Entities
         [field: Range(0,9999)][field: SerializeField] public int MaxHealth { get; private set; }
         [SerializeField] private int startingHealth = 100;
 
-        private int _currentHealth;
+        [SerializeField] private int _currentHealth;
         private bool _isImmortal = false;
         
         protected override void Awake()

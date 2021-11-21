@@ -1,5 +1,8 @@
+using System;
+using System.Collections;
 using Entities;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.VFX;
 using Utilities;
 
@@ -12,6 +15,7 @@ namespace Weapons
         [SerializeField] private GameObject liquidObject;
         private bool _isVfxGhostgunPlaying;
         private bool _canPlayVfxGhostGunStart;
+        private bool _canDealDamage;
         
         private Material liquid;
 
@@ -41,9 +45,13 @@ namespace Weapons
                 if (_isVfxGhostgunPlaying == false)
                     PlayVfxGhostGun();
             }
-            
-            if (_isVfxGhostgunPlaying && (!shooting || IsEmpty)) 
+
+            if (_isVfxGhostgunPlaying && (!shooting || IsEmpty))
+            {
                 StopVfxGhostGun();
+                _canDealDamage = false;
+            } 
+                
 
             return this;
         }
@@ -56,7 +64,7 @@ namespace Weapons
             {
                 if (hit.collider.TryGetComponent(out Health health))
                 {
-                    health.TakeDamage(damage);
+                    if (_canDealDamage) health.TakeDamage(damage);
                 }
             }
 
@@ -78,6 +86,7 @@ namespace Weapons
         {
            _visualEffect.Play();
            _isVfxGhostgunPlaying = true;
+           StartCoroutine(DamageDelay());
         }
 
         private void StopVfxGhostGun()
@@ -87,6 +96,12 @@ namespace Weapons
         }
 
         public override int ShotsLeft => 100*_bulletsLeft/magazineSize;
+        
+        private IEnumerator DamageDelay()
+        {
+            yield return new WaitForSeconds(1f);
+            _canDealDamage = true;
+        }
     }
 
 }
