@@ -8,7 +8,7 @@ public class OrbCollect : MonoBehaviour
     [SerializeField] private Gun _projectileGun;
     [SerializeField] private GameObject healthOrb;
     [SerializeField] private GameObject ammoOrb;
-
+    
     private int healthAddAmount = 10;
     private int ammoAddAmount = 10;
 

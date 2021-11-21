@@ -32,7 +32,7 @@ namespace Weapons
             SwitchTo(initialWeaponIndex);
         }
 
-        protected virtual void SwitchTo(int receivedValue)
+        public virtual void SwitchTo(int receivedValue)
         {
             if (receivedValue < 1 || receivedValue > _weapons.Length)
             {
@@ -40,6 +40,8 @@ namespace Weapons
             }
 
             var selection = receivedValue - 1;
+            if (!ConfirmedGuns[selection].isUnlocked) return;
+            
             ExclusivelyActivate(ref _weapons, selection);
             _previousWeapon = CurrentWeapon;
             if (_previousWeapon != null) _previousWeapon.ShotFired -= OnAnyShotFired;

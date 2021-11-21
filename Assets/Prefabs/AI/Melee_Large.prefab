@@ -429,7 +429,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2
-  m_Speed: 20
+  m_Speed: 12
   m_Acceleration: 36
   avoidancePriority: 99
   m_AngularSpeed: 8
@@ -475,8 +475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d813749cf572449683f7de942dfd0c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 30
-  startingHealth: 30
+  <MaxHealth>k__BackingField: 50
+  startingHealth: 50
   bloodVFX: {fileID: 72652247393625578}
 --- !u!1001 &5550265702832964285
 PrefabInstance:
@@ -568,6 +568,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5550265703808061662}
     m_Modifications:
+    - target: {fileID: 1419516641, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1419516642, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
       propertyPath: enemyType
       value: 1
@@ -576,6 +580,14 @@ PrefabInstance:
       propertyPath: bloodVFX
       value: 
       objectReference: {fileID: 72652247393625578}
+    - target: {fileID: 1419516643, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
+      propertyPath: startingHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419516643, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 629186841301251716, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
       propertyPath: m_RootOrder
       value: 0

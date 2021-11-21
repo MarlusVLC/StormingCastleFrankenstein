@@ -172,6 +172,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84984844468f46179dad8d40f0e0cdb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 0}
+  groundDistance: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  enemyType: 0
+  canFlee: 0
+  weaponCollider: {fileID: 0}
+  rb: {fileID: 0}
+  jumpForce: 0
 --- !u!114 &9218896189359836700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,8 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d813749cf572449683f7de942dfd0c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 30
-  startingHealth: 30
+  <MaxHealth>k__BackingField: 20
+  startingHealth: 20
   bloodVFX: {fileID: 3743763048161599176}
 --- !u!1 &9218896189839753056
 GameObject:
@@ -562,6 +572,14 @@ PrefabInstance:
       propertyPath: bloodVFX
       value: 
       objectReference: {fileID: 3743763048161599176}
+    - target: {fileID: 1419516643, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
+      propertyPath: startingHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419516643, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 629186841301251716, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
       propertyPath: m_RootOrder
       value: 0

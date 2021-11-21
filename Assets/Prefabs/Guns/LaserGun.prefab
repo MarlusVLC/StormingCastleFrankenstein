@@ -63,9 +63,9 @@ MonoBehaviour:
   attackPoint: {fileID: 5766387517294739636}
   isAutomatic: 1
   timeBetweenShooting: 0
-  damage: 1
-  magazineSize: 1000
-  startingAmmo: 1000
+  damage: 2
+  magazineSize: 500
+  startingAmmo: 300
   allowInvoke: 1
   _hasUnlimitedAmmo: 0
   _visualEffect: {fileID: 4400609302459627791}
