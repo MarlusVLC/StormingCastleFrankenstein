@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2132299340055970865}
   - component: {fileID: 2132299340055970869}
-  - component: {fileID: 2132299340055970868}
+  - component: {fileID: 988719479001595242}
+  - component: {fileID: 1305955493463141625}
+  - component: {fileID: 224958496285373152}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -45,62 +47,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: LUKAS1
+  - name: '0: LUKAS1'
     clip: {fileID: 8300000, guid: 0656333f5d46ebc4c8b4990ddd0f5281, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: LUKAS2
+  - name: '1: LUKAS2'
     clip: {fileID: 8300000, guid: 3e7a2ac6197f73d4bb156ec501697816, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Medico1
+  - name: '2: Medico1'
     clip: {fileID: 8300000, guid: d43f974920b6de84e930986d042c7339, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Medico2
+  - name: '3: Medico2'
     clip: {fileID: 8300000, guid: 89657bf9d66c82d49a7d3d46845e1c70, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Medico3
+  - name: '4: Medico3'
     clip: {fileID: 8300000, guid: 023a975a0fb9efb4db72da03cec3b09b, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Medico4
+  - name: '5: Medico4'
     clip: {fileID: 8300000, guid: 38007f0fefa62334894f4659399adbd0, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Medico5
+  - name: '6: Medico5'
     clip: {fileID: 8300000, guid: cbdb172d050a1cd4e8663d4c0c3dc9af, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Medico6
+  - name: '7: Medico6'
     clip: {fileID: 8300000, guid: cd34f5fb5220d754cbc3f9ef503d396a, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Medico7
+  - name: '8: Medico7'
     clip: {fileID: 8300000, guid: b02c4d4f87ee6a547bf5586a94755195, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Medico8
+  - name: '9: Medico8'
     clip: {fileID: 8300000, guid: a53cc6598f7f54443ae82a6d7f8b0daf, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Medico9
+  - name: '10: Medico9'
     clip: {fileID: 8300000, guid: f0be8f4d0094c294283c4c2fd0848298, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
---- !u!114 &2132299340055970868
+--- !u!114 &988719479001595242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,82 +111,187 @@ MonoBehaviour:
   m_GameObject: {fileID: 2132299340055970864}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e00d3ee5a804c5c834bd0510bdae509, type: 3}
+  m_Script: {fileID: 11500000, guid: b9ae755b80f4bb347b78b6294a4f13d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1305955493463141625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132299340055970864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643bd32bf0c70c1489020b9b7f2ca034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: WendigoAtaque1
-    clip: {fileID: 8300000, guid: 2931d8a23df080a469aaf9590dbf503e, type: 3}
+  - name: '0: Ataque1'
+    clip: {fileID: 8300000, guid: 4ee5985afa95f244fbc9fb059dd8b9ac, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoAtaque2
-    clip: {fileID: 8300000, guid: 031d6de696d16ae4fb9e9592d9eb9c80, type: 3}
+  - name: '1: Ataque2'
+    clip: {fileID: 8300000, guid: 5fbb8ece131879444a2266ef0d5c8b17, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoAtaque3
-    clip: {fileID: 8300000, guid: de4252c9cc03e2d4fa9154dcf3651642, type: 3}
+  - name: '2: Ataque3'
+    clip: {fileID: 8300000, guid: cb8af8252c3bfd841a34b543b84d9c83, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoAtaque4
-    clip: {fileID: 8300000, guid: b66ee14acb321404e97f0fbdea860930, type: 3}
+  - name: '3: Ataque4'
+    clip: {fileID: 8300000, guid: 301601561a9d89e4d875cada8903d3e0, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoAtaque5
-    clip: {fileID: 8300000, guid: 7a82ba6b38a02564883fd5e17745c5e5, type: 3}
+  - name: '4: Morte1'
+    clip: {fileID: 8300000, guid: bb635721d42ffae4a9d01a67c1b1e1ba, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoAtaque6
-    clip: {fileID: 8300000, guid: eec0fe9725788a54d9c551830ef430bb, type: 3}
+  - name: '5: Morte2'
+    clip: {fileID: 8300000, guid: f3184849465e12c4a9f3c286b60c9796, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoAtaque7
-    clip: {fileID: 8300000, guid: 2fee2df34dc464144b1bdd70214fac89, type: 3}
+  - name: '6: Morte3'
+    clip: {fileID: 8300000, guid: 062fc76ea73442e4290fcf3493cb2018, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoMorte1
-    clip: {fileID: 8300000, guid: 40fb76ba51742c849a4b4d21eb88c25c, type: 3}
+  - name: '7: Morte4'
+    clip: {fileID: 8300000, guid: 0afa775235e286c4c84e5a3a1329a6c7, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoMorte2
-    clip: {fileID: 8300000, guid: 2c827317e2c09c348b793f69074a2ca5, type: 3}
+  - name: '8: Alert1'
+    clip: {fileID: 8300000, guid: 23a0108d65d5448459ed0d951889cfa1, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoMorte3
-    clip: {fileID: 8300000, guid: 1d2f6b01c9fe46d43bd0c0350134cc9a, type: 3}
+  - name: '9: Alert2'
+    clip: {fileID: 8300000, guid: 0d77b5642114f1141bad805b3c40d862, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoMorte4
-    clip: {fileID: 8300000, guid: c9012e5028abdf540af31c0b08bacaa0, type: 3}
+  - name: '10: Alert3'
+    clip: {fileID: 8300000, guid: 8e6a5aa2ba35f9c4d8ef4cdf4a27fc43, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoMorte5
-    clip: {fileID: 8300000, guid: 51cda076dd4e2094580c49f7ba4fccc1, type: 3}
+  - name: '11: Alert4'
+    clip: {fileID: 8300000, guid: 7932095b0aaf971488c87f8105dbb087, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoMorte6
-    clip: {fileID: 8300000, guid: b5e25c7f417210642aa5bf169b3d2eb7, type: 3}
+  - name: '12: Dano1'
+    clip: {fileID: 8300000, guid: 6ba8ef528b0da414fbbfe11a54ca36db, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoMorte7
-    clip: {fileID: 8300000, guid: 516dd94a9ef66ad40abfd7fbfd75fb15, type: 3}
+  - name: '13: Dano2'
+    clip: {fileID: 8300000, guid: e79215532133e8d418f4fa6c80c39473, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: WendigoMorte8
-    clip: {fileID: 8300000, guid: 5ff560bf1b00fa04ab0d5e894dac84b3, type: 3}
+  - name: '14: Dano3'
+    clip: {fileID: 8300000, guid: b9fd242cac1da7242a071bcf242db853, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '15: Dano4'
+    clip: {fileID: 8300000, guid: 74ecf0c53c5ddc247bd596d9d56afc98, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '16: Chase1'
+    clip: {fileID: 8300000, guid: f1d63ce7389c5c54f81a0f41b8f8755f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '17: Chase2'
+    clip: {fileID: 8300000, guid: faa4bcd4fd86a0a49a14c848890dd9c5, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '18: Chase3'
+    clip: {fileID: 8300000, guid: 14a225f8c0efaac42a8a1455faf5e8ac, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '19: Chase4'
+    clip: {fileID: 8300000, guid: 8442787b57e4c634abee8251ed46db16, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+--- !u!114 &224958496285373152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132299340055970864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27e79c82ba14e1cb06fdb4b8682b65b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: '0: BeepAlert'
+    clip: {fileID: 8300000, guid: 0608894efac1c3e46a91a61de9e23680, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '1: Hit1'
+    clip: {fileID: 8300000, guid: b291f211549e68d469abddeb59c8b380, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '2: Hit2'
+    clip: {fileID: 8300000, guid: 490098c9b050d6249be51a5ade2fca75, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '3: Hit3'
+    clip: {fileID: 8300000, guid: 8542a753bfffaca458da7c7d6708fe5a, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '4: Morte1'
+    clip: {fileID: 8300000, guid: e92d7a9c33028994bb82834c65ca3514, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '5: Morte2'
+    clip: {fileID: 8300000, guid: 84bcd33b21a77bb469954e032aa9b929, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '6: Morte3'
+    clip: {fileID: 8300000, guid: fccf6894b708eaa40b733c6a5b483c24, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '7: Morte4'
+    clip: {fileID: 8300000, guid: 8ffd2647c37410349a51e8616a62868b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '8: MovimentoInicio'
+    clip: {fileID: 8300000, guid: 1764189b0694d804d80f0446928b06b2, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '9: MovimentoMeio'
+    clip: {fileID: 8300000, guid: 807c1dfca0a5f5c4a8d94f3eb28b6440, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '10: MovimentoFim'
+    clip: {fileID: 8300000, guid: 652ffac3a49083f459d3c990eefe7e39, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}

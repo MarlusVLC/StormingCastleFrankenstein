@@ -62,6 +62,7 @@ namespace Weapons
 
             if (Physics.Raycast(ray, out var hit))
             {
+                // Debug.DrawRay();
                 if (hit.collider.TryGetComponent(out Health health))
                 {
                     if (_canDealDamage) health.TakeDamage(damage);

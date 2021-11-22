@@ -73,6 +73,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parede2_low (18) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: efd1b80b48935fb408e6517b10a90233, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd1b80b48935fb408e6517b10a90233, type: 3}
 --- !u!1 &8843098150275977373 stripped
