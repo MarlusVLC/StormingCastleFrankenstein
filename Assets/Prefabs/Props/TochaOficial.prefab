@@ -426,6 +426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vfx_Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 3304541655512538222, guid: 055106185fa0d84439f6b7780c970192, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3304541655512538223, guid: 055106185fa0d84439f6b7780c970192, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -480,6 +484,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3304541655512538223, guid: 055106185fa0d84439f6b7780c970192, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304541656077931290, guid: 055106185fa0d84439f6b7780c970192, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3304541656077931290, guid: 055106185fa0d84439f6b7780c970192, type: 3}

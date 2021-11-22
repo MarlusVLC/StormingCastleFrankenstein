@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 100
   startingHealth: 100
+  _currentHealth: 0
 --- !u!114 &3050747557695548247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,22 +535,22 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '11: Tiro1'
+  - name: '11: EmptyFile'
     clip: {fileID: 8300000, guid: f3608911c4b2c2d448b1cb119384f424, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '12: Tiro2'
+  - name: '12: EmptyFile'
     clip: {fileID: 8300000, guid: d9629b953b2afee4188bc3d3dbe76513, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '13: Tiro3'
+  - name: '13: EmptyFile'
     clip: {fileID: 8300000, guid: e54720f12566d104da0742cf15ff312c, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '14: Tiro4'
+  - name: '14: EmptyFile'
     clip: {fileID: 8300000, guid: 5dcff7f0c4ebf18478fc7dd08eb5a019, type: 3}
     volume: 1
     pitch: 1
@@ -645,42 +646,42 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '15: Jump1'
+  - name: '15: EmptyFile'
     clip: {fileID: 8300000, guid: cdfdfc45def233243b129c5f24268b8e, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '16: Jump2'
+  - name: '16: EmptyFile'
     clip: {fileID: 8300000, guid: 901d7c0fcc26ddd428d9c42ca4051ed5, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '17: Jump3'
+  - name: '17: EmptyFile'
     clip: {fileID: 8300000, guid: 41d026c188573224da1b549dde5d9b09, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '18: Jump4'
+  - name: '18: EmptyFile'
     clip: {fileID: 8300000, guid: 3303a82e17d6ec14cac57a3a7e49f7d8, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '19: Land1'
+  - name: '19: EmptyFile'
     clip: {fileID: 8300000, guid: 5d704f520391d87419403315ed58081b, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '20: Land2'
+  - name: '20: EmptyFile'
     clip: {fileID: 8300000, guid: 2ece211ddd97a6847b8e139bc74c41ae, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '21: Land3'
+  - name: '21: EmptyFile'
     clip: {fileID: 8300000, guid: d40751bb3a9f1bf479528c135021d7bc, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '22: Land4'
+  - name: '22: EmptyFile'
     clip: {fileID: 8300000, guid: 230dc425e72ca24498498eccfbd63a4d, type: 3}
     volume: 1
     pitch: 1
@@ -793,6 +794,10 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 3120367299578857683, guid: 51b02f2a97dc93f44bffd3c0b97f3d6b, type: 3}
+    - target: {fileID: 4884170841564834548, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
+      propertyPath: isUnlocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6349399661403292890, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1320,7 +1325,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 7821477310402925148}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
