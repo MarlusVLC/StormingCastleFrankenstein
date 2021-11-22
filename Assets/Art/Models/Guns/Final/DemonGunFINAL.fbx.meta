@@ -29,7 +29,7 @@ ModelImporter:
     second: Armature|MandibulaAction
   - first:
       74: 7164942965947416308
-    second: Armature|Mordidinha
+    second: Mordidinha
   - first:
       74: -6044344770378259623
     second: Armature|Mordidinha.001
@@ -44,7 +44,7 @@ ModelImporter:
     second: Armature|MordidinhaDoOlho
   - first:
       74: -1749803411506127993
-    second: Armature|Respiro
+    second: Respiro
   - first:
       74: 2171829157474281827
     second: Armature|TamborAction
@@ -56,7 +56,7 @@ ModelImporter:
     second: Armature|Tiro
   - first:
       74: -6000927958295714545
-    second: Armature|Tiro1
+    second: Tiro
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -86,7 +86,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Mordidinha
+      name: Mordidinha
       takeName: Armature|Mordidinha
       internalID: 0
       firstFrame: 0
@@ -115,7 +115,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Respiro
+      name: Respiro
       takeName: Armature|Respiro
       internalID: 0
       firstFrame: 0
@@ -144,11 +144,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Tiro
-      takeName: Armature|Tiro
+      name: Tiro
+      takeName: Armature|Tiro1
       internalID: 0
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 11
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

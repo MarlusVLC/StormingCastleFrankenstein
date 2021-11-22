@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &6444734236961213981
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3353274675195468348}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3ecadbf7a38648428078765d30be6b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8073595011777057413
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,13 +95,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 338347399812927874}
   isAutomatic: 0
-  timeBetweenShooting: 1
+  timeBetweenShooting: 2
   damage: 100
   magazineSize: 5
   startingAmmo: 5
+  isUnlocked: 0
   allowInvoke: 1
   _hasUnlimitedAmmo: 0
-  bullet: {fileID: 6173487948656069444, guid: de12f8190466c064cac84068c1586f88, type: 3}
+  bullet: {fileID: 7063788207918657503, guid: cddf49d1bcb053b4680a2cb581cfcf57, type: 3}
   shootForce: 200
   upwardForce: 10
   spread: 0
@@ -188,6 +208,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 92293cf03846afb43a87c285dff39cf3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2c77559ae1a14c499d9c6daa90a725a, type: 3}
+--- !u!1 &3353274675195468348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2268233030054428266, guid: b2c77559ae1a14c499d9c6daa90a725a, type: 3}
+  m_PrefabInstance: {fileID: 3599317699247039574}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2720993450209476742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1455139046316827856, guid: b2c77559ae1a14c499d9c6daa90a725a, type: 3}

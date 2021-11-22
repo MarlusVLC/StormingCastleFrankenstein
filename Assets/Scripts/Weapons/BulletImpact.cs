@@ -1,8 +1,10 @@
 ﻿using System.Collections;
+using System.Numerics;
 using Entities;
 using UnityEngine;
 using Utilities;
 using Random = UnityEngine.Random;
+using Vector3 = UnityEngine.Vector3;
 
 namespace Weapons
 {
@@ -14,6 +16,7 @@ namespace Weapons
         [SerializeField] private AudioClip[] impactSFX;
         [SerializeField] private MeshRenderer _renderer;
         [SerializeField] private bool explodeBullet;
+        [SerializeField] private float explosionScale = 1000f;
         
         private int _damage;
         private AudioSource _audioSource;
@@ -37,7 +40,7 @@ namespace Weapons
             
             if (explodeBullet)
             {
-                transform.localScale = new Vector3(10f, 10f, 10f);
+                transform.localScale = Vector3.one * explosionScale ;
             }
             
             if (other.TryGetComponent(out Health health))
@@ -71,7 +74,7 @@ namespace Weapons
             _renderer.enabled = false;
             _rb.constraints = RigidbodyConstraints.FreezeAll;
             _ImpactFx.SetActive(true);
-            _ImpactFx.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            _ImpactFx.transform.localScale = Vector3.one * (1/explosionScale);
 
             yield return new WaitForSeconds(delayTime);
             Destroy(gameObject);

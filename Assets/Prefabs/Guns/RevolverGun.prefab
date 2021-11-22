@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8353453180982641588}
   - component: {fileID: 6055540641411315582}
   - component: {fileID: 7547028075048646196}
+  - component: {fileID: 5932117744343447554}
   m_Layer: 0
   m_Name: RevolverGun
   m_TagString: Untagged
@@ -97,10 +98,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 7547028073753882432}
   isAutomatic: 0
-  timeBetweenShooting: 0.1
+  timeBetweenShooting: 0.5
   damage: 10
   magazineSize: 36
   startingAmmo: 36
+  isUnlocked: 0
   allowInvoke: 1
   _hasUnlimitedAmmo: 0
   bullet: {fileID: 6173487948656069444, guid: 52a584bbe72f0484295ea367bea73cb0, type: 3}
@@ -112,6 +114,25 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
+--- !u!95 &5932117744343447554
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695195701880592043}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a4ff1503ac03344f81a34aa617fcd08, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7547028073753882433
 GameObject:
   m_ObjectHideFlags: 0

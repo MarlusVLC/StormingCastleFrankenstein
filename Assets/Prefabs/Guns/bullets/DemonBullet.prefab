@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8770519762529288339}
   - component: {fileID: 9142161791983203470}
   - component: {fileID: 7750469654713398925}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DemonBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,6 +124,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 425ff4ef42115584d8ed4ad3d57ae190, type: 3}
   _renderer: {fileID: 8721046419285872138}
   explodeBullet: 1
+  explosionScale: 350
 --- !u!54 &8770519762529288339
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -353,6 +354,10 @@ PrefabInstance:
     - target: {fileID: 7256214810504188252, guid: 521785fb22d4e0a49bcffdd9de6d7b69, type: 3}
       propertyPath: m_Name
       value: vfx_Impact2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256214810504188252, guid: 521785fb22d4e0a49bcffdd9de6d7b69, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7256214810504188252, guid: 521785fb22d4e0a49bcffdd9de6d7b69, type: 3}
       propertyPath: m_IsActive

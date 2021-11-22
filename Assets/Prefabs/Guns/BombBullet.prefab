@@ -41,7 +41,7 @@ PrefabInstance:
     - target: {fileID: 2128856934279918072, guid: cddf49d1bcb053b4680a2cb581cfcf57, type: 3}
       propertyPath: _rb
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 237708645972259390}
     - target: {fileID: 2128856934279918072, guid: cddf49d1bcb053b4680a2cb581cfcf57, type: 3}
       propertyPath: _renderer
       value: 
@@ -115,5 +115,10 @@ PrefabInstance:
 --- !u!4 &1420862455135389640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7587524545031304549, guid: cddf49d1bcb053b4680a2cb581cfcf57, type: 3}
+  m_PrefabInstance: {fileID: 8861860861961908909}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &237708645972259390 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8770519762529288339, guid: cddf49d1bcb053b4680a2cb581cfcf57, type: 3}
   m_PrefabInstance: {fileID: 8861860861961908909}
   m_PrefabAsset: {fileID: 0}

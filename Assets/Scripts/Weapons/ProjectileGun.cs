@@ -21,13 +21,17 @@ namespace Weapons
         [SerializeField] private VisualEffect muzzleFlash;
         [Header("Enemy Layer")]
         [SerializeField] private LayerMask enemyLayer;
+
+        private Animator animator;
         
         private GameObject npcObject;
         
         private int _bulletsShot;
         private bool _hasMuzzleFlash;
         private bool _enemyGun;
-        
+        private static readonly int PlayShootAnimation = Animator.StringToHash("PlayShootAnimation");
+        private static readonly int PlayMordidinhaAnimation = Animator.StringToHash("PlayMordidinhaAnimation");
+
         protected override void Awake()
         {
             base.Awake();
@@ -45,11 +49,26 @@ namespace Weapons
             {
                 _enemyGun = false;
             }
+
+            animator = GetComponent<Animator>();    
+            
+            if (!animator)
+            {
+                animator = GetComponentInChildren<Animator>();
+            }
+            
         }
 
         private void OnEnable()
         {
             if (_hasMuzzleFlash) muzzleFlash.Stop();
+            
+            Invoke(nameof(PlayMordidinha),2f);
+        }
+
+        private void PlayMordidinha()
+        {
+            animator.SetTrigger(PlayMordidinhaAnimation);
         }
 
         public override Gun PullTrigger(bool shooting, Ray ray, LayerMask damageableLayer)
@@ -117,6 +136,12 @@ namespace Weapons
             {
                 StartCoroutine(Parallel.ExecuteActionWithDelay(ResetShot, timeBetweenShooting));
                 allowInvoke = false;
+            }
+            
+            // animations
+            if (animator.gameObject.activeSelf)
+            {
+                animator.SetTrigger(PlayShootAnimation);
             }
         }
 
