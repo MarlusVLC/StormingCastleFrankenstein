@@ -12,7 +12,8 @@ namespace AI
         [SerializeField] private float jumpForce;
         
         private bool isAttacking;
-        
+        private static readonly int IsCloseToTarget = Animator.StringToHash("IsCloseToTarget");
+
         protected override void Awake()
         {
             base.Awake();
@@ -24,7 +25,7 @@ namespace AI
         }
         protected override void Attack()
         {
-            _animator.SetBool("IsCloseToTarget", _distanceToTarget < StoppingDistance);
+            _animator.SetBool(IsCloseToTarget, _distanceToTarget < StoppingDistance);
             // StartCoroutine(AttackProcess());
         }
 
