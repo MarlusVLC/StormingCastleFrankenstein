@@ -1,4 +1,5 @@
-﻿using AI;
+﻿using System;
+using AI;
 using Audio;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -9,14 +10,17 @@ namespace Entities
     {
         [SerializeField] private VisualEffect bloodVFX;
 
-        private BlinkEffect _blinkEffect;
+        [SerializeField] private BlinkEffect[] blinkEffects;
         private EnemyType _enemyType;
 
         protected override void Awake()
         {
             base.Awake();
             _enemyType = GetComponent<EnemyBot>().EnemyType;
-            _blinkEffect = GetComponent<BlinkEffect>();
+            if (blinkEffects.Length < 1)
+            {
+                blinkEffects = GetComponentsInChildren<BlinkEffect>();
+            }
             bloodVFX.Stop();
         }
 
@@ -35,7 +39,7 @@ namespace Entities
         {
             EnemySoundManager.Instance.PlayDamageSound(_enemyType);
             base.TakeDamage(damage);
-            _blinkEffect.DamageBlink();
+            Array.ForEach(blinkEffects, bE => bE.DamageBlink());
         }
     }
 }

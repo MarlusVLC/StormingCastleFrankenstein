@@ -7,9 +7,7 @@ namespace AI
 {
     public class MeleeBot : EnemyBot
     {
-        [SerializeField] private Collider weaponCollider;
         [SerializeField] private Rigidbody rb;
-        [SerializeField] private float jumpForce;
         
         private bool isAttacking;
         private static readonly int IsCloseToTarget = Animator.StringToHash("IsCloseToTarget");
@@ -28,21 +26,5 @@ namespace AI
             _animator.SetBool(IsCloseToTarget, _distanceToTarget < StoppingDistance);
             // StartCoroutine(AttackProcess());
         }
-
-        // protected IEnumerator AttackProcess()
-        // {
-        //     weaponCollider.enabled = isAttacking = true;
-        //     _navMeshAgent.enabled = false;
-        //     rb.AddForce(Vector3.up * jumpForce);
-        //     while (isAttacking)
-        //     {
-        //         if (!isGrounded)
-        //         {
-        //             yield return new WaitUntil(() => isGrounded);
-        //         }
-        //         weaponCollider.enabled = isAttacking = false;
-        //         _navMeshAgent.enabled = true;
-        //     }
-        // }
     }
 }
