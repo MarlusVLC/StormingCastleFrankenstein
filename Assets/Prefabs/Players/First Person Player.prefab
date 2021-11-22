@@ -499,6 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ed1254a14d4def899ca6e5c3914bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generalVolume: 1
   sounds:
   - name: '0: RevolverShot'
     clip: {fileID: 8300000, guid: 2b1e8c7b5f38c914b8d02a6e1e3fcb4b, type: 3}
@@ -590,6 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70dbb14867cc4579b9d154cae44b2834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generalVolume: 1
   sounds:
   - name: '0: Step1'
     clip: {fileID: 8300000, guid: f15a1b860a1cdba45b8ee2602fae0f1f, type: 3}

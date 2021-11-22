@@ -1609,6 +1609,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2977696827347936223}
     m_Modifications:
+    - target: {fileID: 224958496285373152, guid: 8b4850b6fbae7a440b66fa1e8f713838, type: 3}
+      propertyPath: generalVolume
+      value: 0.483
+      objectReference: {fileID: 0}
+    - target: {fileID: 1305955493463141625, guid: 8b4850b6fbae7a440b66fa1e8f713838, type: 3}
+      propertyPath: generalVolume
+      value: 0.345
+      objectReference: {fileID: 0}
     - target: {fileID: 2132299340055970864, guid: 8b4850b6fbae7a440b66fa1e8f713838, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -1665,6 +1673,10 @@ PrefabInstance:
       propertyPath: revolver
       value: 
       objectReference: {fileID: 4172625990796444323}
+    - target: {fileID: 2132299340055970869, guid: 8b4850b6fbae7a440b66fa1e8f713838, type: 3}
+      propertyPath: generalVolume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2132299340055970868, guid: 8b4850b6fbae7a440b66fa1e8f713838, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8b4850b6fbae7a440b66fa1e8f713838, type: 3}

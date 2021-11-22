@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -1.534394e-11
       objectReference: {fileID: 0}
+    - target: {fileID: 3547511237412802492, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3547511237412802493, guid: 1efcaf2544d58a14d969ba64fb9714ae, type: 3}
       propertyPath: bloodVFX
       value: 

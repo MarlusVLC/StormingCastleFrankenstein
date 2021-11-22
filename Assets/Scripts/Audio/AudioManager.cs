@@ -7,6 +7,7 @@ namespace Audio
 {
     public class AudioManager : MonoCache
     {
+        [Range(0,1)][SerializeField] private float generalVolume;
         public Sound[] sounds;
 
         private int indexSequence = 0;
@@ -22,7 +23,7 @@ namespace Audio
                 s.source = gameObject.AddComponent<AudioSource>();
                 s.source.playOnAwake = false;
                 s.source.clip = s.clip;
-                s.source.volume = s.volume;
+                s.source.volume = s.volume * generalVolume;
                 s.source.pitch = s.pitch;
             }
         }
