@@ -105,7 +105,7 @@ namespace Weapons
 
             // check if ray hit something
             var targetPoint 
-                = Physics.Raycast(ray, out var hit) 
+                = Physics.Raycast(ray, out var hit, 75, enemyLayer, QueryTriggerInteraction.Ignore) 
                     ? hit.point 
                     : ray.GetPoint(75);
             
