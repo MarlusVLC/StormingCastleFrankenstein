@@ -81,7 +81,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: build v0.4.1
+  m_text: build v0.5.1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -403,7 +403,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 4d11f3c4bb395f346abfb59c8cde32d4, type: 3}
     - target: {fileID: 953207435269232637, guid: a75cc98e0b1431943832a5fd48da616c, type: 3}
       propertyPath: sounds.Array.data[4].name
-      value: BackgroundSoundtrack
+      value: '4: WesternThemeSong'
       objectReference: {fileID: 0}
     - target: {fileID: 953207435269232637, guid: a75cc98e0b1431943832a5fd48da616c, type: 3}
       propertyPath: sounds.Array.data[4].pitch

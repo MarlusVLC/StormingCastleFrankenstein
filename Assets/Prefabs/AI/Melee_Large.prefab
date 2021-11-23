@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9df4f0a44c7d1478b6323e256e1ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _newMaterial: {fileID: 2100000, guid: 133fc2e23b7a3ba4a83cf2a3f8b900d2, type: 2}
 --- !u!65 &3627160659256108750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38,7 +37,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9df4f0a44c7d1478b6323e256e1ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _newMaterial: {fileID: 2100000, guid: 133fc2e23b7a3ba4a83cf2a3f8b900d2, type: 2}
 --- !u!114 &12249521323106008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,7 +49,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9df4f0a44c7d1478b6323e256e1ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _newMaterial: {fileID: 2100000, guid: 133fc2e23b7a3ba4a83cf2a3f8b900d2, type: 2}
 --- !u!1 &5550265703150227741
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +347,7 @@ GameObject:
   - component: {fileID: 5550265704439970609}
   - component: {fileID: 5550265704439970610}
   - component: {fileID: 2247015066048213701}
+  - component: {fileID: 9214962239900503614}
   m_Layer: 9
   m_Name: SimpleBot
   m_TagString: Untagged
@@ -506,14 +504,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d813749cf572449683f7de942dfd0c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 30
-  startingHealth: 30
+  <MaxHealth>k__BackingField: 40
+  startingHealth: 40
   _currentHealth: 0
   bloodVFX: {fileID: 72652247393625578}
-  blinkEffects:
-  - {fileID: 2764940383595550653}
-  - {fileID: 7231499964721891251}
-  - {fileID: 12249521323106008}
+  blinkEffects: []
 --- !u!114 &2247015066048213701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +525,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackDamage: 15
+--- !u!114 &9214962239900503614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550265704439970611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9df4f0a44c7d1478b6323e256e1ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2175574383044429259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -764,10 +771,6 @@ PrefabInstance:
     - target: {fileID: 2545138781843031396, guid: 589e0ff8c1ab13942a223556a165479c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -42.757744
-      objectReference: {fileID: 0}
-    - target: {fileID: 2645295125662998166, guid: 589e0ff8c1ab13942a223556a165479c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3148871828571573757, guid: 589e0ff8c1ab13942a223556a165479c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1210,8 +1213,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 72652247393625578}
     - target: {fileID: 1419516643, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
-      propertyPath: blinkEffects.Array.size
-      value: 3
+      propertyPath: startingHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419516643, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1673915253, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
       propertyPath: m_Enabled

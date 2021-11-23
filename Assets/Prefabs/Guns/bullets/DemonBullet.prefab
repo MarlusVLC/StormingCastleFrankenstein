@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8770519762529288339}
   - component: {fileID: 9142161791983203470}
   - component: {fileID: 7750469654713398925}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: DemonBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6aaeb5e8d842515419e56743a8816337, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -357,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7256214810504188252, guid: 521785fb22d4e0a49bcffdd9de6d7b69, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7256214810504188252, guid: 521785fb22d4e0a49bcffdd9de6d7b69, type: 3}
       propertyPath: m_IsActive

@@ -2,9 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.VFX;
 
-namespace AI
+namespace Player
 {
-    public class PlayBloodVfxPlayer : MonoBehaviour
+    public class PlayBulletImpactVfx : MonoBehaviour
     {
         private VisualEffect blood;
 

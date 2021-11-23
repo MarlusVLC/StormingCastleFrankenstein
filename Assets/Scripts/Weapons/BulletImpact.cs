@@ -20,17 +20,7 @@ namespace Weapons
         
         private int _damage;
         private AudioSource _audioSource;
-
-        // TODO: fix this. make the player not collide with the explosion
-        // private void OnControllerColliderHit(ControllerColliderHit hit)
-        // {
-        //     var other = hit.gameObject;
-        //     if (other.CompareTag("Player"))
-        //     {
-        //         Destroy(this);
-        //     }
-        // }
-
+        
         private void OnCollisionEnter(Collision collision)
         {
             TryPlayImpactSfx();
@@ -38,17 +28,24 @@ namespace Weapons
             var other = collision.gameObject;
             if (_damageableLayer.HasLayerWithin(other.layer) == false) return;
             
-            if (explodeBullet)
-            {
-                transform.localScale = Vector3.one * explosionScale ;
-            }
-            
+            _ImpactFx.transform.position = gameObject.transform.position;
+            Instantiate(_ImpactFx, gameObject.transform.parent);
+            _ImpactFx.gameObject.SetActive(true);
+            _ImpactFx.transform.position = gameObject.transform.position;
+
             if (other.TryGetComponent(out Health health))
             {
                 health.TakeDamage(_damage);
             }
-
-            StartCoroutine(DisplayAndDestroy(0.5f));
+            
+            if (explodeBullet)
+            {
+                StartCoroutine(ExpandAndDestroy());
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public BulletImpact Fire(Vector3 direction, float shootForce, float upwardForce)
@@ -69,17 +66,16 @@ namespace Weapons
             return true;
         }
 
-        private IEnumerator DisplayAndDestroy(float delayTime)
+        private IEnumerator ExpandAndDestroy()
         {
+            transform.localScale = Vector3.one * explosionScale;
+            _ImpactFx.gameObject.transform.localScale = Vector3.one/explosionScale;
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
             _renderer.enabled = false;
-            _rb.constraints = RigidbodyConstraints.FreezeAll;
-            _ImpactFx.SetActive(true);
-            _ImpactFx.transform.localScale = Vector3.one * (1/explosionScale);
-
-            yield return new WaitForSeconds(delayTime);
+            yield return new WaitForSeconds(0.3f);
             Destroy(gameObject);
         }
-
+        
         public LayerMask UncollidableMask
         {
             get => _damageableLayer;
