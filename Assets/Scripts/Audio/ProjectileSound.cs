@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Weapons;
 
 namespace Audio
 {
@@ -9,17 +10,35 @@ namespace Audio
         [SerializeField] private GameObject revolver;
         [SerializeField] private GameObject shotgun;
         [SerializeField] private GameObject demonGun;
-        public void PlayProjectileSound()
+        
+        
+        // public void PlayProjectileSound()
+        // {
+        //     if (revolver.gameObject.activeSelf)
+        //     {
+        //         StartCoroutine(RevolverShot());
+        //     }
+        //     else if (shotgun.gameObject.activeSelf)
+        //     {
+        //         StartCoroutine(ShotgunShot());
+        //     }
+        //     else if (demonGun.gameObject.activeSelf)
+        //     {
+        //         StartCoroutine(DemonShot());
+        //     }
+        // }
+        
+        public void PlayProjectileSound(Gun.GunType gunType)
         {
-            if (revolver.gameObject.activeSelf)
+            if (gunType == Gun.GunType.Revolver)
             {
                 StartCoroutine(RevolverShot());
             }
-            else if (shotgun.gameObject.activeSelf)
+            else if (gunType == Gun.GunType.Shotgun)
             {
                 StartCoroutine(ShotgunShot());
             }
-            else if (demonGun.gameObject.activeSelf)
+            else if (gunType == Gun.GunType.Demon)
             {
                 StartCoroutine(DemonShot());
             }

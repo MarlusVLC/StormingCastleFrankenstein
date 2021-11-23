@@ -13,13 +13,11 @@ public class Credits : MonoBehaviour
     private void Awake()
     {
         _videoPlayer = GetComponent<VideoPlayer>();
+        Invoke("GoToMainMenu", 68f);
     }
 
-    private void Update()
+    private void GoToMainMenu()
     {
-        if (_videoPlayer.frame >= _videoPlayer.clip.length)
-        {
-            SceneManager.LoadScene("Main Menu");
-        }
+        SceneManager.LoadScene("Main Menu");
     }
 }

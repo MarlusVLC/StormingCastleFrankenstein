@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Audio;
 using Player;
 using UnityEditor;
 using UnityEngine;
@@ -12,5 +13,7 @@ public class Teleport : Interact
         _characterController.enabled = false;
         transform.position = portal.pairPortal.telePoint.transform.position;
         _characterController.enabled = true;
+        
+        FindObjectOfType<PortalSound>().PlayPortalSound();
     }
 }

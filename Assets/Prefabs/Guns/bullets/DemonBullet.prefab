@@ -118,10 +118,10 @@ MonoBehaviour:
     m_Bits: 512
   _ImpactFx: {fileID: 8662264639418744574}
   impactSFX:
-  - {fileID: 8300000, guid: b63a96c2536d4944cb8d4a7850820dc5, type: 3}
-  - {fileID: 8300000, guid: 3d8fa37cb41c5e042b1c08e8a3e75117, type: 3}
-  - {fileID: 8300000, guid: 39830bea3eb5d694bb7d314767fe47c3, type: 3}
-  - {fileID: 8300000, guid: 425ff4ef42115584d8ed4ad3d57ae190, type: 3}
+  - {fileID: 8300000, guid: 0ecb5819c83271c438bc418c919a463d, type: 3}
+  - {fileID: 8300000, guid: 45f567805adea534ea66afb41e0613f0, type: 3}
+  - {fileID: 8300000, guid: c5bdb0808b353714e94fbb08a2ba5742, type: 3}
+  - {fileID: 8300000, guid: 08b467b526c59dc46b32361987826749, type: 3}
   _renderer: {fileID: 8721046419285872138}
   explodeBullet: 1
   explosionScale: 350
@@ -304,7 +304,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.8
       inSlope: 0
       outSlope: 0
       tangentMode: 0

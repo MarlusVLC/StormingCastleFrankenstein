@@ -7,6 +7,7 @@ namespace Weapons
 {
     public abstract class Gun : MonoCache
     {
+        public GunType gunType;
         [Header("Gun Stats")]
         [SerializeField] protected Transform attackPoint;
         [SerializeField] protected bool isAutomatic;
@@ -91,6 +92,11 @@ namespace Weapons
         {
             get => _hasUnlimitedAmmo;
             set => _hasUnlimitedAmmo = value;
+        }
+        
+        public enum GunType
+        {
+            Revolver, Shotgun, Demon   
         }
     }
 }

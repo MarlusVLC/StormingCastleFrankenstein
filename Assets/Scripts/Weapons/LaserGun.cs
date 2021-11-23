@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Audio;
 using Entities;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -88,6 +89,7 @@ namespace Weapons
            _visualEffect.Play();
            _isVfxGhostgunPlaying = true;
            StartCoroutine(DamageDelay());
+           FindObjectOfType<LaserSound>().PlayLaserSound();
         }
 
         private void StopVfxGhostGun()

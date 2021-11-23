@@ -200,7 +200,6 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 5550265703611938827}
-  - {fileID: 72652247393625581}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -88.476, z: 0}
@@ -510,7 +509,7 @@ MonoBehaviour:
   <MaxHealth>k__BackingField: 40
   startingHealth: 40
   _currentHealth: 0
-  bloodVFX: {fileID: 72652247393625578}
+  bloodVFX: {fileID: 5477676312420378455, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
   blinkEffects: []
 --- !u!114 &2247015066048213701
 MonoBehaviour:
@@ -527,7 +526,7 @@ MonoBehaviour:
   attackableMask:
     serializedVersion: 2
     m_Bits: 64
-  attackDamage: 15
+  attackDamage: 7
 --- !u!114 &9214962239900503614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1110,89 +1109,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2766642560208959060, guid: 589e0ff8c1ab13942a223556a165479c, type: 3}
   m_PrefabInstance: {fileID: 2175574383044429259}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5550265702832964285
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5550265703808061662}
-    m_Modifications:
-    - target: {fileID: 5477676312420378448, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378448, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378448, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378448, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378448, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378448, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378448, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378448, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378448, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378448, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378448, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378453, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_Name
-      value: Vfx_blood
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378453, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378454, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378454, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477676312420378454, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
---- !u!4 &72652247393625581 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5477676312420378448, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-  m_PrefabInstance: {fileID: 5550265702832964285}
-  m_PrefabAsset: {fileID: 0}
---- !u!2083052967 &72652247393625578 stripped
-VisualEffect:
-  m_CorrespondingSourceObject: {fileID: 5477676312420378455, guid: 8fb508935d05bd3488b462745a60a852, type: 3}
-  m_PrefabInstance: {fileID: 5550265702832964285}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5550265703611938820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1215,7 +1131,7 @@ PrefabInstance:
     - target: {fileID: 1419516643, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
       propertyPath: bloodVFX
       value: 
-      objectReference: {fileID: 72652247393625578}
+      objectReference: {fileID: 0}
     - target: {fileID: 1419516643, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
       propertyPath: startingHealth
       value: 40

@@ -88,7 +88,7 @@ namespace Weapons
                 }
                 else
                 {
-                    FindObjectOfType<ProjectileSound>().PlayProjectileSound();   
+                    FindObjectOfType<ProjectileSound>().PlayProjectileSound(gunType);   
                 }
             }
             if (shooting && _bulletsLeft <= 0)

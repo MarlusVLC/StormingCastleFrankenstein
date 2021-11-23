@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cac3efec5c38c499287c7535437bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunType: 2
   attackPoint: {fileID: 338347399812927874}
   isAutomatic: 0
   timeBetweenShooting: 2
