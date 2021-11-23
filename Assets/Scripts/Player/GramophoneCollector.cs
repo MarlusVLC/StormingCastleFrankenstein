@@ -2,6 +2,8 @@ using System;
 using Audio;
 using Player;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class GramophoneCollector : Interact
 {
@@ -16,6 +18,7 @@ public class GramophoneCollector : Interact
         _audioLogSound = FindObjectOfType<AudioLogSound>();
         _hasAudioLogBeenCollected = new bool[_audioLogSound.sounds.Length];
     }
+    
     protected override void Interaction(Transform item)
     {
         
@@ -54,6 +57,7 @@ public class GramophoneCollector : Interact
                 break;
             case "RecordPlayer11":
                 audioIndex = 10;
+                Invoke("GoToCredits", 35f);
                 break;
             
         }
@@ -62,6 +66,11 @@ public class GramophoneCollector : Interact
         OnGramophoneCollected?.Invoke(audioIndex);
         _hasAudioLogBeenCollected[audioIndex] = true;
         item.gameObject.SetActive(false);
+    }
+
+    private void GoToCredits()
+    {
+        SceneManager.LoadScene("Credits");
     }
     
     
