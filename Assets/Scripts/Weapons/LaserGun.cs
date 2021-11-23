@@ -100,7 +100,7 @@ namespace Weapons
         
         private IEnumerator DamageDelay()
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
             _canDealDamage = true;
         }
     }
