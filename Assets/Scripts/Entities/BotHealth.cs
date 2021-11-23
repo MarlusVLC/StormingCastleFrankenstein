@@ -21,14 +21,12 @@ namespace Entities
             {
                 blinkEffects = GetComponentsInChildren<BlinkEffect>();
             }
-            bloodVFX.Stop();
         }
 
         protected override void Die()
         {
             transform.parent.position = transform.position;
             Instantiate(bloodVFX, transform.parent);
-            bloodVFX.Play();
             
             EnemySoundManager.Instance.PlayDeathSound(_enemyType);
 
