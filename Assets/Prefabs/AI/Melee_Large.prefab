@@ -504,8 +504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d813749cf572449683f7de942dfd0c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 30
-  startingHealth: 30
+  <MaxHealth>k__BackingField: 40
+  startingHealth: 40
   _currentHealth: 0
   bloodVFX: {fileID: 72652247393625578}
   blinkEffects: []
@@ -1212,6 +1212,14 @@ PrefabInstance:
       propertyPath: bloodVFX
       value: 
       objectReference: {fileID: 72652247393625578}
+    - target: {fileID: 1419516643, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
+      propertyPath: startingHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419516643, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 1673915253, guid: 6dac85c8566877a46bd6307e3cbcf1d1, type: 3}
       propertyPath: m_Enabled
       value: 0

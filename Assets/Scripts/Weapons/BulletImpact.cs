@@ -20,17 +20,7 @@ namespace Weapons
         
         private int _damage;
         private AudioSource _audioSource;
-
-        // TODO: fix this. make the player not collide with the explosion
-        // private void OnControllerColliderHit(ControllerColliderHit hit)
-        // {
-        //     var other = hit.gameObject;
-        //     if (other.CompareTag("Player"))
-        //     {
-        //         Destroy(this);
-        //     }
-        // }
-
+        
         private void OnCollisionEnter(Collision collision)
         {
             TryPlayImpactSfx();
@@ -48,7 +38,9 @@ namespace Weapons
                 health.TakeDamage(_damage);
             }
 
-            StartCoroutine(DisplayAndDestroy(0.5f));
+            Instantiate(_ImpactFx, gameObject.transform);
+            
+            Destroy(gameObject);
         }
 
         public BulletImpact Fire(Vector3 direction, float shootForce, float upwardForce)
@@ -68,18 +60,7 @@ namespace Weapons
 
             return true;
         }
-
-        private IEnumerator DisplayAndDestroy(float delayTime)
-        {
-            _renderer.enabled = false;
-            _rb.constraints = RigidbodyConstraints.FreezeAll;
-            _ImpactFx.SetActive(true);
-            _ImpactFx.transform.localScale = Vector3.one * (1/explosionScale);
-
-            yield return new WaitForSeconds(delayTime);
-            Destroy(gameObject);
-        }
-
+        
         public LayerMask UncollidableMask
         {
             get => _damageableLayer;
