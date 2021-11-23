@@ -5,22 +5,21 @@ namespace AI
 {
     public class BlinkEffect : MonoBehaviour
     {
-        private Color startColor;
-        private Color endColor = Color.white;
-
+        [SerializeField] private Material _newMaterial;
+        private Material _material;
         private Renderer _renderer;
 
         private void Start()
         {
             _renderer = GetComponent<Renderer>();
-            startColor = _renderer.material.color;
+            _material = _renderer.material;
         }
 
         private IEnumerator BlinkOnce()
         {
-            _renderer.material.color = Color.Lerp(startColor, endColor, 0.2f);
+            _renderer.material = _newMaterial;
             yield return new WaitForSeconds(0.1f);
-            _renderer.material.color = startColor;
+            _renderer.material = _material;
         }
     
         public void DamageBlink()
