@@ -2437,6 +2437,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7294369549288909877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2831569359612899519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5015d719594266a08338300d19d7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: MainFOV
+  showCircumference: 1
+  numberOfExpectedTargets: 1
+  checkInterval: 0.4
+  viewAngle: 360
+  viewRadius: 50
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 64
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 136
 --- !u!1001 &5983672143303284719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2931,3 +2955,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fac756694a631343b61e0a004246987, type: 3}
+--- !u!1 &2831569359612899519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4978732088309103004, guid: 4fac756694a631343b61e0a004246987, type: 3}
+  m_PrefabInstance: {fileID: 7085221182049077539}
+  m_PrefabAsset: {fileID: 0}

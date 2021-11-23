@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 125
   m_IsActive: 1
 --- !u!4 &785189656039811947
 Transform:
@@ -112,7 +112,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 125
   m_IsActive: 1
 --- !u!4 &5725825815975261096
 Transform:
@@ -207,7 +207,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 125
   m_IsActive: 1
 --- !u!4 &1479171504766753471
 Transform:
@@ -299,7 +299,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 125
   m_IsActive: 1
 --- !u!4 &5438972600821760732
 Transform:
@@ -337,7 +337,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 125
   m_IsActive: 1
 --- !u!4 &8852994974552303768
 Transform:
@@ -428,7 +428,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3304541655512538222, guid: 055106185fa0d84439f6b7780c970192, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304541655512538222, guid: 055106185fa0d84439f6b7780c970192, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 3304541655512538223, guid: 055106185fa0d84439f6b7780c970192, type: 3}
       propertyPath: m_RootOrder
@@ -488,7 +492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3304541656077931290, guid: 055106185fa0d84439f6b7780c970192, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3304541656077931290, guid: 055106185fa0d84439f6b7780c970192, type: 3}
       propertyPath: m_Materials.Array.size
@@ -518,6 +522,10 @@ PrefabInstance:
       propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.z
       value: 8.425583
       objectReference: {fileID: 0}
+    - target: {fileID: 3304541656077931292, guid: 055106185fa0d84439f6b7780c970192, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 125
+      objectReference: {fileID: 0}
     - target: {fileID: 3304541656077931293, guid: 055106185fa0d84439f6b7780c970192, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.026
@@ -537,6 +545,10 @@ PrefabInstance:
     - target: {fileID: 3304541656167717985, guid: 055106185fa0d84439f6b7780c970192, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.81960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304541656167717986, guid: 055106185fa0d84439f6b7780c970192, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 055106185fa0d84439f6b7780c970192, type: 3}
