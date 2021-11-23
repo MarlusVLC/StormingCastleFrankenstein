@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 7547028073753882432}
   isAutomatic: 0
-  timeBetweenShooting: 0.5
+  timeBetweenShooting: 0.25
   damage: 10
   magazineSize: 36
   startingAmmo: 36
@@ -525,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7450587763688537812, guid: fded58728f314fd4ead2e2b6a480f1a2, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7450587763688537812, guid: fded58728f314fd4ead2e2b6a480f1a2, type: 3}
       propertyPath: m_Materials.Array.size

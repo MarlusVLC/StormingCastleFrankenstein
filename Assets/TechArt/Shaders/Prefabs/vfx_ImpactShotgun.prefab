@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4793253953435282987}
   - component: {fileID: 1465139717577666681}
   m_Layer: 0
-  m_Name: vfx_Impact
+  m_Name: vfx_ImpactShotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4793253953435282986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300.76474, y: 121.58685, z: -26.302116}
+  m_LocalPosition: {x: 296.45917, y: 124.27414, z: -46.158115}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,7 +58,13 @@ VisualEffect:
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0.751946, y: 3.9930742, z: 0.52265376, w: 0}
+        m_Name: Color01
+        m_Overridden: 1
+      - m_Value: {x: 0.7746741, y: 4.126176, z: 0.3888543, w: 0}
+        m_Name: Color02
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:

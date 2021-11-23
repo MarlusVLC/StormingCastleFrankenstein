@@ -28,19 +28,24 @@ namespace Weapons
             var other = collision.gameObject;
             if (_damageableLayer.HasLayerWithin(other.layer) == false) return;
             
-            if (explodeBullet)
-            {
-                transform.localScale = Vector3.one * explosionScale ;
-            }
-            
+            _ImpactFx.transform.position = gameObject.transform.position;
+            Instantiate(_ImpactFx, gameObject.transform.parent);
+            _ImpactFx.gameObject.SetActive(true);
+            _ImpactFx.transform.position = gameObject.transform.position;
+
             if (other.TryGetComponent(out Health health))
             {
                 health.TakeDamage(_damage);
             }
-
-            Instantiate(_ImpactFx, gameObject.transform);
             
-            Destroy(gameObject);
+            if (explodeBullet)
+            {
+                StartCoroutine(ExpandAndDestroy());
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public BulletImpact Fire(Vector3 direction, float shootForce, float upwardForce)
@@ -59,6 +64,16 @@ namespace Weapons
             }
 
             return true;
+        }
+
+        private IEnumerator ExpandAndDestroy()
+        {
+            transform.localScale = Vector3.one * explosionScale;
+            _ImpactFx.gameObject.transform.localScale = Vector3.one/explosionScale;
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            _renderer.enabled = false;
+            yield return new WaitForSeconds(0.3f);
+            Destroy(gameObject);
         }
         
         public LayerMask UncollidableMask

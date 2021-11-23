@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7256214810504188259}
   - component: {fileID: 7256214810504188258}
   - component: {fileID: 7256214810504188253}
+  - component: {fileID: -8004472348249326288}
   m_Layer: 0
   m_Name: vfx_Impact2
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7256214810504188252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.76, y: 0.27, z: 10.488}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,7 +86,7 @@ VisualEffect:
       - m_Value: {x: 18.648636, y: 0, z: 0, w: 0}
         m_Name: Color01
         m_Overridden: 1
-      - m_Value: {x: 18.591482, y: 0, z: 0, w: 0}
+      - m_Value: {x: 18.59148, y: 0, z: 0, w: 0}
         m_Name: Color02
         m_Overridden: 1
     m_Uint:
@@ -145,3 +146,15 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-8004472348249326288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7256214810504188252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 196724689ebc40649a3d62d7b320fad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
