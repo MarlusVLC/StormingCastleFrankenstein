@@ -18,14 +18,14 @@ namespace UI.HUD
 
         private GameObject[] _weaponIcons;
         private GameObject[] _ammoIcons;
-        private TextMeshProUGUI[] _indexes;
+        private GameObject[] _indexes;
 
 
         private void Awake()
         {
             weaponIcons.transform.TryGetChildren(out _weaponIcons);
             ammoIcons.transform.TryGetChildren(out _ammoIcons);
-            _indexes = indexes.transform.RetrieveComponentsInChildren<TextMeshProUGUI>();
+            indexes.transform.TryGetChildren(out _indexes);
         }
 
         private void OnEnable()
@@ -80,17 +80,19 @@ namespace UI.HUD
                 Debug.LogWarning("There's no index associated with the weapon in the index: " + selection);
             }
             
-            for (var i = 0; i < _indexes.Length; i++)
-            {
-                if (i != selection)
-                {
-                    _indexes[i].color = Color.white;
-                }
-                else
-                {
-                    _indexes[i].color = Color.red;
-                }
-            }
+            // for (var i = 0; i < _indexes.Length; i++)
+            // {
+            //     if (i != selection)
+            //     {
+            //         _indexes[i].color = Color.white;
+            //     }
+            //     else
+            //     {
+            //         _indexes[i].color = Color.red;
+            //     }
+            // }
+            
+            ExclusivelyActivate(ref _indexes, selection);
         }
 
         private void UpdateAmmoCounter(WeaponHandler.WeaponChangedEventArgs e)
