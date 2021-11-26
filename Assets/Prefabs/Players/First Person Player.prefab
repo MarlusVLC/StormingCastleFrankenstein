@@ -466,6 +466,7 @@ GameObject:
   - component: {fileID: 7437514660116333515}
   - component: {fileID: 2257129464590809763}
   - component: {fileID: 5116752834057915797}
+  - component: {fileID: 974494763448355286}
   m_Layer: 6
   m_Name: PlayerAudio
   m_TagString: AudioManager
@@ -499,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ed1254a14d4def899ca6e5c3914bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generalVolume: 1
+  generalVolume: 0.7
   sounds:
   - name: '0: RevolverShot'
     clip: {fileID: 8300000, guid: 2b1e8c7b5f38c914b8d02a6e1e3fcb4b, type: 3}
@@ -556,23 +557,23 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '11: EmptyFile'
-    clip: {fileID: 8300000, guid: f3608911c4b2c2d448b1cb119384f424, type: 3}
+  - name: '11: Tiro1'
+    clip: {fileID: 8300000, guid: 870cccc4558c6be46ad5f9835ffdd5f4, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '12: EmptyFile'
-    clip: {fileID: 8300000, guid: d9629b953b2afee4188bc3d3dbe76513, type: 3}
+  - name: '12: Tiro2'
+    clip: {fileID: 8300000, guid: 8b1c35cfaa156f845865c4051c0f5ea8, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '13: EmptyFile'
-    clip: {fileID: 8300000, guid: e54720f12566d104da0742cf15ff312c, type: 3}
+  - name: '13: Tiro3'
+    clip: {fileID: 8300000, guid: 101131fac657a644e8fa001e2089569f, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: '14: EmptyFile'
-    clip: {fileID: 8300000, guid: 5dcff7f0c4ebf18478fc7dd08eb5a019, type: 3}
+  - name: '14: Tiro4'
+    clip: {fileID: 8300000, guid: 8c3bb34f0768ec74a839289a8dc60793, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
@@ -709,6 +710,30 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   playVoice: 1
+--- !u!114 &974494763448355286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8169025936866992146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227c4838b55845e88133245dc7b864e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generalVolume: 0.4
+  sounds:
+  - name: '0: LaserEstranhoComFim'
+    clip: {fileID: 8300000, guid: ccac3b0c5d69c374cacf9c05215801b9, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '1: LaserEstranhoComFim'
+    clip: {fileID: 8300000, guid: ccac3b0c5d69c374cacf9c05215801b9, type: 3}
+    volume: 0
+    pitch: 1
+    source: {fileID: 0}
 --- !u!1001 &6164360181052630573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1209,10 +1234,6 @@ PrefabInstance:
     - target: {fileID: 7392596377544531214, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8068798557132210276, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 168
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b5a7ca5060ef7d4db917b0d6befd643, type: 3}

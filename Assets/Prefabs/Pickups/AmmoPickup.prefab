@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8ace9afd7948d9a9c3f00b45d4241c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoPercentageRecover: 0.25
+  ammoPercentageRecover: 0.5
   collectorMask:
     serializedVersion: 2
     m_Bits: 64

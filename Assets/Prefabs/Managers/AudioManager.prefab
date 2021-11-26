@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 988719479001595242}
   - component: {fileID: 1305955493463141625}
   - component: {fileID: 224958496285373152}
+  - component: {fileID: 2989944708272014159}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -46,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065a96aa9cf640caa05db77c88a0de25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generalVolume: 0
   sounds:
   - name: '0: LUKAS1'
     clip: {fileID: 8300000, guid: 0656333f5d46ebc4c8b4990ddd0f5281, type: 3}
@@ -126,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643bd32bf0c70c1489020b9b7f2ca034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generalVolume: 0
   sounds:
   - name: '0: Ataque1'
     clip: {fileID: 8300000, guid: 4ee5985afa95f244fbc9fb059dd8b9ac, type: 3}
@@ -239,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27e79c82ba14e1cb06fdb4b8682b65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generalVolume: 0
   sounds:
   - name: '0: BeepAlert'
     clip: {fileID: 8300000, guid: 0608894efac1c3e46a91a61de9e23680, type: 3}
@@ -292,6 +296,75 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: '10: MovimentoFim'
     clip: {fileID: 8300000, guid: 652ffac3a49083f459d3c990eefe7e39, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+--- !u!114 &2989944708272014159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132299340055970864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4cfa0f6d8c45c8b81de7ef627cca55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generalVolume: 0.67
+  sounds:
+  - name: '0: BeepDetection'
+    clip: {fileID: 8300000, guid: cdf5431c3e6d41e41af263188fd05dd9, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '1: Hit1'
+    clip: {fileID: 8300000, guid: e8e970bef4e94f9429f23c090cd301a6, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '2: Hit2'
+    clip: {fileID: 8300000, guid: 7ee3ae1eaa1379a469bead8aeeba4c8a, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '3: Hit3'
+    clip: {fileID: 8300000, guid: ae3952ab70f2ae94fa8873872211c20f, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '4: Death1'
+    clip: {fileID: 8300000, guid: adf642528ef173f44b20ff808518daae, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '5: Death2'
+    clip: {fileID: 8300000, guid: 05d4c86937cff50448830712c95ee818, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '6: Death3'
+    clip: {fileID: 8300000, guid: 30be913974414f64182b922762222589, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '7: Death4'
+    clip: {fileID: 8300000, guid: 65bda0e747b9c474db99abd6557a7824, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '8: MovimentoInicio'
+    clip: {fileID: 8300000, guid: 2ac83de02e29b28449bd0159e654957e, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '9: MovimentoMeio'
+    clip: {fileID: 8300000, guid: f9cc2a728f3108f4c8f47ac143253635, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '10: MovimentoFim'
+    clip: {fileID: 8300000, guid: 9df3fb96095e89440a189f68033ef0f8, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
