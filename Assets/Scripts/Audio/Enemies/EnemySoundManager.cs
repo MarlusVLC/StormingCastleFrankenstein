@@ -8,12 +8,13 @@ namespace Audio
     {
         private WendigoSound _wendigoSound;
         private RobotSound _robotSound;
-        
+        private SpiderSound _spiderSound;
 
         private void Awake()
         {
             _wendigoSound = GetComponent<WendigoSound>();
             _robotSound = GetComponent<RobotSound>();
+            _spiderSound = GetComponent<SpiderSound>();
         }
 
         public void PlayAttackSound(EnemyType enemyType)
@@ -25,6 +26,9 @@ namespace Audio
                     break;
                 case EnemyType.Robot:
                     _robotSound.PlayAttackSound();
+                    break;
+                case EnemyType.Spider:
+                    _spiderSound.PlayAttackSound();
                     break;
             }
             
@@ -40,6 +44,9 @@ namespace Audio
                 case EnemyType.Robot:
                     _robotSound.PlayDeathSound();
                     break;
+                case EnemyType.Spider:
+                    _spiderSound.PlayDeathSound();
+                    break;
             }
         }
         
@@ -52,6 +59,9 @@ namespace Audio
                     break;
                 case EnemyType.Robot:
                     _robotSound.PlayAlertSound();
+                    break;
+                case EnemyType.Spider:
+                    _spiderSound.PlayAlertSound();
                     break;
             }
         }
@@ -66,6 +76,9 @@ namespace Audio
                 case EnemyType.Robot:
                     _robotSound.PlayDamageSound();
                     break;
+                case EnemyType.Spider:
+                    _spiderSound.PlayDamageSound();
+                    break;
             }
         }
 
@@ -78,6 +91,9 @@ namespace Audio
                     break;
                 case EnemyType.Robot:
                     _robotSound.PlayChaseSound();
+                    break;
+                case EnemyType.Spider:
+                    _spiderSound.PlayChaseSound();
                     break;
             }
         }

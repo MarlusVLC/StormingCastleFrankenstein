@@ -49,10 +49,8 @@ namespace Weapons
             {
                 _enemyGun = false;
             }
-
-            animator = GetComponent<Animator>();    
             
-            if (!animator)
+            if (!TryGetComponent(out animator))
             {
                 animator = GetComponentInChildren<Animator>();
             }
@@ -139,7 +137,7 @@ namespace Weapons
             }
             
             // animations
-            if (animator.gameObject.activeSelf)
+            if (animator != null && animator.gameObject.activeSelf)
             {
                 animator.SetTrigger(PlayShootAnimation);
             }

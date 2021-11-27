@@ -48,24 +48,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fe5be63039444da0ac4061200dde86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generalVolume: 1
   sounds:
-  - name: MouseOverSound
+  - name: '0: MenuMouseOver'
     clip: {fileID: 8300000, guid: 73f800beec85ffc43bc2d2a74445cfe5, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: ReturnSound
+  - name: '1: MenuVoltando'
     clip: {fileID: 8300000, guid: e893ac2fb9377f7428d0687c9dc01b16, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: ForwardSound
+  - name: '2: MenuAvancando'
     clip: {fileID: 8300000, guid: 7144982b4033b4149b3cd779549b5f57, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: PlaySound
+  - name: '3: PlayGeral1'
     clip: {fileID: 8300000, guid: 508031d83ebb42444a219abb657cf6a8, type: 3}
     volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: '4: The Doomed Parade'
+    clip: {fileID: 8300000, guid: 87157e88c43c44441b5fc1553046e67e, type: 3}
+    volume: 0.028
     pitch: 1
     source: {fileID: 0}

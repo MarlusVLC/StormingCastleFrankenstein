@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3826680635589602509}
   - component: {fileID: 4919609546855286920}
-  - component: {fileID: 4347898297736223860}
   - component: {fileID: 6885818397150723688}
   m_Layer: 6
   m_Name: GunCamera
@@ -76,14 +75,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4347898297736223860
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2702753180944072857}
-  m_Enabled: 1
 --- !u!114 &6885818397150723688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1128,6 +1119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
+--- !u!1 &3598713862947253318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7240952424369408619, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
+  m_PrefabInstance: {fileID: 6164360181052630573}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4651684969496822331 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1513823247883674646, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
@@ -1138,19 +1134,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3827263784317732097, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
   m_PrefabInstance: {fileID: 6164360181052630573}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4409123957561472950 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7547028074830352795, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
-  m_PrefabInstance: {fileID: 6164360181052630573}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3598713862947253318 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7240952424369408619, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
-  m_PrefabInstance: {fileID: 6164360181052630573}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4409123957561472951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7547028074830352794, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
+  m_PrefabInstance: {fileID: 6164360181052630573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4409123957561472950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7547028074830352795, guid: ed8ac4c82e5a15a4a8e59f10311769ee, type: 3}
   m_PrefabInstance: {fileID: 6164360181052630573}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7821477310402925148
