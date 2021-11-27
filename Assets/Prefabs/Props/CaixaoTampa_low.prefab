@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7659336825092587069}
   - component: {fileID: 6765732478271959448}
   - component: {fileID: 8791099720587658578}
-  - component: {fileID: 7499037117469827576}
+  - component: {fileID: 1517246796142627432}
   m_Layer: 3
   m_Name: CaixaoTampa_low
   m_TagString: Untagged
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7499037117469827576
+--- !u!64 &1517246796142627432
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,6 +93,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7057512313179642577, guid: 76b530979cff53540892bec924b6ae56, type: 3}
