@@ -40,7 +40,7 @@ namespace Weapons
             }
 
             var selection = receivedValue - 1;
-            if (!ConfirmedGuns[selection].isUnlocked) return;
+            if (!ConfirmedGuns[selection].IsUnlocked) return;
             
             ExclusivelyActivate(ref _weapons, selection);
             _previousWeapon = CurrentWeapon;

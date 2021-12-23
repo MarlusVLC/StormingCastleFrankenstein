@@ -53,7 +53,7 @@ namespace UI.HUD
                 Debug.LogWarning("There's no icon associated with the weapon in the index: " + selection);
             }
 
-            if (weaponSelector.ConfirmedGuns[selection].isUnlocked)
+            if (weaponSelector.ConfirmedGuns[selection].IsUnlocked)
             {
                 ExclusivelyActivate(ref _weaponIcons, selection);
             }
@@ -67,7 +67,7 @@ namespace UI.HUD
                 Debug.LogWarning("There's no ammo icon associated with the weapon in the index: " + selection);
             }
 
-            if (weaponSelector.ConfirmedGuns[selection].isUnlocked)
+            if (weaponSelector.ConfirmedGuns[selection].IsUnlocked)
             {
                 ExclusivelyActivate(ref _ammoIcons, selection);
             }

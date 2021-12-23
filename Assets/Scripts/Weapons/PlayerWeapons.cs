@@ -32,7 +32,7 @@ namespace Weapons
 
         public void Collect(int index)
         {
-            ConfirmedGuns[index-1].isUnlocked = true;
+            ConfirmedGuns[index-1].IsUnlocked = true;
             SwitchTo(index);
         }
     }

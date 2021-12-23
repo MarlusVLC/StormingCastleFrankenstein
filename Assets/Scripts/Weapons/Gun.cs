@@ -17,7 +17,7 @@ namespace Weapons
         [SerializeField] protected int magazineSize;
         [SerializeField] protected int startingAmmo;
         [Space(10)] 
-        [SerializeField] public bool isUnlocked; //TODO tornar privada e gerar propriedade
+        [SerializeField] protected bool isUnlocked; //TODO tornar privada e gerar propriedade
         [Header("Debugging")] 
         [SerializeField] protected bool allowInvoke = true;
         [SerializeField] protected bool _hasUnlimitedAmmo;
@@ -93,7 +93,13 @@ namespace Weapons
             get => _hasUnlimitedAmmo;
             set => _hasUnlimitedAmmo = value;
         }
-        
+
+        public bool IsUnlocked
+        {
+            get => isUnlocked;
+            set => isUnlocked = value;
+        }
+
         public enum GunType
         {
             Revolver, Shotgun, Demon   
