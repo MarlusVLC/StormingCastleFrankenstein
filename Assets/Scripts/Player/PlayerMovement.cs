@@ -50,7 +50,7 @@ public class PlayerMovement : AgileBeing
         float z = Input.GetAxis("Vertical");
         
         // setting movement according to inputs
-        var move = transform.right * x + transform.forward * z;
+        var move = (transform.right * x + transform.forward * z).normalized;
 
         // "Move" method from character controller using the movement Vector3 and multiplying by the speed
         controller.Move(move * (speed * Time.deltaTime));

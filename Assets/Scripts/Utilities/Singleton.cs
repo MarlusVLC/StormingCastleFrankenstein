@@ -27,6 +27,19 @@ namespace Utilities
                 return _instance;
             }
         }
+        
+        protected virtual void Awake ()
+        {
+            if ( _instance == null )
+            {
+                _instance = this as T;
+                DontDestroyOnLoad ( gameObject );
+            }
+            else
+            {
+                Destroy ( gameObject );
+            }
+        }
 
         public static bool HasInstance()
         {

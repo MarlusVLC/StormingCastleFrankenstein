@@ -10,7 +10,7 @@ namespace Audio
         private RobotSound _robotSound;
         private SpiderSound _spiderSound;
 
-        private void Awake()
+        private new void Awake()
         {
             _wendigoSound = GetComponent<WendigoSound>();
             _robotSound = GetComponent<RobotSound>();

@@ -21,7 +21,7 @@ namespace UI.HUD
         private GameObject[] _indexes;
 
 
-        private void Awake()
+        private new void Awake()
         {
             weaponIcons.transform.TryGetChildren(out _weaponIcons);
             ammoIcons.transform.TryGetChildren(out _ammoIcons);

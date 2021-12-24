@@ -12,6 +12,7 @@ namespace UI.Menus
         [SerializeField] private float highlightSpecularPower = 4f;
         [SerializeField] private float lightAngle = 4f;
         [Range(1,3)][SerializeField] private int clickSoundIndex = 1;
+        [SerializeField] private bool playSound = true;
 
         private TextMeshProUGUI _text;
         private float _origSpecularPower;
@@ -49,7 +50,10 @@ namespace UI.Menus
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            _menuSound.PlayIndex(clickSoundIndex);
+            if (playSound)
+            {
+                _menuSound.PlayIndex(clickSoundIndex);
+            }
         }
     }
 }

@@ -4,18 +4,24 @@ using System.Runtime.Serialization.Formatters.Binary;
 using Player;
 using UnityEngine;
 using Utilities;
+using Random = UnityEngine.Random;
 
 namespace GameManagement
 {
     public class SaveManager : Singleton<SaveManager>
     {
+        [SerializeField] private AudioClip[] deleteFileSfx;
+        [SerializeField] private AudioClip[] emptyFileSfx;
+        
         private BinaryFormatter _binaryFormatter;
         private string _savePath;
+        private AudioClip sfx;
 
         public string SavePath => _savePath;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _binaryFormatter = new BinaryFormatter();
             _savePath = Application.persistentDataPath + "/SaveData.save";
         }
@@ -60,7 +66,13 @@ namespace GameManagement
             {
                 File.Delete(_savePath);
                 Debug.Log("File deleted");
+                sfx = deleteFileSfx[Random.Range(0, deleteFileSfx.Length)];
             }
+            else
+            {
+                sfx = emptyFileSfx[Random.Range(0, emptyFileSfx.Length)];
+            }
+            AudioSource.PlayClipAtPoint(sfx, Vector3.zero);
         }
         
         
