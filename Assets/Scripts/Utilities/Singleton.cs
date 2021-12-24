@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 namespace Utilities
 {
     public class Singleton<T> : MonoBehaviour where T : Component
     {
+        protected static bool IsPermanent = false;
+        
         private static T _instance;
 
         public static T Instance
@@ -22,22 +25,10 @@ namespace Utilities
                         };
                         _instance = obj.AddComponent<T>();
                     }
+                    Debug.Log($"{typeof(T).Name} is Permanent: {IsPermanent.ToString()}" );
+                    if (IsPermanent) DontDestroyOnLoad ( _instance.gameObject );
                 }
-
                 return _instance;
-            }
-        }
-        
-        protected virtual void Awake ()
-        {
-            if ( _instance == null )
-            {
-                _instance = this as T;
-                DontDestroyOnLoad ( gameObject );
-            }
-            else
-            {
-                Destroy ( gameObject );
             }
         }
 

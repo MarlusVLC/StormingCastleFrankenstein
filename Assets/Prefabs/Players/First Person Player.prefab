@@ -183,7 +183,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   controller: {fileID: 4409123955690605755}
-  speed: 12
+  speed: 12.5
   gravity: -19.62
   jumpHeight: 2.5
   stepping: 0

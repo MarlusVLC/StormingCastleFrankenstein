@@ -46,13 +46,14 @@ public class PlayerMovement : AgileBeing
         if (isGrounded && velocity.y < 0) { velocity.y = -2f; }
         
         // getting inputs
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
         
         // setting movement according to inputs
         var move = (transform.right * x + transform.forward * z);
+        if (move.sqrMagnitude > 1.0f) move.Normalize();
 
-        // "Move" method from character controller using the movement Vector3 and multiplying by the speed
+            // "Move" method from character controller using the movement Vector3 and multiplying by the speed
         controller.Move(move * (speed * Time.deltaTime));
 
         // jump

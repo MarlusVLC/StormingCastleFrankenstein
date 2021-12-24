@@ -12,16 +12,17 @@ namespace GameManagement
     {
         [SerializeField] private AudioClip[] deleteFileSfx;
         [SerializeField] private AudioClip[] emptyFileSfx;
-        
+
         private BinaryFormatter _binaryFormatter;
         private string _savePath;
         private AudioClip sfx;
 
         public string SavePath => _savePath;
 
-        protected override void Awake()
+        protected /*override*/ void Awake()
         {
-            base.Awake();
+            // base.Awake();
+            IsPermanent = true;
             _binaryFormatter = new BinaryFormatter();
             _savePath = Application.persistentDataPath + "/SaveData.save";
         }

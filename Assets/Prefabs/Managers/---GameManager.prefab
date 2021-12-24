@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd951781160498d83a1e30a8481a278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPermanent: 1
   deleteFileSfx:
   - {fileID: 8300000, guid: 51adddfb535d1ca458de1a94d0be93b4, type: 3}
   emptyFileSfx:
