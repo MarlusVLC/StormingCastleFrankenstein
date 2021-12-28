@@ -19,7 +19,7 @@ namespace GameManagement
 
         public string SavePath => _savePath;
 
-        protected /*override*/ void Awake()
+        protected /*override*/ void OnEnable()
         {
             // base.Awake();
             IsPermanent = true;

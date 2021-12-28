@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Utilities
 {
-    public class Singleton<T> : MonoBehaviour where T : Component
+    public abstract class Singleton<T> : MonoBehaviour where T : Component
     {
         protected static bool IsPermanent = false;
         
@@ -25,6 +25,7 @@ namespace Utilities
                         };
                         _instance = obj.AddComponent<T>();
                     }
+
                     Debug.Log($"{typeof(T).Name} is Permanent: {IsPermanent.ToString()}" );
                     if (IsPermanent) DontDestroyOnLoad ( _instance.gameObject );
                 }
@@ -36,5 +37,6 @@ namespace Utilities
         {
             return _instance != null;
         }
+
     }
 }
