@@ -60,12 +60,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0693e012e8b0a4d99bb7548a23a2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunType: 0
   attackPoint: {fileID: 5766387517294739636}
   isAutomatic: 1
   timeBetweenShooting: 0
   damage: 2
   magazineSize: 500
-  startingAmmo: 300
+  startingAmmo: 500
+  isUnlocked: 0
   allowInvoke: 1
   _hasUnlimitedAmmo: 0
   _visualEffect: {fileID: 4400609302459627791}

@@ -124,7 +124,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 08b467b526c59dc46b32361987826749, type: 3}
   _renderer: {fileID: 8721046419285872138}
   explodeBullet: 1
-  explosionScale: 350
+  explosionScale: 700
 --- !u!54 &8770519762529288339
 Rigidbody:
   m_ObjectHideFlags: 0
