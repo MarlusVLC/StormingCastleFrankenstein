@@ -7,7 +7,7 @@ namespace Utilities
     {
         protected static bool IsPermanent = false;
         
-        private static T _instance;
+        protected static T _instance;
 
         public static T Instance
         {
@@ -32,6 +32,7 @@ namespace Utilities
                 return _instance;
             }
         }
+        
 
         public static bool HasInstance()
         {

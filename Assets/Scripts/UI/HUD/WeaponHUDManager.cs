@@ -19,6 +19,7 @@ namespace UI.HUD
         private GameObject[] _weaponIcons;
         private GameObject[] _ammoIcons;
         private GameObject[] _indexes;
+        private int _currentWeaponMagazineSize;
 
 
         private new void Awake()
@@ -97,7 +98,8 @@ namespace UI.HUD
 
         private void UpdateAmmoCounter(WeaponHandler.WeaponChangedEventArgs e)
         {
-            ammoCounter.text = e.CurrentWeapon.ShotsLeft.ToString();
+            _currentWeaponMagazineSize = e.CurrentWeapon.MagazineSize;
+            ammoCounter.text = $"{e.CurrentWeapon.ShotsLeft.ToString()} / {_currentWeaponMagazineSize.ToString()}";
             if (e.PreviousWeapon != null)
             {
                 e.PreviousWeapon.AmmoChanged -= UpdateAmmoCounter;
@@ -107,7 +109,7 @@ namespace UI.HUD
         
         private void UpdateAmmoCounter(int ammo)
         {
-            ammoCounter.text = ammo.ToString();
+            ammoCounter.text = $"{ammo.ToString()} / {_currentWeaponMagazineSize.ToString()}" ;
         }
     }
 }

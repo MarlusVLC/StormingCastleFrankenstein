@@ -22,17 +22,22 @@ namespace GameManagement
         protected /*override*/ void OnEnable()
         {
             // base.Awake();
-            IsPermanent = true;
+            // IsPermanent = true;
+            Time.timeScale = 1.0f;
             _binaryFormatter = new BinaryFormatter();
             _savePath = Application.persistentDataPath + "/SaveData.save";
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Delete))
+            if (Application.isEditor)
             {
-                DeleteGameState();
+                if (Input.GetKeyDown(KeyCode.Delete))
+                {
+                    DeleteGameState();
+                }
             }
+
         }
 
         public void SaveGameState(PlayerData playerData)
