@@ -98,6 +98,8 @@ namespace Weapons
             _isVfxGhostgunPlaying = false;
         }
 
+        public override int MagazineSize => 100;
+
         public override int ShotsLeft => 100*_bulletsLeft/magazineSize;
         
         private IEnumerator DamageDelay()

@@ -82,7 +82,7 @@ namespace Weapons
         
         public abstract int ShotsLeft {get;}
 
-        public int MagazineSize => magazineSize;
+        public virtual int MagazineSize => magazineSize;
 
         public bool IsFullyLoaded => _bulletsLeft == magazineSize;
 

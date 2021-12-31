@@ -11,6 +11,8 @@ namespace Player
         [SerializeField] private Transform playerStartingPoint;
         [SerializeField] private LayerMask checkPointLayer;
         [SerializeField] private PlayerWeapons weaponHandler;
+
+        private bool _positionLoaded;
         
         private void Start()
         {
