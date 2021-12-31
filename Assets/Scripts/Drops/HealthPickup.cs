@@ -17,8 +17,11 @@ namespace Drops
             {
                 if (otherGameObject.TryGetComponent(out Health health))
                 {
-                    health.RecoverHealth(healthRecover);
-                    Destroy(gameObject);
+                    if (!health.IsFull)
+                    {
+                        health.RecoverHealth(healthRecover);
+                        Destroy(gameObject);
+                    }
                 }
             }
         }

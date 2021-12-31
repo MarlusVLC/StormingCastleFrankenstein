@@ -84,6 +84,8 @@ namespace Weapons
 
         public int MagazineSize => magazineSize;
 
+        public bool IsFullyLoaded => _bulletsLeft == magazineSize;
+
         public bool IsEmpty => _bulletsLeft <= 0;
         
         public bool IsAutomatic => isAutomatic;

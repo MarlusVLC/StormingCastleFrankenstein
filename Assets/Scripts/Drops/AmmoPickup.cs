@@ -20,8 +20,11 @@ namespace Drops
                 // if (otherGameObject.TryGetComponent(out WeaponHandler weaponHandler))
                 if (weaponHandler != null)
                 {
-                    weaponHandler.CurrentWeapon.AddRelativeAmmo(ammoPercentageRecover);
-                    Destroy(gameObject);
+                    if (!weaponHandler.CurrentWeapon.IsFullyLoaded)
+                    {
+                        weaponHandler.CurrentWeapon.AddRelativeAmmo(ammoPercentageRecover);
+                        Destroy(gameObject);
+                    }
                 }
             }
         }

@@ -76,6 +76,7 @@ namespace Entities
             public int MaxHealth { get; set; }
         }
 
+        public bool IsFull => _currentHealth == MaxHealth;
 
         public bool IsImmortal
         {
