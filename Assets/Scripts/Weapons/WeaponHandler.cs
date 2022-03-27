@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using Utilities;
 using static Utilities.GameObjectUtil;
 
@@ -9,6 +10,7 @@ namespace Weapons
     {
         [SerializeField] private int initialWeaponIndex = 1;
         [SerializeField] private LayerMask damageableLayer;
+        [SerializeField] private UnityEvent<WeaponChangedEventArgs> onWeaponChanged;
 
         private GameObject[] _weapons;
         private Gun _previousWeapon;
@@ -47,7 +49,7 @@ namespace Weapons
             if (_previousWeapon != null) _previousWeapon.ShotFired -= OnAnyShotFired;
             CurrentWeapon = ConfirmedGuns[selection];
             CurrentWeapon.ShotFired += OnAnyShotFired;
-            OnWeaponChanged?.Invoke(new WeaponChangedEventArgs
+            onWeaponChanged?.Invoke(new WeaponChangedEventArgs
             {
                 Position = selection, 
                 PreviousWeapon = _previousWeapon, 
@@ -62,7 +64,7 @@ namespace Weapons
         }
 
         public event Action OnAnyShotFired;
-        public event Action<WeaponChangedEventArgs> OnWeaponChanged;
+        // public event Action<WeaponChangedEventArgs> OnWeaponChanged;
         public class WeaponChangedEventArgs : EventArgs
         {
             public int Position { get; set; }

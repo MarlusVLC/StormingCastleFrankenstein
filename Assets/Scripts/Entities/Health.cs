@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using Utilities;
 
 namespace Entities
@@ -65,7 +66,7 @@ namespace Entities
             {
                 HealthChanged?.Invoke(this, e);
             }
-
+        
         }
         
         public event EventHandler<HealthChangedEventArgs> HealthChanged;

@@ -1,6 +1,7 @@
 using System;
 using Audio;
 using UnityEngine;
+using UnityEngine.Events;
 using Utilities;
 
 namespace Weapons
@@ -21,7 +22,7 @@ namespace Weapons
         [Header("Debugging")] 
         [SerializeField] protected bool allowInvoke = true;
         [SerializeField] protected bool _hasUnlimitedAmmo;
-        
+
         // protected WeaponAudio _weaponAudio;
         protected int _bulletsLeft;
         protected bool _readyToShoot;

@@ -29,24 +29,23 @@ namespace UI.HUD
             indexes.transform.TryGetChildren(out _indexes);
         }
 
-        private void OnEnable()
-        {
-            weaponSelector.OnWeaponChanged += ChangeWeaponIcon;
-            weaponSelector.OnWeaponChanged += ChangeAmmoIcon;
-            weaponSelector.OnWeaponChanged += ChangeIndex;
-            weaponSelector.OnWeaponChanged += UpdateAmmoCounter;
-        }
-        
-        private void OnDisable()
-        {
-            weaponSelector.OnWeaponChanged -= ChangeWeaponIcon;
-            weaponSelector.OnWeaponChanged -= ChangeAmmoIcon;
-            weaponSelector.OnWeaponChanged -= ChangeIndex;
-            weaponSelector.OnWeaponChanged -= UpdateAmmoCounter;
+        // private void OnEnable()
+        // {
+        //     weaponSelector.OnWeaponChanged += ChangeWeaponIcon;
+        //     weaponSelector.OnWeaponChanged += ChangeAmmoIcon;
+        //     weaponSelector.OnWeaponChanged += ChangeIndex;
+        //     weaponSelector.OnWeaponChanged += UpdateAmmoCounter;
+        // }
+        //
+        // private void OnDisable()
+        // {
+        //     weaponSelector.OnWeaponChanged -= ChangeWeaponIcon;
+        //     weaponSelector.OnWeaponChanged -= ChangeAmmoIcon;
+        //     weaponSelector.OnWeaponChanged -= ChangeIndex;
+        //     weaponSelector.OnWeaponChanged -= UpdateAmmoCounter;
+        // }
 
-        }
-
-        private void ChangeWeaponIcon(WeaponHandler.WeaponChangedEventArgs e)
+        public void ChangeWeaponIcon(WeaponHandler.WeaponChangedEventArgs e)
         {
             var selection = e.Position;
             if (selection > _weaponIcons.Length)
@@ -60,7 +59,7 @@ namespace UI.HUD
             }
         }
 
-        private void ChangeAmmoIcon(WeaponHandler.WeaponChangedEventArgs e)
+        public void ChangeAmmoIcon(WeaponHandler.WeaponChangedEventArgs e)
         {
             var selection = e.Position;
             if (selection > _ammoIcons.Length)
@@ -73,7 +72,7 @@ namespace UI.HUD
                 ExclusivelyActivate(ref _ammoIcons, selection);
             }
         }
-        private void ChangeIndex(WeaponHandler.WeaponChangedEventArgs e)
+        public void ChangeIndex(WeaponHandler.WeaponChangedEventArgs e)
         {
             var selection = e.Position;
             if (selection > _weaponIcons.Length)
@@ -96,7 +95,7 @@ namespace UI.HUD
             ExclusivelyActivate(ref _indexes, selection);
         }
 
-        private void UpdateAmmoCounter(WeaponHandler.WeaponChangedEventArgs e)
+        public void UpdateAmmoCounter(WeaponHandler.WeaponChangedEventArgs e)
         {
             _currentWeaponMagazineSize = e.CurrentWeapon.MagazineSize;
             ammoCounter.text = $"{e.CurrentWeapon.ShotsLeft.ToString()} / {_currentWeaponMagazineSize.ToString()}";
@@ -107,7 +106,7 @@ namespace UI.HUD
             e.CurrentWeapon.AmmoChanged += UpdateAmmoCounter;
         }
         
-        private void UpdateAmmoCounter(int ammo)
+        public void UpdateAmmoCounter(int ammo)
         {
             ammoCounter.text = $"{ammo.ToString()} / {_currentWeaponMagazineSize.ToString()}" ;
         }
