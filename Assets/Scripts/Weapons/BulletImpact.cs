@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Numerics;
 using Entities;
+using Ez;
 using UnityEngine;
 using Utilities;
 using Random = UnityEngine.Random;
@@ -8,7 +9,7 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Weapons
 {
-    public class BulletImpact : MonoBehaviour
+    public class BulletImpact : MonoBehaviour, IBulletImpact
     {
         [SerializeField] private Rigidbody _rb;
         [SerializeField] private LayerMask _damageableLayer;
@@ -33,10 +34,11 @@ namespace Weapons
             _ImpactFx.gameObject.SetActive(true);
             _ImpactFx.transform.position = gameObject.transform.position;
 
-            if (other.TryGetComponent(out Health health))
-            {
-                health.TakeDamage(_damage);
-            }
+            // if (other.TryGetComponent(out Health health))
+            // {
+            //     health.TakeDamage(_damage);
+            // }
+            other.Send<Health>(_=>_.TakeDamage(_damage));
             
             if (explodeBullet)
             {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using AI;
 using Audio;
 using UnityEngine;
@@ -33,11 +34,13 @@ namespace Entities
             Destroy(gameObject);
         }
 
-        public override void TakeDamage(int damage)
+        public override IEnumerable TakeDamage(int damage)
         {
             EnemySoundManager.Instance.PlayDamageSound(_enemyType);
-            base.TakeDamage(damage);
+            // base.TakeDamage(damage)
+            StartCoroutine(base.TakeDamage(damage).GetEnumerator());
             Array.ForEach(blinkEffects, bE => bE.DamageBlink());
+            yield return null;
         }
     }
 }

@@ -1,5 +1,6 @@
 
 using Audio;
+using Ez;
 using UnityEngine;
 using UnityEngine.VFX;
 using Utilities;
@@ -66,6 +67,7 @@ namespace Weapons
 
         private void PlayMordidinha()
         {
+            if (animator == null) return;
             animator.SetTrigger(PlayMordidinhaAnimation);
         }
 
@@ -118,10 +120,14 @@ namespace Weapons
                 trajectoryDirection += new Vector3(spreadX, spreadY, 0);
                 
                 var currentBullet = Instantiate(bullet, attackPosition, Quaternion.identity);
-                currentBullet.GetComponent<BulletImpact>()
-                    .Fire(trajectoryDirection.normalized, shootForce, upwardForce)
+                // currentBullet.GetComponent<BulletImpact>()
+                //     .Fire(trajectoryDirection.normalized, shootForce, upwardForce)
+                //     .SetUncollidableMask(damageableLayer)
+                //     .SetDamage(damage/bulletFragments);
+                currentBullet.Request<BulletImpact, BulletImpact>(_ => _
+                        .Fire(trajectoryDirection.normalized, shootForce, upwardForce))
                     .SetUncollidableMask(damageableLayer)
-                    .SetDamage(damage/bulletFragments);
+                    .SetDamage(damage / bulletFragments);
             }
 
 

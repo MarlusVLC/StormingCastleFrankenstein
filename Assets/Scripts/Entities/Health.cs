@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using Utilities;
 
 namespace Entities
 {
-    public abstract class Health : MonoCache
+    public abstract class Health : MonoCache, IHealth
     {
         [field: Range(0,9999)][field: SerializeField] public int MaxHealth { get; private set; }
         [SerializeField] private int startingHealth = 100;
@@ -20,22 +21,26 @@ namespace Entities
             OnHealthChanged();
         }
 
-        public void RecoverHealth(int healthAddition)
+        // public void RecoverHealth(int healthAddition)
+        public IEnumerable RecoverHealth(int healthAddition)
         {
             _currentHealth += healthAddition;
             if (_currentHealth > MaxHealth) _currentHealth = MaxHealth;
             OnHealthChanged();
+            yield return null;
         }
 
-        public virtual void TakeDamage(int damage)
+        // public virtual void TakeDamage(int damage)
+        public virtual IEnumerable TakeDamage(int damage)
         {
-            if (_isImmortal) return;
+            if (_isImmortal) yield break;
+            Debug.Log(CurrentHealth.ToString());
             CurrentHealth -= damage;
         }
 
         protected abstract void Die();
 
-        private int CurrentHealth
+        public int CurrentHealth
         {
             get => _currentHealth;
             set

@@ -75,7 +75,7 @@ namespace Audio
             currentSource.ignoreListenerPause = ignoreListenerPause;
             currentSource.Play();
 
-            if (currentSource.gameObject.activeSelf == true)
+            if (currentSource.gameObject.activeInHierarchy == true)
             {
                 StartCoroutine(WaitForAudioEnd());
             }
